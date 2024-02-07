@@ -1,0 +1,3 @@
+/Users/aidenpratt/Documents/AP-6015/lectures/Shape/cmake-build-debug/CMakeFiles/Shape.dir
+/Users/aidenpratt/Documents/AP-6015/lectures/Shape/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/aidenpratt/Documents/AP-6015/lectures/Shape/cmake-build-debug/CMakeFiles/rebuild_cache.dir

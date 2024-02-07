@@ -1,0 +1,4 @@
+# ninja log v5
+0	28	1704991013221025673	CMakeFiles/Shape.dir/main.cpp.o	85e8a242ad92fe55
+0	273	1704991013464838062	CMakeFiles/Shape.dir/shape.cpp.o	bf80fb3ebe7f0228
+274	310	1704991013502463944	Shape	b39ac10cf1e1af5a

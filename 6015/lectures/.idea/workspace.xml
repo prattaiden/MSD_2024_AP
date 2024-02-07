@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9ee4d29a-36ad-46e0-af78-4c869427da0c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../labs/Lab 1_Source files/Caps.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../labs/Lab 1_Source files/Caps.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../labs/Lab 1_Source files/Clothing.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../labs/Lab 1_Source files/Clothing.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../labs/Lab 1_Source files/Pants.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../labs/Lab 1_Source files/Pants.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../labs/Lab 1_Source files/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shape/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shape/.idea/Shape.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shape/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shape/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../notes/6015d1" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2aohK6K5s9gqvWgp0MIRYZQsIp1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ee4d29a-36ad-46e0-af78-4c869427da0c" name="Changes" comment="" />
+      <created>1704990771481</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704990771481</updated>
+      <workItem from="1704990772528" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
