@@ -1,4 +1,4 @@
-LATEX_CMD?=/usr/local/texlive/2023/bin/universal-darwin/pdflatex
+LATEX_CMD?=pdflatex
 MKIDX_CMD?=makeindex
 BIBTEX_CMD?=bibtex
 LATEX_COUNT?=8
@@ -17,7 +17,7 @@ $(MANUAL_FILE).pdf: clean $(MANUAL_FILE).tex
 	    do \
 	      echo "Rerunning latex...." ;\
 	      $(LATEX_CMD) $(MANUAL_FILE) ;\
-	      latex_count=`expr $$latex_count - 1` ;
+	      latex_count=`expr $$latex_count - 1` ;\
 	    done
 	$(MKIDX_CMD) $(MANUAL_FILE).idx
 	$(LATEX_CMD) $(MANUAL_FILE)
