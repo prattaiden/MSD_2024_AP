@@ -234,7 +234,7 @@ void Add::pretty_print(std::ostream &ostream, precedence_t p, bool let_pos, int 
     if(p > prec_add){
         ostream << "(";
     }
-    (this->lhs->pretty_print(ostream, prec_add, let_pos, pos));
+    (this->lhs->pretty_print(ostream, prec_add, true, pos));
     ostream << " + ";
     (this->rhs->pretty_print(ostream, prec_add, let_pos, pos));
     if(p > prec_add){
@@ -370,7 +370,6 @@ expr* Let::subst(std::string string, expr *e) {
     else{
         return new Let(this->name, this->value->subst(string, e), this->body->subst(string, e));
     }
-
 }
 
 void Let::print(std::ostream &ostream) {
@@ -395,28 +394,18 @@ void Let::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_par
     ostream << "_let ";
     ostream << this->name;
     ostream << " = ";
-
-
     this->value->pretty_print(ostream, p, let_needs_parenthesis, pos);
-    std::cout << "pos = " << pos << std::endl;
-    std::cout << "letpos = " << letPos << std::endl;
     ostream << "\n";
-
     for(int i = 0; i < letPos - pos; i ++){
         ostream << " ";
     }
-
     int letPos2 =ostream.tellp();
     ostream << "_in  ";
-
     this->body->pretty_print(ostream, prec_none, let_needs_parenthesis, letPos2);
 
     if(p > prec_none && let_needs_parenthesis){
         ostream << ")";
     }
-
-//    pos = letPos;
-
 }
 
 

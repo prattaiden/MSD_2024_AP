@@ -21,64 +21,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61742fe-8a3f-4bdd-ad26-0e2456aed0fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/msdscript2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/A3Unix" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A3Unix" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A3Unix.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A3Unix.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A3Unix.dir/shelpers.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A3Unix.dir/shelpers.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/file.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/r.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/t.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/y.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelpers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shelpers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/catch.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/catch.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-74bff2117e45a6d98168.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-07T20-05-19-0898.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/target-msdscript2-Debug-f3232c1552c1597418f4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_detail_1_1_approx.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_detail_1_1_approx.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_simple_pcg32.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_simple_pcg32.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/expr_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/expr_8h_source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions_vars.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions_vars.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer-members.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/catch_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/catch_8h_source.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_add.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_add.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_binary_expr.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_binary_expr.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_detail_1_1_approx.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_detail_1_1_approx.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_expr_lhs.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_expr_lhs.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_simple_pcg32.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_simple_pcg32.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_unary_expr.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_unary_expr.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_mult.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_mult.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/expr_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/expr_8h_source.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_decomposer.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_decomposer.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/expr.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" afterDir="false" />
     </list>
@@ -145,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707339734977</updated>
       <workItem from="1707339737095" duration="12708000" />
-      <workItem from="1707415023190" duration="2357000" />
+      <workItem from="1707415023190" duration="2963000" />
     </task>
     <servers />
   </component>
