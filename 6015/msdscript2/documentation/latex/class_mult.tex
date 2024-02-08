@@ -18,7 +18,7 @@ Inheritance diagram for Mult\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_mult_a333fb1192329ab9a17a27232808fc89f}{Mult}} (\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_mult_a46684b065ff5ef8ab2d1ff426c07a5c3}{lhs}}, \mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_mult_a04981a1023e9de24dfe0408747a67887}{rhs}})
+\mbox{\hyperlink{class_mult_a333fb1192329ab9a17a27232808fc89f}{Mult}} (\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_mult_a46684b065ff5ef8ab2d1ff426c07a5c3}{name}}, \mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_mult_a04981a1023e9de24dfe0408747a67887}{value}})
 \begin{DoxyCompactList}\small\item\em mult constructor implementation \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_mult_ae03d29a7f4b24a4b0aba5d0736ca0040}{equals}} (\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}e) override
 \begin{DoxyCompactList}\small\item\em checks if add objects are the same \end{DoxyCompactList}\item 
@@ -45,10 +45,10 @@ void {\bfseries pretty\+\_\+print\+\_\+at} (std\+::ostream \&ostream)
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_mult_a46684b065ff5ef8ab2d1ff426c07a5c3}\label{class_mult_a46684b065ff5ef8ab2d1ff426c07a5c3} 
-\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries lhs}
+\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries name}
 \begin{DoxyCompactList}\small\item\em left hands side expression of \doxylink{class_mult}{Mult} class \end{DoxyCompactList}\item 
 \Hypertarget{class_mult_a04981a1023e9de24dfe0408747a67887}\label{class_mult_a04981a1023e9de24dfe0408747a67887} 
-\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries rhs}
+\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries value}
 \begin{DoxyCompactList}\small\item\em right hands side expression of \doxylink{class_mult}{Mult} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -60,7 +60,7 @@ void {\bfseries pretty\+\_\+print\+\_\+at} (std\+::ostream \&ostream)
 \index{Mult@{Mult}!Mult@{Mult}}
 \index{Mult@{Mult}!Mult@{Mult}}
 \doxysubsubsection{\texorpdfstring{Mult()}{Mult()}}
-{\footnotesize\ttfamily Mult\+::\+Mult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{lhs,  }\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Mult\+::\+Mult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{name,  }\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -109,7 +109,7 @@ Implements \mbox{\hyperlink{classexpr_ace167083262a5660abc2f5c3b2cffaa9}{expr}}.
 checks for a variable in the add object 
 
 \begin{DoxyReturn}{Returns}
-returns true if there is a variable in the add objects lhs or rhs 
+returns true if there is a variable in the add objects name or value
 \end{DoxyReturn}
 
 
@@ -126,7 +126,7 @@ Implements \mbox{\hyperlink{classexpr}{expr}}.
 interps the mult object mathematically 
 
 \begin{DoxyReturn}{Returns}
-return the mathematical addition equation of of lhs and rhs 
+return the mathematical addition equation of of name and value
 \end{DoxyReturn}
 
 

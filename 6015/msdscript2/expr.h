@@ -49,10 +49,10 @@ public:
     }
 
     void pretty_print_at(std::ostream &ostream){
-       this->pretty_print(ostream, prec_none);
+        this->pretty_print(ostream, prec_none, true, 0);
     }
 
-    virtual void pretty_print(std::ostream &ostream, precedence_t p) = 0;
+    virtual void pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) = 0;
 };
 
 //----------------------------------------------NUM-------------------------------------------------------//
@@ -69,7 +69,7 @@ public:
     bool has_variable() override;
     expr* subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
-    void pretty_print(std::ostream &override, precedence_t p) override;
+    void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 
 };
 
@@ -88,7 +88,7 @@ public:
     bool has_variable() override;
     expr* subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
-    void pretty_print(std::ostream &ostream, precedence_t p) override;
+    void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
 
 //----------------------------------------------MULT-----------------------------------------------------//
@@ -106,7 +106,7 @@ public:
     bool has_variable() override;
     expr* subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
-    void pretty_print(std::ostream &ostream, precedence_t p) override;
+    void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
 
 //----------------------------------------------------VAR------------------------------------------------//
@@ -123,14 +123,14 @@ public:
     bool has_variable() override;
     expr* subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
-    void pretty_print(std::ostream &ostream, precedence_t p) override;
+    void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
 
 //----------------------------------------------------_LET------------------------------------------------//
 class Let : public expr{
 public:
-    std::string lhsVar;
-    expr *rhs;
+    std::string name;
+    expr *value;
     expr *body;
     Let(std::string lhsVar, expr *rhs, expr *body);
     bool equals(expr *e) override;
@@ -138,7 +138,7 @@ public:
     bool has_variable() override;
     expr* subst(std::string string, expr *e) override;
     void print(std::ostream & ostream) override;
-    void pretty_print(std::ostream &ostream, precedence_t p) override;
+    void pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
 
 

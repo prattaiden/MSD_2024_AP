@@ -183,6 +183,10 @@ vector<Command> getCommands( const vector<string> & tokens )
                 if(cmdNumber == commands.size() -1 ){
                     if(j + 1 < tokens.size()){
                         command.outputFd = open(tokens[j + 1].c_str(), O_WRONLY | O_CREAT , 0666);
+                        if(command.outputFd == -1){
+                            perror("error opening output file");
+                            error = true;
+                        }
                     }
                 }
             }
@@ -190,8 +194,12 @@ vector<Command> getCommands( const vector<string> & tokens )
                  if(cmdNumber == commands.size() -1 ){
                      if(j + 1 < tokens.size()){
                          command.inputFd = open(tokens[j + 1].c_str(), O_RDONLY , 0666);
+                         if(command.inputFd == -1){
+                             perror("error opening input file");
+                             error = true;
+                         }
                      }
-                     //TODO errors
+                     //TODO errors if file doesn't exist?
                  }
              }
             // Note, that only the FIRST command can take input redirection

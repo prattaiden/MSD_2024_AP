@@ -18,7 +18,7 @@ Inheritance diagram for Add\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_add_aedf3b15697a16479385d2011edb94192}{Add}} (\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_add_a42ec49a1dd47d1abc3924963e54820ea}{lhs}}, \mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_add_a98fb3a88084e40c7d1f1d1667096cccf}{rhs}})
+\mbox{\hyperlink{class_add_aedf3b15697a16479385d2011edb94192}{Add}} (\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_add_a42ec49a1dd47d1abc3924963e54820ea}{name}}, \mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_add_a98fb3a88084e40c7d1f1d1667096cccf}{value}})
 \begin{DoxyCompactList}\small\item\em add constructor implementation \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_add_a2ab1a38848aaec38ef75d7890f747c0a}{equals}} (\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}e) override
 \begin{DoxyCompactList}\small\item\em checks if add objects are the same \end{DoxyCompactList}\item 
@@ -45,10 +45,10 @@ void {\bfseries pretty\+\_\+print\+\_\+at} (std\+::ostream \&ostream)
 \begin{DoxyCompactItemize}
 \item 
 \Hypertarget{class_add_a42ec49a1dd47d1abc3924963e54820ea}\label{class_add_a42ec49a1dd47d1abc3924963e54820ea} 
-\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries lhs}
+\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries name}
 \begin{DoxyCompactList}\small\item\em left hands side expression of \doxylink{class_add}{Add} class \end{DoxyCompactList}\item 
 \Hypertarget{class_add_a98fb3a88084e40c7d1f1d1667096cccf}\label{class_add_a98fb3a88084e40c7d1f1d1667096cccf} 
-\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries rhs}
+\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries value}
 \begin{DoxyCompactList}\small\item\em right hands side expression of \doxylink{class_add}{Add} class \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -60,7 +60,7 @@ void {\bfseries pretty\+\_\+print\+\_\+at} (std\+::ostream \&ostream)
 \index{Add@{Add}!Add@{Add}}
 \index{Add@{Add}!Add@{Add}}
 \doxysubsubsection{\texorpdfstring{Add()}{Add()}}
-{\footnotesize\ttfamily Add\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{lhs,  }\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Add\+::\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{name,  }\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
 
 
 
@@ -109,7 +109,7 @@ Implements \mbox{\hyperlink{classexpr_ace167083262a5660abc2f5c3b2cffaa9}{expr}}.
 checks for a variable in the add object 
 
 \begin{DoxyReturn}{Returns}
-returns true if there is a variable in the add objects lhs or rhs 
+returns true if there is a variable in the add objects name or value
 \end{DoxyReturn}
 
 
@@ -126,7 +126,7 @@ Implements \mbox{\hyperlink{classexpr}{expr}}.
 interps the add object mathematically 
 
 \begin{DoxyReturn}{Returns}
-return the mathematical addition equation of of lhs and rhs 
+return the mathematical addition equation of of name and value
 \end{DoxyReturn}
 
 

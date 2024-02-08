@@ -3448,7 +3448,7 @@ namespace Matchers {
         // Given IEEE-754 format for floats and doubles, we can assume
         // that float -> double promotion is lossless. Given this, we can
         // assume that if we do the standard relative comparison of
-        // |lhs - rhs| <= epsilon * max(fabs(lhs), fabs(rhs)), then we get
+        // |name - value| <= epsilon * max(fabs(name), fabs(value)), then we get
         // the same result if we do this for floats, as if we do this for
         // doubles that were promoted from floats.
         struct WithinRelMatcher : MatcherBase<double> {
@@ -7862,7 +7862,7 @@ namespace Catch {
 
 namespace {
 
-// Performs equivalent check of std::fabs(lhs - rhs) <= margin
+// Performs equivalent check of std::fabs(name - value) <= margin
 // But without the subtraction to allow for INFINITY in comparison
 bool marginComparison(double lhs, double rhs, double margin) {
     return (lhs + margin >= rhs) && (rhs + margin >= lhs);
@@ -11542,7 +11542,7 @@ FP step(FP start, FP direction, uint64_t steps) {
     return start;
 }
 
-// Performs equivalent check of std::fabs(lhs - rhs) <= margin
+// Performs equivalent check of std::fabs(name - value) <= margin
 // But without the subtraction to allow for INFINITY in comparison
 bool marginComparison(double lhs, double rhs, double margin) {
     return (lhs + margin >= rhs) && (rhs + margin >= lhs);
@@ -11571,7 +11571,7 @@ namespace Floating {
             << " Margin has to be non-negative.");
     }
 
-    // Performs equivalent check of std::fabs(lhs - rhs) <= margin
+    // Performs equivalent check of std::fabs(name - value) <= margin
     // But without the subtraction to allow for INFINITY in comparison
     bool WithinAbsMatcher::match(double const& matchee) const {
         return (matchee + m_margin >= m_target) && (m_target + m_margin >= matchee);

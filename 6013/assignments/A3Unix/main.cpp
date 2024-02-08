@@ -36,9 +36,8 @@ int main(int argc, char *argv[]) {
         if(pid == 0){
             std::cout << "Child: hello my pid is: " << getpid();
             //use the dup2 command to point to the file outputFd
-            //close(1);
-            dup2(command.inputFd, 0);
-            dup2(command.outputFd, 1);
+            dup2(command.inputFd, 0); //input
+            dup2(command.outputFd, 1); //output
             //const_cast
             execvp(command.execName.c_str(), const_cast<char* const*>(command.argv.data()));
             perror("\nexecvp failed");

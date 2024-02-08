@@ -3,9 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -21,787 +21,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61742fe-8a3f-4bdd-ad26-0e2456aed0fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/A3Unix.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelpers.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelpers.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/.idea/msdscript2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/catch.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmdline.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmdline.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/Doxyfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/annotated.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/bc_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/bc_sd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/catch_8h_source.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_a_d_d.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_assertion_handler-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_assertion_handler.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_capturer-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_capturer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_detail_1_1_approx-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_detail_1_1_approx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_detail_1_1_is_stream_insertable-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_detail_1_1_is_stream_insertable.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_exception_translator_registrar-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_exception_translator_registrar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generator_exception-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generator_exception.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generator_exception.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_chunk_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_chunk_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_chunk_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_filter_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_filter_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_filter_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_fixed_values_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_fixed_values_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_fixed_values_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_generator_untyped_base-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_generator_untyped_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_generator_untyped_base.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_generator_wrapper-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_generator_wrapper.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_generators-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_generators.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_generators.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_iterator_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_iterator_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_iterator_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_map_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_map_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_map_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_random_floating_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_random_floating_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_random_floating_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_random_integer_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_random_integer_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_random_integer_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_range_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_range_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_range_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_repeat_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_repeat_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_repeat_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_single_value_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_single_value_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_single_value_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_take_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_take_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_generators_1_1_take_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_lazy_expression-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_lazy_expression.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_match_expr-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_match_expr.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_match_expr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_non_copyable-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_non_copyable.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_non_copyable.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_option-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_option.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_reusable_string_stream-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_reusable_string_stream.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_reusable_string_stream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_scoped_message-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_scoped_message.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_section-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_section.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_section.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_simple_pcg32-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_simple_pcg32.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_string_ref-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_string_ref.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_test_case-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_test_case.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_test_case.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_test_invoker_as_method-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_test_invoker_as_method.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_test_invoker_as_method.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_timer-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_timer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_e_x_p_r.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_m_u_l_t.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_n_u_m.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_num-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_num.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_num.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_v_a_r.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_var-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_var.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_var.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/classes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/classexpr-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/classexpr.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/classexpr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/clipboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/closed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/cmdline_8cpp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/cmdline_8hpp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/cmdline_8hpp_source.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/cookie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/doc.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/docd.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/doxygen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/doxygen.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/doxygen_crawl.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/dynsections.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/expr_8cpp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/expr_8h.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/expr_8h_source.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/files.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/folderclosed.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/folderclosedd.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/folderopen.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/folderopend.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions_func.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions_vars.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/hierarchy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/main_8cpp.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/menudata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/minus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/minusd.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/nav_f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/nav_fd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/nav_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/nav_h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/nav_hd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/plusd.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_10.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_11.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_12.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_13.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_9.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/all_f.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_10.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_11.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_12.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_9.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_a.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_b.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/classes_f.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/files_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/files_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/files_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/functions_8.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/mag.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/mag_d.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/mag_sel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/mag_seld.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/pages_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/search.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/searchdata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/variables_0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/variables_1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/search/variables_2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/splitbar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/splitbard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_assertion_info-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_assertion_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_assertion_reaction-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_assertion_reaction.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_auto_reg-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_auto_reg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_auto_reg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_case_sensitive-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_case_sensitive.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_counts-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_counts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_detail_1_1_enum_info-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_detail_1_1_enum_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_generators_1_1_i_generator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_generators_1_1_i_generator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_generators_1_1_i_generator.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_generators_1_1as.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_config-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_config.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_config.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_context-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_context.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_context.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_exception_translator-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_exception_translator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_exception_translator_registry-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_exception_translator_registry.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_generator_tracker-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_generator_tracker.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_mutable_context-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_mutable_context.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_mutable_context.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_mutable_enum_values_registry-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_mutable_enum_values_registry.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_mutable_registry_hub-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_mutable_registry_hub.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_registry_hub-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_registry_hub.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_result_capture-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_result_capture.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_runner-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_runner.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_stream-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_stream.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_test_case_registry-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_test_case_registry.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_test_invoker-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_test_invoker.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_test_invoker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_transient_expression-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_transient_expression.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_i_transient_expression.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_cased_string-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_cased_string.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_message_builder-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_message_builder.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_message_builder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_message_info-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_message_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_message_stream-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_message_stream.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_message_stream.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_name_and_tags-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_name_and_tags.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_registrar_for_tag_aliases-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_registrar_for_tag_aliases.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_result_disposition-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_result_disposition.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_result_was-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_result_was.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_run_tests-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_run_tests.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_section_end_info-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_section_end_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_section_info-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_section_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_show_durations-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_show_durations.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_source_line_info-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_source_line_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_stream_end_stop-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_stream_end_stop.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_catch_1_1_detail_1_1_approx_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_catch_1_1_detail_1_1_approx_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_r_00_01typename_01std_1_1enable__if_3_01is__range_3_01_r_01_4536d8fedfff6d62432b3dc59b56e1380.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_r_00_01typename_01std_1_1enable__if_3_01is__range_3_01_r_01_4b2659549e0e87f27cdabec6f94fde16d.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_r_01_c_1_1_5_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_r_01_c_1_1_5_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_t_01_5_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_t_01_5_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_t_0f_s_z_0e_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01_t_0f_s_z_0e_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01bool_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01bool_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01char_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01char_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01char_01_5_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01char_01_5_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01char_01const_01_5_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01char_01const_01_5_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01char_0f_s_z_0e_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01char_0f_s_z_0e_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01double_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01double_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01float_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01float_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01int_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01int_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01long_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01long_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01long_01long_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01long_01long_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01signed_01char_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01signed_01char_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01signed_01char_0f_s_z_0e_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01signed_01char_0f_s_z_0e_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01std_1_1nullptr__t_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01std_1_1nullptr__t_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01std_1_1string_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01std_1_1string_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01std_1_1wstring_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01std_1_1wstring_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01char_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01char_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01char_0f_s_z_0e_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01char_0f_s_z_0e_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01int_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01int_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01long_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01long_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01long_01long_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01unsigned_01long_01long_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01wchar__t_01_5_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01wchar__t_01_5_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01wchar__t_01const_01_5_01_4-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_string_maker_3_01wchar__t_01const_01_5_01_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_test_case_info-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_test_case_info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_test_case_info.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_test_failure_exception.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_totals-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_totals.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_use_colour-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_use_colour.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_wait_for_keypress-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_wait_for_keypress.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_warn_about-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_warn_about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1always__false.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1always__false.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1detail_1_1is__range__impl.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1detail_1_1is__range__impl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1detail_1_1void__type-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1detail_1_1void__type.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1is__callable.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1is__callable_3_01_fun_07_args_8_8_8_08_4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1is__callable__tester-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1is__callable__tester.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1is__range.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1is__range.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1pluralise-members.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1pluralise.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1true__given.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1true__given.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch__global__namespace__dummy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/sync_off.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/sync_on.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tab_a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tab_ad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tab_b.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tab_bd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tab_h.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tab_hd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tab_s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tab_sd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/tabs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/annotated.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/catch_8h_source.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_a_d_d.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_add.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_add.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_add.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_assertion_handler.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_binary_expr.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_binary_expr.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_capturer.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_detail_1_1_approx.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_detail_1_1_is_stream_insertable.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_exception_translator_registrar.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_expr_lhs.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generator_exception.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generator_exception.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_chunk_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_chunk_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_filter_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_filter_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_fixed_values_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_fixed_values_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_generator_untyped_base.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_generator_untyped_base.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_generator_wrapper.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_generators.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_generators.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_iterator_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_iterator_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_map_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_map_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_random_floating_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_random_floating_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_random_integer_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_random_integer_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_range_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_range_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_repeat_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_repeat_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_single_value_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_single_value_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_take_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_generators_1_1_take_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_lazy_expression.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_match_expr.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_match_expr.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_matchers_1_1_exception_1_1_exception_message_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_matchers_1_1_generic_1_1_predicate_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_matchers_1_1_impl_1_1_matcher_untyped_base.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_non_copyable.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_non_copyable.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_option.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_reusable_string_stream.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_reusable_string_stream.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_scoped_message.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_section.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_section.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_simple_pcg32.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_string_ref.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_test_case.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_test_case.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_test_invoker_as_method.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_test_invoker_as_method.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_timer.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_unary_expr.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_unary_expr.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_e_x_p_r.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_m_u_l_t.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_mult.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_mult.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_mult.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_n_u_m.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_num.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_num.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_num.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_v_a_r.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_var.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_var.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_var.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/classexpr.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/classexpr.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/classexpr.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/cmdline_8cpp.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/cmdline_8hpp.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/cmdline_8hpp_source.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/doxygen.sty" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/etoc_doxygen.sty" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/expr_8cpp.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/expr_8h.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/expr_8h_source.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/files.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/hierarchy.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/index.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/longtable_doxygen.sty" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/main_8cpp.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/refman.aux" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/refman.idx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/refman.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/refman.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/refman.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/refman.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/refman.toc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_assertion_info.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_assertion_reaction.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_auto_reg.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_auto_reg.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_case_sensitive.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_counts.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_decomposer.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_detail_1_1_enum_info.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_generators_1_1_i_generator.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_generators_1_1_i_generator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_generators_1_1as.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_config.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_config.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_context.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_context.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_exception_translator.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_exception_translator_registry.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_generator_tracker.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_mutable_context.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_mutable_context.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_mutable_enum_values_registry.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_mutable_registry_hub.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_registry_hub.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_result_capture.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_runner.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_stream.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_test_case_registry.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_test_invoker.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_test_invoker.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_transient_expression.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_i_transient_expression.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_floating_1_1_within_abs_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_floating_1_1_within_rel_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_floating_1_1_within_ulps_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_match_all_of.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_match_any_of.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_base.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_impl_1_1_matcher_method.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_cased_string.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_ends_with_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_equals_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_regex_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_std_string_1_1_string_matcher_base.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_approx_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_contains_element_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_equals_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_matchers_1_1_vector_1_1_unordered_equals_matcher.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_message_builder.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_message_builder.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_message_info.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_message_stream.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_message_stream.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_name_and_tags.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_registrar_for_tag_aliases.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_result_disposition.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_result_was.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_run_tests.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_section_end_info.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_section_info.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_show_durations.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_source_line_info.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_stream_end_stop.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01_catch_1_1_detail_1_1_approx_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01_r_00_01typename_01std_1_1enable__if_3_01is__range_3_01_r_01_4536d8fedfff6d62432b3dc59b56e1380.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01_r_01_c_1_1_5_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01_t_01_5_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01_t_0f_s_z_0e_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01bool_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01char_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01char_01_5_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01char_01const_01_5_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01char_0f_s_z_0e_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01double_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01float_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01int_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01long_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01long_01long_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01signed_01char_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01signed_01char_0f_s_z_0e_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01std_1_1nullptr__t_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01std_1_1string_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01std_1_1wstring_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01unsigned_01char_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01unsigned_01char_0f_s_z_0e_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01unsigned_01int_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01unsigned_01long_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01unsigned_01long_01long_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01wchar__t_01_5_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_string_maker_3_01wchar__t_01const_01_5_01_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_test_case_info.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_test_case_info.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_test_failure_exception.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_totals.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_use_colour.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_wait_for_keypress.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_warn_about.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1always__false.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1always__false.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1detail_1_1is__range__impl.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1detail_1_1is__range__impl.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1detail_1_1is__range__impl_3_01_t_00_01typename_01void__type_3_01decltype_07begin8604ecb9de16ea7789f2f694ac896ffd.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1detail_1_1void__type.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1is__callable.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1is__callable_3_01_fun_07_args_8_8_8_08_4.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1is__callable__tester.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1is__range.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1is__range.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1pluralise.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1true__given.eps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1true__given.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch__global__namespace__dummy.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/tabu_doxygen.sty" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/texput.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/.idea/A3UnixShell.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/reply/cache-v2-c33236ec60e1bc89e6f1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-410385588e78b6b9b179.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-40f7b4af31f82f4e8353.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-07T17-11-18-0430.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/reply/target-A3UnixShell-Debug-3a382e5d7b3960eee8b1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-6f619f6ed2b9cb9d1698.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/3.27.8/CompilerIdCXX/CMakeCXXCompilerId.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/build.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/shelpers.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../A3UnixShell/shelpers.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/catch.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/cmdline.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/cmdline.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/expr.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/expr.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript/tests.cpp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/msdscript2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/A3Unix" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/A3Unix" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A3Unix.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A3Unix.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A3Unix.dir/shelpers.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/A3Unix.dir/shelpers.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/a.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/r.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/t.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/y.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelpers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shelpers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/catch.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/catch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-74bff2117e45a6d98168.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-07T20-05-19-0898.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/target-msdscript2-Debug-f3232c1552c1597418f4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_binary_expr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_detail_1_1_approx.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_detail_1_1_approx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_expr_lhs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_simple_pcg32.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_simple_pcg32.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_catch_1_1_unary_expr.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/class_mult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/expr_8h_source.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/expr_8h_source.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions_vars.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/functions_vars.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer-members.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer-members.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/html/struct_catch_1_1_decomposer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/catch_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/catch_8h_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_add.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_add.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_binary_expr.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_binary_expr.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_detail_1_1_approx.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_detail_1_1_approx.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_expr_lhs.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_expr_lhs.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_simple_pcg32.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_simple_pcg32.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_unary_expr.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_catch_1_1_unary_expr.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_mult.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/class_mult.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/expr_8h_source.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/expr_8h_source.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_decomposer.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/documentation/latex/struct_catch_1_1_decomposer.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/expr.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -820,9 +99,9 @@
     <option name="majorVersion" value="2023" />
     <option name="minorVersion" value="3.2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2c3UPuxWLWXcMBEDI0IiknfWsxI" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -831,31 +110,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "CMake Application.A3Unix.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;CMake Application.A3Unix.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="A3Unix" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="A3Unix" TARGET_NAME="A3Unix" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="A3Unix" RUN_TARGET_NAME="A3Unix">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -871,6 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1707339734977</updated>
       <workItem from="1707339737095" duration="12708000" />
+      <workItem from="1707415023190" duration="2357000" />
     </task>
     <servers />
   </component>

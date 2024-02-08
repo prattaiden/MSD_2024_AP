@@ -95,7 +95,7 @@ Inheritance diagram for Add:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aedf3b15697a16479385d2011edb94192" id="r_aedf3b15697a16479385d2011edb94192"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedf3b15697a16479385d2011edb94192">Add</a> (<a class="el" href="classexpr.html">expr</a> *<a class="el" href="#a42ec49a1dd47d1abc3924963e54820ea">lhs</a>, <a class="el" href="classexpr.html">expr</a> *<a class="el" href="#a98fb3a88084e40c7d1f1d1667096cccf">rhs</a>)</td></tr>
+<tr class="memitem:aedf3b15697a16479385d2011edb94192" id="r_aedf3b15697a16479385d2011edb94192"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedf3b15697a16479385d2011edb94192">Add</a> (<a class="el" href="classexpr.html">expr</a> *<a class="el" href="#a42ec49a1dd47d1abc3924963e54820ea">name</a>, <a class="el" href="classexpr.html">expr</a> *<a class="el" href="#a98fb3a88084e40c7d1f1d1667096cccf">value</a>)</td></tr>
 <tr class="memdesc:aedf3b15697a16479385d2011edb94192"><td class="mdescLeft">&#160;</td><td class="mdescRight">add constructor implementation  <br /></td></tr>
 <tr class="separator:aedf3b15697a16479385d2011edb94192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ab1a38848aaec38ef75d7890f747c0a" id="r_a2ab1a38848aaec38ef75d7890f747c0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ab1a38848aaec38ef75d7890f747c0a">equals</a> (<a class="el" href="classexpr.html">expr</a> *e) override</td></tr>
@@ -130,11 +130,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>pretty_print_at</b> (
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a42ec49a1dd47d1abc3924963e54820ea" id="r_a42ec49a1dd47d1abc3924963e54820ea"><td class="memItemLeft" align="right" valign="top"><a id="a42ec49a1dd47d1abc3924963e54820ea" name="a42ec49a1dd47d1abc3924963e54820ea"></a>
-<a class="el" href="classexpr.html">expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>lhs</b></td></tr>
+<a class="el" href="classexpr.html">expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="memdesc:a42ec49a1dd47d1abc3924963e54820ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">left hands side expression of <a class="el" href="class_add.html" title="Add class, child of expression class.">Add</a> class <br /></td></tr>
 <tr class="separator:a42ec49a1dd47d1abc3924963e54820ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98fb3a88084e40c7d1f1d1667096cccf" id="r_a98fb3a88084e40c7d1f1d1667096cccf"><td class="memItemLeft" align="right" valign="top"><a id="a98fb3a88084e40c7d1f1d1667096cccf" name="a98fb3a88084e40c7d1f1d1667096cccf"></a>
-<a class="el" href="classexpr.html">expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rhs</b></td></tr>
+<a class="el" href="classexpr.html">expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
 <tr class="memdesc:a98fb3a88084e40c7d1f1d1667096cccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">right hands side expression of <a class="el" href="class_add.html" title="Add class, child of expression class.">Add</a> class <br /></td></tr>
 <tr class="separator:a98fb3a88084e40c7d1f1d1667096cccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -150,12 +150,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">Add::Add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classexpr.html">expr</a> *</td>          <td class="paramname"><span class="paramname"><em>lhs</em>, </span></td>
+          <td class="paramtype"><a class="el" href="classexpr.html">expr</a> *</td>          <td class="paramname"><span class="paramname"><em>name</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classexpr.html">expr</a> *</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classexpr.html">expr</a> *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -233,7 +233,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>checks for a variable in the add object </p>
-<dl class="section return"><dt>Returns</dt><dd>returns true if there is a variable in the add objects lhs or rhs </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>returns true if there is a variable in the add objects name or value </dd></dl>
 
 <p>Implements <a class="el" href="classexpr.html">expr</a>.</p>
 
@@ -263,7 +263,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>interps the add object mathematically </p>
-<dl class="section return"><dt>Returns</dt><dd>return the mathematical addition equation of of lhs and rhs </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>return the mathematical addition equation of of name and value </dd></dl>
 
 <p>Implements <a class="el" href="classexpr.html#ae1b13259e12d33e9d77871c5ae7d9578">expr</a>.</p>
 

@@ -95,7 +95,7 @@ Inheritance diagram for Mult:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a333fb1192329ab9a17a27232808fc89f" id="r_a333fb1192329ab9a17a27232808fc89f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a333fb1192329ab9a17a27232808fc89f">Mult</a> (<a class="el" href="classexpr.html">expr</a> *<a class="el" href="#a46684b065ff5ef8ab2d1ff426c07a5c3">lhs</a>, <a class="el" href="classexpr.html">expr</a> *<a class="el" href="#a04981a1023e9de24dfe0408747a67887">rhs</a>)</td></tr>
+<tr class="memitem:a333fb1192329ab9a17a27232808fc89f" id="r_a333fb1192329ab9a17a27232808fc89f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a333fb1192329ab9a17a27232808fc89f">Mult</a> (<a class="el" href="classexpr.html">expr</a> *<a class="el" href="#a46684b065ff5ef8ab2d1ff426c07a5c3">name</a>, <a class="el" href="classexpr.html">expr</a> *<a class="el" href="#a04981a1023e9de24dfe0408747a67887">value</a>)</td></tr>
 <tr class="memdesc:a333fb1192329ab9a17a27232808fc89f"><td class="mdescLeft">&#160;</td><td class="mdescRight">mult constructor implementation  <br /></td></tr>
 <tr class="separator:a333fb1192329ab9a17a27232808fc89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae03d29a7f4b24a4b0aba5d0736ca0040" id="r_ae03d29a7f4b24a4b0aba5d0736ca0040"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae03d29a7f4b24a4b0aba5d0736ca0040">equals</a> (<a class="el" href="classexpr.html">expr</a> *e) override</td></tr>
@@ -130,11 +130,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>pretty_print_at</b> (
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a46684b065ff5ef8ab2d1ff426c07a5c3" id="r_a46684b065ff5ef8ab2d1ff426c07a5c3"><td class="memItemLeft" align="right" valign="top"><a id="a46684b065ff5ef8ab2d1ff426c07a5c3" name="a46684b065ff5ef8ab2d1ff426c07a5c3"></a>
-<a class="el" href="classexpr.html">expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>lhs</b></td></tr>
+<a class="el" href="classexpr.html">expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="memdesc:a46684b065ff5ef8ab2d1ff426c07a5c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">left hands side expression of <a class="el" href="class_mult.html" title="Mult class, child of expression class.">Mult</a> class <br /></td></tr>
 <tr class="separator:a46684b065ff5ef8ab2d1ff426c07a5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04981a1023e9de24dfe0408747a67887" id="r_a04981a1023e9de24dfe0408747a67887"><td class="memItemLeft" align="right" valign="top"><a id="a04981a1023e9de24dfe0408747a67887" name="a04981a1023e9de24dfe0408747a67887"></a>
-<a class="el" href="classexpr.html">expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>rhs</b></td></tr>
+<a class="el" href="classexpr.html">expr</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
 <tr class="memdesc:a04981a1023e9de24dfe0408747a67887"><td class="mdescLeft">&#160;</td><td class="mdescRight">right hands side expression of <a class="el" href="class_mult.html" title="Mult class, child of expression class.">Mult</a> class <br /></td></tr>
 <tr class="separator:a04981a1023e9de24dfe0408747a67887"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -150,12 +150,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">Mult::Mult </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classexpr.html">expr</a> *</td>          <td class="paramname"><span class="paramname"><em>lhs</em>, </span></td>
+          <td class="paramtype"><a class="el" href="classexpr.html">expr</a> *</td>          <td class="paramname"><span class="paramname"><em>name</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classexpr.html">expr</a> *</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classexpr.html">expr</a> *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -233,7 +233,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>checks for a variable in the add object </p>
-<dl class="section return"><dt>Returns</dt><dd>returns true if there is a variable in the add objects lhs or rhs </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>returns true if there is a variable in the add objects name or value </dd></dl>
 
 <p>Implements <a class="el" href="classexpr.html">expr</a>.</p>
 
@@ -263,7 +263,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>interps the mult object mathematically </p>
-<dl class="section return"><dt>Returns</dt><dd>return the mathematical addition equation of of lhs and rhs </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>return the mathematical addition equation of of name and value </dd></dl>
 
 <p>Implements <a class="el" href="classexpr.html#ae1b13259e12d33e9d77871c5ae7d9578">expr</a>.</p>
 
