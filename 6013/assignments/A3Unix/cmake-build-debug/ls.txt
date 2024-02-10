@@ -1,0 +1,9 @@
+A3Unix
+CMakeCache.txt
+CMakeFiles
+Testing
+build.ninja
+cmake_install.cmake
+est.txt
+ls.txt
+tttt.txt

@@ -177,12 +177,14 @@ vector<Command> getCommands( const vector<string> & tokens )
 	
       for( int j = first + 1; j < last; ++j ) {
 
+          //checking for I/O calls
          if( tokens[j] == ">" || tokens[j] == "<" ) {
             // Handle I/O redirection tokens
             if(tokens[j] == ">"){
                 if(cmdNumber == commands.size() -1 ){
                     if(j + 1 < tokens.size()){
-                        command.outputFd = open(tokens[j + 1].c_str(), O_WRONLY | O_CREAT , 0666);
+                        //setting the outputFD to open file and changing the standard out
+                        command.outputFd = open(tokens[j + 1].c_str(), O_WRONLY | O_CREAT | O_APPEND , 0666);
                         if(command.outputFd == -1){
                             perror("error opening output file");
                             error = true;
@@ -190,16 +192,16 @@ vector<Command> getCommands( const vector<string> & tokens )
                     }
                 }
             }
-             if(tokens[j] == "<"){
+            if(tokens[j] == "<"){
                  if(cmdNumber == commands.size() -1 ){
                      if(j + 1 < tokens.size()){
+                         //setting the inputFD to open file and changing the standard in
                          command.inputFd = open(tokens[j + 1].c_str(), O_RDONLY , 0666);
                          if(command.inputFd == -1){
                              perror("error opening input file");
                              error = true;
                          }
                      }
-                     //TODO errors if file doesn't exist?
                  }
              }
             // Note, that only the FIRST command can take input redirection
@@ -211,7 +213,8 @@ vector<Command> getCommands( const vector<string> & tokens )
 
          else if( tokens[j] == "&" ){
             // Fill this in if you choose to do the optional "background command" part.
-            assert(false);
+            command.background = true;
+             continue;
          }
          else {
             // Otherwise this is a normal command line argument! Add to argv.
@@ -224,8 +227,15 @@ vector<Command> getCommands( const vector<string> & tokens )
          if( cmdNumber > 0 ){
             // There are multiple commands.  Open a pipe and
             // connect the ends to the fd's for the commands!
+            int pipeFD[2];
+            if(pipe(pipeFD) == -1){
+                perror("pipe creation failed\n");
+                error = true;
+            } else{
+                command.inputFd = pipeFD[0]; //reading from the previous commands output
+                commands[cmdNumber - 1].outputFd = pipeFD[1];
+            }
 
-            assert( false );
          }
 
          // Exec wants argv to have a nullptr at the end!
@@ -256,3 +266,13 @@ vector<Command> getCommands( const vector<string> & tokens )
    return commands;
 
 } // end getCommands()
+
+//Function closes the command's input and output file descriptors if they're not using the standard file descriptors
+void closeCommandFileDescriptors(Command& command) {
+    if (command.inputFd != STDIN_FILENO) {
+        close(command.inputFd);
+    }
+    if (command.outputFd != STDOUT_FILENO) {
+        close(command.outputFd);
+    }
+}
