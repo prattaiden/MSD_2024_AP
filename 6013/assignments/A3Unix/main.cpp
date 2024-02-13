@@ -103,7 +103,8 @@ int main(int argc, char *argv[]) {
                 std::cout << "PARENT: done waiting for child to run.\n";
             }
             else{
-                std::cout << "PARENT: child is running in background, I will not wait\n";
+                std::cout << "PARENT: child is running in background, I will not wait.\n";
+                //todo my '?' icon does not come back after this! when i cat
             }
 
         }

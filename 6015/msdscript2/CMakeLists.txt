@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(msdscript2 main.cpp expr.cpp cmdline.cpp
         tests.cpp
         parse.hpp
-        parse.cpp)
+        parse.cpp
+        parse2.cpp
+        parse2.h)

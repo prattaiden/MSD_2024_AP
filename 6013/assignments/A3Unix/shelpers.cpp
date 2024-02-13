@@ -216,6 +216,7 @@ vector<Command> getCommands( const vector<string> & tokens )
             command.background = true;
              continue;
          }
+
          else {
             // Otherwise this is a normal command line argument! Add to argv.
             command.argv.push_back( tokens[j].c_str() );

@@ -230,13 +230,14 @@ void Add::print(std::ostream &ostream) {
  * \param ostream
  *\@param precedence
  */
-void Add::pretty_print(std::ostream &ostream, precedence_t p, bool let_pos, int pos) {
+void Add::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
     if(p > prec_add){
         ostream << "(";
     }
-    (this->lhs->pretty_print(ostream, prec_add, true, pos));
+
+    (this->lhs->pretty_print(ostream, static_cast<precedence_t>(prec_add + 1), true, pos));
     ostream << " + ";
-    (this->rhs->pretty_print(ostream, prec_add, let_pos, pos));
+    (this->rhs->pretty_print(ostream, prec_none, true, pos));
     if(p > prec_add){
         ostream << ")";
     }
@@ -315,13 +316,10 @@ void Mult::print(std::ostream &ostream) {
 void Mult::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
 
     if(p > prec_mult){
+        let_needs_parenthesis = false;
         ostream << "(";
     }
-    //if rhs of the mult is a let, do not need () around the let
-     Let *let = dynamic_cast<Let*>(rhs);
-    if(let != nullptr){
-        let_needs_parenthesis = false;
-    }
+
 
     (this->lhs->pretty_print(ostream, static_cast<precedence_t>(prec_mult + 1), let_needs_parenthesis, pos));
     ostream << " * ";
@@ -331,6 +329,8 @@ void Mult::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_pa
         ostream << ")";
     }
 }
+
+
 
 //------------------------------------------LET--------------------------------------------------------//
 
@@ -391,17 +391,19 @@ void Let::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_par
     }
 
     int letPos = ostream.tellp();
-    ostream << "_let ";
-    ostream << this->name;
-    ostream << " = ";
-    this->value->pretty_print(ostream, p, let_needs_parenthesis, pos);
-    ostream << "\n";
-    for(int i = 0; i < letPos - pos; i ++){
+    int n = letPos - pos;
+    ostream << "_let " << this->name << " = " ;
+
+    this->value->pretty_print(ostream, p, let_needs_parenthesis, letPos);
+    ostream << "\n" << " ";
+    int inPos = ostream.tellp();
+
+    while(n > 0){
         ostream << " ";
+        n--;
     }
-    int letPos2 =ostream.tellp();
     ostream << "_in  ";
-    this->body->pretty_print(ostream, prec_none, let_needs_parenthesis, letPos2);
+    this->body->pretty_print(ostream, prec_none, let_needs_parenthesis, inPos);
 
     if(p > prec_none && let_needs_parenthesis){
         ostream << ")";

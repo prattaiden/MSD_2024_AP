@@ -21,11 +21,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61742fe-8a3f-4bdd-ad26-0e2456aed0fa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/est.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/ls.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/ls2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/r.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmake-build-debug/tttt.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/duck.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6014/assignments/HW3LowerNetworkLayers/untitled/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6014/assignments/HW3LowerNetworkLayers/untitled/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6014/assignments/HW3LowerNetworkLayers/untitled/src/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6014/assignments/HW3LowerNetworkLayers/untitled/src/Neighbor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6014/assignments/HW3LowerNetworkLayers/untitled/src/Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6014/assignments/HW3LowerNetworkLayers/untitled/src/Router.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse2.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
@@ -35,6 +39,18 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shelpers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shelpers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-7618b2c2eb1b2297018c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/index-2024-02-08T16-32-17-0882.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.cmake/api/v1/reply/target-msdscript2-Debug-537fe662c676ad1c5d0c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/parse.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +116,7 @@
       <updated>1707339734977</updated>
       <workItem from="1707339737095" duration="12708000" />
       <workItem from="1707415023190" duration="12933000" />
+      <workItem from="1707774542561" duration="1833000" />
     </task>
     <servers />
   </component>
