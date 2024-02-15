@@ -19,7 +19,7 @@ public class Router {
         HashMap<Router, Integer> distance = new HashMap<>(distances);
         for(Router neighbor: routers){
             if(!neighbor.equals(this)){
-                distances.put(neighbor, Integer.MAX_VALUE/2);
+                distances.put(neighbor, Integer.MAX_VALUE);
             }
         }
         distances.put(this, 0);

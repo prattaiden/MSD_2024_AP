@@ -8,8 +8,8 @@
 
 CXX=c++
 CFLAGS= -std=c++11
-CXXSOURCE= cmdline.cpp main.cpp expr.cpp tests.cpp
-HEADERS= cmdline.hpp catch.h expr.h
+CXXSOURCE= cmdline.cpp main.cpp expr.cpp tests.cpp parse.cpp
+HEADERS= cmdline.hpp catch.h expr.h parse.hpp
 
 
 run: msdscript
@@ -25,6 +25,9 @@ clean:
 
 test : msdscript
 	./msdscript --test
+
+interp: msdscript
+	./msdscript --interp
 
 printM:
 	$ (echo $(HEADERS) $(CXXSOURCE))

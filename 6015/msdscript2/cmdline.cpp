@@ -10,9 +10,10 @@
  * \file cmdline.cpp
  * \brief implementation of use_arguments for the command line
  */
-void use_arguments(int argc, char **argv) {
+run_mode_t use_arguments(int argc, char **argv) {
     int length = argc;
     bool testFlag = false;
+    run_mode_t mode;
 
     for (int i = 1; i < length; i++) {
         std::string argVString = argv[i];
@@ -38,9 +39,27 @@ void use_arguments(int argc, char **argv) {
                 exit(1);
             }
         }
-        else{
-            std::cerr << "error: bad flag, use --help for more info\n";
-            exit(1);
+
+        //--interp
+        if(argVString.compare("--interp") == 0){
+            mode = do_interp;
         }
+
+        //--print
+        if(argVString.compare("--print") == 0){
+            mode = do_print;
+        }
+
+        if(argVString.compare("--pretty_print")==0){
+            mode = do_pretty_print;
+        }
+
+//        else{
+//            std::cerr << "error: bad flag, use '--help' for more info\n";
+//            exit(1);
+//        }
     }
+
+
+    return mode;
 }

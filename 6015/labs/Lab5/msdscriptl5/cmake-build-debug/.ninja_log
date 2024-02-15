@@ -1,0 +1,7 @@
+# ninja log v5
+0	464	1707419307466651873	CMakeFiles/msdscript2.dir/main.cpp.o	6747c0e9f9fa3e83
+1	468	1707419307466319040	CMakeFiles/msdscript2.dir/parse.cpp.o	71ab0490b77010c
+6	636	1707420608318049278	CMakeFiles/msdscript2.dir/tests.cpp.o	ac0cd53970515232
+0	564	1707419307568287366	CMakeFiles/msdscript2.dir/expr.cpp.o	4396a3c7d8c7c7f4
+1	2791	1707419309787513773	CMakeFiles/msdscript2.dir/cmdline.cpp.o	85138a9538e24956
+638	710	1707420608394088108	msdscript2	fa88601ac6b9b3e4

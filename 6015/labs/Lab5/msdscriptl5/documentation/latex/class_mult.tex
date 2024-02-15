@@ -1,0 +1,202 @@
+\doxysection{Mult Class Reference}
+\hypertarget{class_mult}{}\label{class_mult}\index{Mult@{Mult}}
+
+
+\doxylink{class_mult}{Mult} class, child of expression class.  
+
+
+
+
+{\ttfamily \#include $<$expr.\+h$>$}
+
+Inheritance diagram for Mult\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mult}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mult_a333fb1192329ab9a17a27232808fc89f}{Mult}} (\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_mult_a46684b065ff5ef8ab2d1ff426c07a5c3}{name}}, \mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_mult_a04981a1023e9de24dfe0408747a67887}{value}})
+\begin{DoxyCompactList}\small\item\em mult constructor implementation \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mult_ae03d29a7f4b24a4b0aba5d0736ca0040}{equals}} (\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em checks if add objects are the same \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mult_a0ae0098f4a1adaef9686983f263ab35a}{interp}} () override
+\begin{DoxyCompactList}\small\item\em interps the mult object mathematically \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mult_a214c39d71da10d21bdbd7fbc70032357}{has\+\_\+variable}} () override
+\begin{DoxyCompactList}\small\item\em checks for a variable in the add object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mult_a2f9b00529ea02a3c4eca07b8a1c70556}{subst}} (std\+::string string, \mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em substitutes the passed in string with the passed in expression if applicable \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mult_a4aa4a8b707ee78d4e3ec497d5d3ad526}{print}} (std\+::ostream \&ostream) override
+\begin{DoxyCompactList}\small\item\em prints the add object to the ostream \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mult_a2318adaebfe988d87038f617cd2e635b}{pretty\+\_\+print}} (std\+::ostream \&ostream, precedence\+\_\+t p) override
+\begin{DoxyCompactList}\small\item\em prints the add object to the ostream in a pretty way \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classexpr}{expr}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries to\+\_\+string} ()
+\item 
+std\+::string {\bfseries to\+\_\+pp\+\_\+string} ()
+\item 
+void {\bfseries pretty\+\_\+print\+\_\+at} (std\+::ostream \&ostream)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mult_a46684b065ff5ef8ab2d1ff426c07a5c3}\label{class_mult_a46684b065ff5ef8ab2d1ff426c07a5c3} 
+\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries name}
+\begin{DoxyCompactList}\small\item\em left hands side expression of \doxylink{class_mult}{Mult} class \end{DoxyCompactList}\item 
+\Hypertarget{class_mult_a04981a1023e9de24dfe0408747a67887}\label{class_mult_a04981a1023e9de24dfe0408747a67887} 
+\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} {\bfseries value}
+\begin{DoxyCompactList}\small\item\em right hands side expression of \doxylink{class_mult}{Mult} class \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_mult}{Mult} class, child of expression class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mult_a333fb1192329ab9a17a27232808fc89f}\label{class_mult_a333fb1192329ab9a17a27232808fc89f} 
+\index{Mult@{Mult}!Mult@{Mult}}
+\index{Mult@{Mult}!Mult@{Mult}}
+\doxysubsubsection{\texorpdfstring{Mult()}{Mult()}}
+{\footnotesize\ttfamily Mult\+::\+Mult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{name,  }\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})}
+
+
+
+mult constructor implementation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & hand side \\
+\hline
+{\em right} & hand side \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mult_ae03d29a7f4b24a4b0aba5d0736ca0040}\label{class_mult_ae03d29a7f4b24a4b0aba5d0736ca0040} 
+\index{Mult@{Mult}!equals@{equals}}
+\index{equals@{equals}!Mult@{Mult}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily bool Mult\+::equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+checks if add objects are the same 
+
+
+\begin{DoxyParams}{Parameters}
+{\em expression} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the mult expressions are equal 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} object dynamic cast to check if parameter expression object is a mult
+
+Implements \mbox{\hyperlink{classexpr_ace167083262a5660abc2f5c3b2cffaa9}{expr}}.
+
+\Hypertarget{class_mult_a214c39d71da10d21bdbd7fbc70032357}\label{class_mult_a214c39d71da10d21bdbd7fbc70032357} 
+\index{Mult@{Mult}!has\_variable@{has\_variable}}
+\index{has\_variable@{has\_variable}!Mult@{Mult}}
+\doxysubsubsection{\texorpdfstring{has\_variable()}{has\_variable()}}
+{\footnotesize\ttfamily bool Mult\+::has\+\_\+variable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+checks for a variable in the add object 
+
+\begin{DoxyReturn}{Returns}
+returns true if there is a variable in the add objects name or value
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classexpr}{expr}}.
+
+\Hypertarget{class_mult_a0ae0098f4a1adaef9686983f263ab35a}\label{class_mult_a0ae0098f4a1adaef9686983f263ab35a} 
+\index{Mult@{Mult}!interp@{interp}}
+\index{interp@{interp}!Mult@{Mult}}
+\doxysubsubsection{\texorpdfstring{interp()}{interp()}}
+{\footnotesize\ttfamily int Mult\+::interp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+interps the mult object mathematically 
+
+\begin{DoxyReturn}{Returns}
+return the mathematical addition equation of of name and value
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classexpr_ae1b13259e12d33e9d77871c5ae7d9578}{expr}}.
+
+\Hypertarget{class_mult_a2318adaebfe988d87038f617cd2e635b}\label{class_mult_a2318adaebfe988d87038f617cd2e635b} 
+\index{Mult@{Mult}!pretty\_print@{pretty\_print}}
+\index{pretty\_print@{pretty\_print}!Mult@{Mult}}
+\doxysubsubsection{\texorpdfstring{pretty\_print()}{pretty\_print()}}
+{\footnotesize\ttfamily void Mult\+::pretty\+\_\+print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostream,  }\item[{precedence\+\_\+t}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+prints the add object to the ostream in a pretty way 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream} & @param precedence \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexpr}{expr}}.
+
+\Hypertarget{class_mult_a4aa4a8b707ee78d4e3ec497d5d3ad526}\label{class_mult_a4aa4a8b707ee78d4e3ec497d5d3ad526} 
+\index{Mult@{Mult}!print@{print}}
+\index{print@{print}!Mult@{Mult}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Mult\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+prints the add object to the ostream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ostream} & \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classexpr}{expr}}.
+
+\Hypertarget{class_mult_a2f9b00529ea02a3c4eca07b8a1c70556}\label{class_mult_a2f9b00529ea02a3c4eca07b8a1c70556} 
+\index{Mult@{Mult}!subst@{subst}}
+\index{subst@{subst}!Mult@{Mult}}
+\doxysubsubsection{\texorpdfstring{subst()}{subst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*} Mult\+::subst (\begin{DoxyParamCaption}\item[{std\+::string}]{string,  }\item[{\mbox{\hyperlink{classexpr}{expr}} \texorpdfstring{$\ast$}{*}}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+substitutes the passed in string with the passed in expression if applicable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & \\
+\hline
+{\em expression} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a new add object with the substituted variables if applicable 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classexpr}{expr}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/aidenpratt/\+Documents/\+Documents -\/ Aiden’s Mac\+Book Pro/\+MSD-\/2024/\+MSD\+\_\+2024\+\_\+\+AP/6015/msdscript/\mbox{\hyperlink{expr_8h}{expr.\+h}}\item 
+/\+Users/aidenpratt/\+Documents/\+Documents -\/ Aiden’s Mac\+Book Pro/\+MSD-\/2024/\+MSD\+\_\+2024\+\_\+\+AP/6015/msdscript/\mbox{\hyperlink{expr_8cpp}{expr.\+cpp}}\end{DoxyCompactItemize}

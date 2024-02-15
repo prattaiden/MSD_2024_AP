@@ -72,6 +72,23 @@ public:
 
 };
 
+//----------------------------------------------------VAR------------------------------------------------//
+
+/**
+ *\brief Var class, child of expression class
+ */
+class Var : public expr{
+public:
+    std::string var; ///< string that will be the var
+    Var(std::string var);
+    bool equals(expr *e) override;
+    int interp() override;
+    bool has_variable() override;
+    expr* subst(std::string string , expr *e) override;
+    void print(std::ostream &ostream) override;
+    void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
+};
+
 //-----------------------------------------------ADD-----------------------------------------------------//
 
 /**
@@ -100,23 +117,6 @@ public:
     expr *lhs; ///< left hands side expression of Mult class
     expr *rhs; ///< right hands side expression of Mult class
     Mult(expr *lhs, expr *rhs);
-    bool equals(expr *e) override;
-    int interp() override;
-    bool has_variable() override;
-    expr* subst(std::string string , expr *e) override;
-    void print(std::ostream &ostream) override;
-    void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
-};
-
-//----------------------------------------------------VAR------------------------------------------------//
-
-/**
- *\brief Var class, child of expression class
- */
-class Var : public expr{
-public:
-    std::string var; ///< string that will be the var
-    Var(std::string var);
     bool equals(expr *e) override;
     int interp() override;
     bool has_variable() override;

@@ -8,4 +8,4 @@ add_executable(msdscript2 main.cpp expr.cpp cmdline.cpp
         parse.hpp
         parse.cpp
         parse2.cpp
-        parse2.h)
+)

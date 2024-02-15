@@ -234,7 +234,6 @@ void Add::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_par
     if(p > prec_add){
         ostream << "(";
     }
-
     (this->lhs->pretty_print(ostream, static_cast<precedence_t>(prec_add + 1), true, pos));
     ostream << " + ";
     (this->rhs->pretty_print(ostream, prec_none, true, pos));
@@ -380,10 +379,9 @@ void Let::print(std::ostream &ostream) {
     ostream<< " _in ";
     this->body->print(ostream);
     ostream << ")";
-
-    //whatever name is in body needs to be replaced with value , in body
 }
 
+//todo meets let expectations explanation
 void Let::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
     //counts spaces
     if(p > prec_none && let_needs_parenthesis){
