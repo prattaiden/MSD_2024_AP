@@ -29,9 +29,6 @@ void printVector(std::vector<Command> &commands){
     }
 }
 
-
-
-
 int main(int argc, char *argv[]) {
     std::string input;
 
@@ -68,12 +65,12 @@ int main(int argc, char *argv[]) {
         if(pid<0){
             perror("fork failed");
         }
+        //child
         if(pid == 0){
             std::cout << "Child: hello my pid is: " << getpid();
             //use the dup2 command to point to the file outputFd
             dup2(command.inputFd, 0); //input
             dup2(command.outputFd, 1); //output
-            //todo need to close the outputs, in the parent
 
             //closing the file descriptors
             if(command.inputFd != STDIN_FILENO) close(command.inputFd);
@@ -86,7 +83,7 @@ int main(int argc, char *argv[]) {
         }
 
         else{
-            //in parent, wait on child
+            //in parent, wait on child if not '&'
             //closing file descriptors associated with pipes
             if(command.inputFd != STDIN_FILENO) close(command.inputFd);
             if(command.outputFd != STDOUT_FILENO) close(command.outputFd);

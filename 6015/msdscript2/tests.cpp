@@ -361,4 +361,9 @@ TEST_CASE("Nabil_parse") {
 TEST_CASE("testing_let_parse"){
     CHECK(parse_str(("_let x=5 _in (x+7)"))->equals(new Let("x", new Num(5), new Add(new Var("x"), new Num(7)))));
     CHECK(parse_str(("_let x=10 _in (y+10)"))->equals(new Let("x", new Num(10), new Add(new Var("y"), new Num(10)))));
+    CHECK(parse_str(("_let i=100 _in (i+10)"))->equals(new Let("i", new Num(100), new Add(new Var("i"), new Num(10)))));
+    CHECK(parse_str(("(_let x=5 _in ((_let y=3 _in (y+2))+x))"))
+    ->equals(new Let("x", new Num(5),
+                     new Add(new Let("y", new Num(3), new Add(new Var("y"), new Num(2))), new Var("x")))));
+    CHECK(parse_str(("(_let x=5 _in (x+7))"))->equals((new Let("x", new Num(5), new Add(new Var("x"), new Num(7))))));
 }
