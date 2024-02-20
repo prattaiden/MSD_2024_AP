@@ -26,7 +26,9 @@ typedef enum {
 /**g
  *expression class and parent of num, add, mult, var
  */
-//------------------------------------------EXPR--------------------------------------------------------//
+//------------------------------------------------------EXPR------------------------------------------------------//
+
+
 class expr {
 public:
     virtual bool equals(expr *e) = 0;//each subclass must override

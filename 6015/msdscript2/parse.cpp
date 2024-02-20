@@ -18,7 +18,7 @@ expr* parse_var(std::istream &in){
 //todo
 expr* parse_let(std::istream &in){
 
-    //todo//_let <var> = <expr> _in <expr>//
+    //todo// (_let <var> = <expr> _in <expr>)//
 
     std::string let = "_let";
 
@@ -179,16 +179,6 @@ expr *parse(std::istream &in) {
 
     return e;
 }
-
-//expr* parseInput(){
-//    std::string input;
-//    getline( std::cin, input);
-//    std::cout << "input : " << input << std::endl;
-//    std::stringstream ss(input);
-//    return parse_expr(ss);
-//
-//}
-
 
 
 expr* parse_str(const std::string &str) {

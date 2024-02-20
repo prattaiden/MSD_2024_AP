@@ -367,3 +367,7 @@ TEST_CASE("testing_let_parse"){
                      new Add(new Let("y", new Num(3), new Add(new Var("y"), new Num(2))), new Var("x")))));
     CHECK(parse_str(("(_let x=5 _in (x+7))"))->equals((new Let("x", new Num(5), new Add(new Var("x"), new Num(7))))));
 }
+
+TEST_CASE("Test_Var"){
+
+}
