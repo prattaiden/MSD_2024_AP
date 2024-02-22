@@ -394,6 +394,7 @@ void Let::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_par
 
     this->value->pretty_print(ostream, p, let_needs_parenthesis, letPos);
     ostream << "\n" << " ";
+    //todo might not need this space
     int inPos = ostream.tellp();
 
     while(n > 0){

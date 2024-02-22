@@ -35,5 +35,8 @@ printM:
 doc: msdscript
 	cd documentation && doxygen
 
+test_msdscript : test_msdscript.cpp exec.cpp expr.h
+	$(CXX) $(CFLAGS) test_msdscript.cpp exec.cpp -o tester
+
 
 

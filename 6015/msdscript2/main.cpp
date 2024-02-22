@@ -16,23 +16,32 @@
 
 
 int main(int argc, char** argv){
-    run_mode_t mode = use_arguments(argc,argv);
-    expr *n;
+    try {
+        run_mode_t mode = use_arguments(argc, argv);
+        expr *n;
 
-    if(mode == do_print){
-        n = parse_expr(std::cin);
-        std::cout << n->to_string()<<"\n";
+        switch(mode){
+            case do_nothing:
+                break;
+            case do_print:
+                n = parse_expr(std::cin);
+                std::cout << n->to_string() << "\n";
+                break;
+            case do_interp:
+                n = parse_expr(std::cin);
+                std::cout << n->interp() << "\n" ;
+                break;
+            case do_pretty_print:
+                n = parse_expr(std::cin);
+                std::cout << n->to_pp_string() << "\n";
+                break;
         }
-    if(mode == do_interp){
-        n = parse_expr(std::cin);
-        std::cout << "value: " << n->interp() << "\n";
+
+        return 0;
     }
-    if(mode == do_pretty_print){
-        n = parse_expr(std::cin);
-        std::cout << n->to_pp_string()<<"\n";
+    catch (std::runtime_error exn) {
+        std::cerr << exn.what() << "\n";
+        return 1;
     }
 
-
-
-    return 0;
 }

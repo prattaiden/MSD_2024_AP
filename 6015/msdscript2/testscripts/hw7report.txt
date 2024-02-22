@@ -1,0 +1,18 @@
+msdscript0 : nothing for print, pretty print, interp
+
+msdscript1: nothing for print, pretty print, interp
+
+msdscript2: no pretty print, cannot handle interp with * or negative expressions
+
+msdscript3: no pretty print. does not do + , prints a * instead
+
+msdscript4 : pretty print will not place parenthesis in the correct spot for mult expressions
+
+msdscript5 : no pretty print or let. does not do + ()
+    interp fails on nested lets
+
+msdscript6 : no pretty print for let and no print for let
+   fails print and pretty print for let expressions
+   no interp for a regular number
+
+mscscript7 : does not do negative numbers for print or interp
