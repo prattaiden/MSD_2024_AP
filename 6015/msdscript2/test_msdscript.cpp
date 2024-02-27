@@ -71,6 +71,7 @@ int main(int argc, char **argv) {
     return 0;
 }
 
+
 std::string rand_var(){
     std::string s = "";
     for (int i = 0; i < rand()%6;i++ ){

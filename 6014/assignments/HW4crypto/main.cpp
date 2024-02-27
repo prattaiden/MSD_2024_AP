@@ -268,61 +268,61 @@ int main() {
     //uncomment sections below:
 
     //setting up the substitution tables:
-//    std::vector<SubTable> substitutionTables(8, SubTable(256));
-//    for (SubTable &table: substitutionTables) {
-//        fisherYates(table);
-//    }
-//
-//    //real password and real key:
-//    std::string password = "abcdefgh";
-//    Key key = computeSecretKey(password);
-//    std::cout << "password in binary: ";
-//    printStringInBits(password);
-//    std::cout << "key in binary: ";
-//    printBinaryKeyOrBlock(key);
-//
-//
-//
-//
-//    //fake password nad fake key:
-//    std::string fakePassword = "fakeword";
-//    Key fakeKey = computeSecretKey(fakePassword);
-//    std::cout << "fake password in binary: ";
-//    printStringInBits(fakePassword);
-//    std::cout << "fake key in binary: ";
-//    printBinaryKeyOrBlock(fakeKey);
-//
-//    //message to be sent:
-//    std::string inputString = "helloman";
-//    std::cout << "intput message: " << inputString << std::endl;
-//    std::cout << "input message in binary: ";
-//    printStringInBits(inputString);
-//
-//    //ENCRYPTION:
-//    Block encrypted = encrypt(inputString, key, substitutionTables);
-//    std::cout << "encrypted state of input message: ";
+    std::vector<SubTable> substitutionTables(8, SubTable(256));
+    for (SubTable &table: substitutionTables) {
+        fisherYates(table);
+    }
+
+    //real password and real key:
+    std::string password = "abcdefgh";
+    Key key = computeSecretKey(password);
+    std::cout << "password in binary: ";
+    printStringInBits(password);
+    std::cout << "key in binary: ";
+    printBinaryKeyOrBlock(key);
+
+
+
+
+    //fake password nad fake key:
+    std::string fakePassword = "fakeword";
+    Key fakeKey = computeSecretKey(fakePassword);
+    std::cout << "fake password in binary: ";
+    printStringInBits(fakePassword);
+    std::cout << "fake key in binary: ";
+    printBinaryKeyOrBlock(fakeKey);
+
+    //message to be sent:
+    std::string inputString = "helloman";
+    std::cout << "intput message: " << inputString << std::endl;
+    std::cout << "input message in binary: ";
+    printStringInBits(inputString);
+
+    //ENCRYPTION:
+    Block encrypted = encrypt(inputString, key, substitutionTables);
+    std::cout << "encrypted state of input message: ";
+    printBinaryKeyOrBlock(encrypted);
+
+    //FLIPPING A BIT:s
+//    int bitFlip = 4;
+//    changeOneBit(encrypted, bitFlip);
+//    std::cout << "one bit changed cyphertext: ";
 //    printBinaryKeyOrBlock(encrypted);
-//
-//    //FLIPPING A BIT:
-////    int bitFlip = 4;
-////    changeOneBit(encrypted, bitFlip);
-////    std::cout << "one bit changed cyphertext: ";
-////    printBinaryKeyOrBlock(encrypted);
-//
-//    //DECRYPTION:
-//    Block decrypted = decrypt(encrypted, key, substitutionTables);
-//    std::cout << "decrypted input message: ";
-//    printBinaryKeyOrBlock(decrypted);
-//    std::cout << "decrypted message: ";
-//    printBitsToString(decrypted);
-//
-//
-//    //fake password decryption:
-//    Block fakeDecryption = decrypt(encrypted, fakeKey, substitutionTables);
-//    std::cout << "fake decryption password bits: ";
-//    printBinaryKeyOrBlock(fakeDecryption);
-//    std::cout << "fake decryption password message: ";
-//    printBitsToString(fakeDecryption);
+
+    //DECRYPTION:
+    Block decrypted = decrypt(encrypted, key, substitutionTables);
+    std::cout << "decrypted input message: ";
+    printBinaryKeyOrBlock(decrypted);
+    std::cout << "decrypted message: ";
+    printBitsToString(decrypted);
+
+
+    //fake password decryption:
+    Block fakeDecryption = decrypt(encrypted, fakeKey, substitutionTables);
+    std::cout << "fake decryption password bits: ";
+    printBinaryKeyOrBlock(fakeDecryption);
+    std::cout << "fake decryption password message: ";
+    printBitsToString(fakeDecryption);
 
     return 0;
 }
