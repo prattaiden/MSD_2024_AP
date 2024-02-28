@@ -318,8 +318,6 @@ void Mult::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_pa
         let_needs_parenthesis = false;
         ostream << "(";
     }
-
-
     (this->lhs->pretty_print(ostream, static_cast<precedence_t>(prec_mult + 1), let_needs_parenthesis, pos));
     ostream << " * ";
     (this->rhs->pretty_print(ostream, prec_mult, let_needs_parenthesis, pos));
