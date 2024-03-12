@@ -13,7 +13,7 @@ expr* parse_var(std::istream &in){
             break;
         }
     }
-    return new Var(var);
+    return new VarExpr(var);
 }
 //todo
 expr* parse_let(std::istream &in){
@@ -54,7 +54,7 @@ expr* parse_let(std::istream &in){
 
     expr *expr2 = parse_expr(in);
 
-    return new Let(var->to_string(), expr1, expr2);
+    return new LetExpr(var->to_string(), expr1, expr2);
 
 }
 
@@ -112,7 +112,7 @@ expr *parse_num(std::istream &inn) {
     if (negative)
         n = n * -1;
 
-    return new Num(n);
+    return new NumExpr(n);
 }
 
 expr *parse_expr(std::istream &in) {
@@ -127,7 +127,7 @@ expr *parse_expr(std::istream &in) {
     if (c == '+') {
         consume(in, '+');
         expr *rhs = parse_expr(in);
-        return new Add(e, rhs);
+        return new AddExpr(e, rhs);
     }
     else{
         return  e;
@@ -147,7 +147,7 @@ expr *parse_addend(std::istream &in) {
         consume(in, '*');
         skip_whitespace(in) ;
         expr *rhs = parse_addend(in);
-        return new Mult(e, rhs);
+        return new MultExpr(e, rhs);
     }
     else{
         return e ;

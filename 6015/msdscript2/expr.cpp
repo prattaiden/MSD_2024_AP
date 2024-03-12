@@ -7,6 +7,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <sstream>
+#include "Val.h"
 
 /**
  * \author Aiden Pratt
@@ -28,7 +29,7 @@ bool expr::equals(expr *e) {
  *\brief definition for interp in expr
  *\return 0
  */
-int expr::interp() {
+Val * expr::interp() {
     return 0;
 }
 
@@ -37,7 +38,7 @@ int expr::interp() {
  * \brief num constructor implementation
  * \param val
  */
-Num :: Num(int val){
+NumExpr :: NumExpr(int val){
     this->val = val;
 }
 /**
@@ -45,8 +46,8 @@ Num :: Num(int val){
  * \param expression
  * \return true or false if the values are equal to each other
  */
-bool Num::equals(expr *e) {
-    Num *n = dynamic_cast<Num*>(e);///< object dynamic cast to check if parameter expression object is a num
+bool NumExpr::equals(expr *e) {
+    NumExpr *n = dynamic_cast<NumExpr*>(e);///< object dynamic cast to check if parameter expression object is a num
     if(n == nullptr){
         return false;
     }
@@ -58,28 +59,28 @@ bool Num::equals(expr *e) {
  * \brief interps the num value
  * \return the val of this num object
  */
-int Num::interp() {
-    return val;
+Val * NumExpr::interp() {
+    return new NumVal(this->val);
 }
 /**
  *\brief checks if this object is a variable
  * \return returns that this num object is not a variable
  */
-bool Num::has_variable() {
+bool NumExpr::has_variable() {
     return false;
 }
 /**
  *\brief implementation of subst in num
  * \return returns a new num of the same value
  */
-expr* Num::subst(std::string string, expr *e) {
-    return new Num(this->val);
+expr* NumExpr::subst(std::string string, expr *e) {
+    return new NumExpr(this->val);
 }
 /**
  *\brief prints this value to the provided output stream
  * \param ostream
  */
-void Num::print(std::ostream &ostream) {
+void NumExpr::print(std::ostream &ostream) {
     ostream << this->val;
 }
 
@@ -88,7 +89,7 @@ void Num::print(std::ostream &ostream) {
  * \param ostream
  * \param precedence
  */
-void Num::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+void NumExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
     print(ostream);
 }
 //------------------------------------------VAR--------------------------------------------------------//
@@ -97,7 +98,7 @@ void Num::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_par
  * \brief constructor for var class
  * \param var
  */
-Var :: Var(std::string var) {
+VarExpr :: VarExpr(std::string var) {
     this->var = var;
 }
 
@@ -106,8 +107,8 @@ Var :: Var(std::string var) {
  * \param e
  * \return returns true if the vars are the equals
  */
-bool Var::equals(expr *e) {
-    Var *v = dynamic_cast<Var*>(e);///< object dynamic cast to check if parameter expression object is a var
+bool VarExpr::equals(expr *e) {
+    VarExpr *v = dynamic_cast<VarExpr*>(e);///< object dynamic cast to check if parameter expression object is a var
     if(v == nullptr){
         return false;
     }
@@ -119,7 +120,7 @@ bool Var::equals(expr *e) {
 /**
  * \brief interp implementation for var, returns a runtime error
  */
-int Var::interp(){
+Val * VarExpr::interp(){
     throw std::runtime_error("no value for variable");
 }
 
@@ -127,7 +128,7 @@ int Var::interp(){
  * \brief checks if this object is a variable
  * @return returns that this var object is a variable
  */
-bool Var::has_variable() {
+bool VarExpr::has_variable() {
     return true;
 }
 
@@ -137,19 +138,19 @@ bool Var::has_variable() {
  * \param expression
  * \return returns a new var object
  */
-expr* Var::subst(std::string string, expr *e) {
+expr* VarExpr::subst(std::string string, expr *e) {
     if(this->var == string){
         return e;
 
     }
-    return new Var(this->var);
+    return new VarExpr(this->var);
 }
 
 /**
  * \brief print implementation for var class, prints var to ostream
  * @param ostream
  */
-void Var::print(std::ostream &ostream) {
+void VarExpr::print(std::ostream &ostream) {
     ostream << this->var;
 }
 
@@ -158,7 +159,7 @@ void Var::print(std::ostream &ostream) {
  * \param ostream
  * \param precedence
  */
-void Var::pretty_print(std::ostream &ostream, precedence_t p, bool let_pos, int pos) {
+void VarExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_pos, int pos) {
     ostream << this->var;
 }
 
@@ -169,7 +170,7 @@ void Var::pretty_print(std::ostream &ostream, precedence_t p, bool let_pos, int 
  * \param left hand side
  * \param right hand side
  */
-Add :: Add(expr *lhs, expr *rhs){
+AddExpr :: AddExpr(expr *lhs, expr *rhs){
     this->lhs = lhs;
     this->rhs = rhs;
 }
@@ -178,8 +179,8 @@ Add :: Add(expr *lhs, expr *rhs){
  * \param expression
  * \return true if the add expressions are equal
  */
-bool Add::equals(expr *e) {
-    Add *a = dynamic_cast<Add*>(e); ///< object dynamic cast to check if parameter expression object is a add
+bool AddExpr::equals(expr *e) {
+    AddExpr *a = dynamic_cast<AddExpr*>(e); ///< object dynamic cast to check if parameter expression object is a add
     if(a == nullptr){
         return false;
     }
@@ -191,15 +192,15 @@ bool Add::equals(expr *e) {
  * \brief interps the add object mathematically
  * \return return the mathematical addition equation of of name and value
  */
-int Add::interp(){
-    return this->lhs->interp() + this->rhs->interp();
+Val * AddExpr::interp(){
+    return this->lhs->interp()->add_to(this->rhs->interp());
 }
 
 /**
  * \brief checks for a variable in the add object
  * \return returns true if there is a variable in the add objects name or value
  */
-bool Add::has_variable() {
+bool AddExpr::has_variable() {
     return this->lhs->has_variable() || this->rhs->has_variable();
 }
 
@@ -209,15 +210,15 @@ bool Add::has_variable() {
  * \param expression
  * \return returns a new add object with the substituted variables if applicable
  */
-expr* Add::subst(std::string string, expr *e) {
-    return(new Add(this->lhs->subst(string, e),(this->rhs->subst(string,e))));
+expr* AddExpr::subst(std::string string, expr *e) {
+    return(new AddExpr(this->lhs->subst(string, e), (this->rhs->subst(string, e))));
 }
 
 /**
  * \brief prints the add object to the ostream
  * \param ostream
  */
-void Add::print(std::ostream &ostream) {
+void AddExpr::print(std::ostream &ostream) {
     ostream << "(";
     (this->lhs->print(ostream));
     ostream << "+";
@@ -230,7 +231,7 @@ void Add::print(std::ostream &ostream) {
  * \param ostream
  *\@param precedence
  */
-void Add::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+void AddExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
     if(p > prec_add){
         ostream << "(";
     }
@@ -250,7 +251,7 @@ void Add::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_par
  * \param left hand side
  * \param right hand side
  */
-Mult :: Mult(expr *lhs, expr *rhs) {
+MultExpr :: MultExpr(expr *lhs, expr *rhs) {
     this->lhs = lhs;
     this->rhs = rhs;
 }
@@ -259,8 +260,8 @@ Mult :: Mult(expr *lhs, expr *rhs) {
  * \param expression
  * \return true if the mult expressions are equal
  */
-bool Mult::equals(expr *e) {
-    Mult *m = dynamic_cast<Mult*>(e);///< object dynamic cast to check if parameter expression object is a mult
+bool MultExpr::equals(expr *e) {
+    MultExpr *m = dynamic_cast<MultExpr*>(e);///< object dynamic cast to check if parameter expression object is a mult
     if(m == nullptr){
         return false;
     }
@@ -273,15 +274,15 @@ bool Mult::equals(expr *e) {
  * \brief interps the mult object mathematically
  * \return return the mathematical addition equation of of name and value
  */
-int Mult::interp(){
-    return this->lhs->interp() * this->rhs->interp();
+Val * MultExpr::interp(){
+    return this->lhs->interp()->mult_to(this->rhs->interp());
 }
 
 /**
  * \brief checks for a variable in the add object
  * \return returns true if there is a variable in the add objects name or value
  */
-bool Mult::has_variable() {
+bool MultExpr::has_variable() {
     return this->lhs->has_variable() || this->rhs->has_variable();
 }
 
@@ -291,15 +292,15 @@ bool Mult::has_variable() {
  * \param expression
  * \return returns a new add object with the substituted variables if applicable
  */
-expr* Mult::subst(std::string string, expr *e) {
-    return(new Mult(this->lhs->subst(string, e),(this->rhs->subst(string,e))));
+expr* MultExpr::subst(std::string string, expr *e) {
+    return(new MultExpr(this->lhs->subst(string, e), (this->rhs->subst(string, e))));
 }
 
 /**
  * \brief prints the add object to the ostream
  * \param ostream
  */
-void Mult::print(std::ostream &ostream) {
+void MultExpr::print(std::ostream &ostream) {
     ostream << "(";
     (this->lhs->print(ostream));
     ostream << "*";
@@ -312,7 +313,7 @@ void Mult::print(std::ostream &ostream) {
  * \param ostream
  *\@param precedence
  */
-void Mult::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+void MultExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
 
     if(p > prec_mult){
         let_needs_parenthesis = false;
@@ -331,14 +332,14 @@ void Mult::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_pa
 
 //------------------------------------------LET--------------------------------------------------------//
 
-Let :: Let(std::string lhs, expr *rhs, expr *body) {
+LetExpr :: LetExpr(std::string lhs, expr *rhs, expr *body) {
     this->name = lhs;
     this->value = rhs;
     this->body = body;
 }
 
-bool Let::equals(expr *e) {
-    Let *l = dynamic_cast<Let*>(e);
+bool LetExpr::equals(expr *e) {
+    LetExpr *l = dynamic_cast<LetExpr*>(e);
         if(l == nullptr){
             return false;
         }
@@ -347,29 +348,29 @@ bool Let::equals(expr *e) {
     }
 }
 
-int Let::interp() {
+Val * LetExpr::interp() {
     expr *newExpr = this->body->subst(this->name, this->value);
     return newExpr->interp();
 }
 
-bool Let::has_variable(){
+bool LetExpr::has_variable(){
     return this->value->has_variable() || this->body->has_variable();
 };
 
 //Sub if name == string in value
 //Sub if name != string when string is contained in value
 //Sub if name != string when string is contained in body
-expr* Let::subst(std::string string, expr *e) {
+expr* LetExpr::subst(std::string string, expr *e) {
 
     if(this->name == string){
-        return new Let(this->name , this->value->subst(string, e), this->body);
+        return new LetExpr(this->name , this->value->subst(string, e), this->body);
     }
     else{
-        return new Let(this->name, this->value->subst(string, e), this->body->subst(string, e));
+        return new LetExpr(this->name, this->value->subst(string, e), this->body->subst(string, e));
     }
 }
 
-void Let::print(std::ostream &ostream) {
+void LetExpr::print(std::ostream &ostream) {
     ostream << "(_let ";
     ostream << this->name;
     ostream << "=";
@@ -380,7 +381,7 @@ void Let::print(std::ostream &ostream) {
 }
 
 //todo meets let expectations explanation
-void Let::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+void LetExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
     //counts spaces
     if(p > prec_none && let_needs_parenthesis){
         ostream << "(";

@@ -6,6 +6,7 @@
 #define msdscript_EXPR_H
 #include <string>
 #include <sstream>
+#include "Val.h"
 
 /**
  * \file expr.h
@@ -32,7 +33,7 @@ typedef enum {
 class expr {
 public:
     virtual bool equals(expr *e) = 0;//each subclass must override
-    virtual int interp() = 0;
+    virtual Val * interp() = 0;
     virtual bool has_variable() = 0;
     virtual expr* subst(std::string string , expr *e) = 0;
     virtual void print(std::ostream&) = 0;
@@ -61,12 +62,12 @@ public:
 /**
  *\brief Num class, child of expression class
  */
-class Num : public expr {
+class NumExpr : public expr {
 public:
     int val; ///< int that will be the Num value
-    explicit Num(int val);
+    explicit NumExpr(int val);
     bool equals(expr *e) override;
-    int interp() override;
+    Val * interp() override;
     bool has_variable() override;
     expr* subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
@@ -79,12 +80,12 @@ public:
 /**
  *\brief Var class, child of expression class
  */
-class Var : public expr{
+class VarExpr : public expr{
 public:
     std::string var; ///< string that will be the var
-    Var(std::string var);
+    VarExpr(std::string var);
     bool equals(expr *e) override;
-    int interp() override;
+    Val * interp() override;
     bool has_variable() override;
     expr* subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
@@ -96,13 +97,13 @@ public:
 /**
  *\brief Add class, child of expression class
  */
-class Add : public expr{
+class AddExpr : public expr{
 public:
     expr *lhs; ///< left hands side expression of Add class
     expr *rhs; ///< right hands side expression of Add class
-    Add(expr *lhs, expr *rhs);
+    AddExpr(expr *lhs, expr *rhs);
     bool equals(expr *e) override;
-    int interp() override;
+    Val * interp() override;
     bool has_variable() override;
     expr* subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
@@ -114,13 +115,13 @@ public:
 /**
  *\brief Mult class, child of expression class
  */
-class Mult : public expr {
+class MultExpr : public expr {
 public:
     expr *lhs; ///< left hands side expression of Mult class
     expr *rhs; ///< right hands side expression of Mult class
-    Mult(expr *lhs, expr *rhs);
+    MultExpr(expr *lhs, expr *rhs);
     bool equals(expr *e) override;
-    int interp() override;
+    Val * interp() override;
     bool has_variable() override;
     expr* subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
@@ -128,14 +129,14 @@ public:
 };
 
 //----------------------------------------------------_LET------------------------------------------------//
-class Let : public expr{
+class LetExpr : public expr{
 public:
     std::string name;
     expr *value;
     expr *body;
-    Let(std::string lhsVar, expr *rhs, expr *body);
+    LetExpr(std::string lhsVar, expr *rhs, expr *body);
     bool equals(expr *e) override;
-    int interp() override;
+    Val * interp() override;
     bool has_variable() override;
     expr* subst(std::string string, expr *e) override;
     void print(std::ostream & ostream) override;
