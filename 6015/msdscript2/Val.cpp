@@ -43,3 +43,7 @@ std::string NumVal::to_string() {
     return std::to_string(val);
 }
 
+Expr *NumVal::to_expr() {
+    return nullptr;
+}
+

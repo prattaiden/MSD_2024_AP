@@ -368,4 +368,8 @@ TEST_CASE("testing_let_parse"){
     CHECK(parse_str(("(_let x=5 _in (x+7))"))->equals((new LetExpr("x", new NumExpr(5), new AddExpr(new VarExpr("x"), new NumExpr(7))))));
 }
 
+TEST_CASE("Val_Classes"){
+    CHECK(((new NumVal(4))->to_string()) == "4");
+}
+
 
