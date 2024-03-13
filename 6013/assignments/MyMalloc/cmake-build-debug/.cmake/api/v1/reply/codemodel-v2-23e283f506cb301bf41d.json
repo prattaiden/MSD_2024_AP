@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MyMalloc",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "MyMalloc::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MyMalloc-Debug-1a60cb802ea18d7e3a07.json",
+					"name" : "MyMalloc",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/aidenpratt/Documents/Documents - Aiden\u2019s MacBook Pro/MSD-2024/MSD_2024_AP/6013/assignments/MyMalloc/cmake-build-debug",
+		"source" : "/Users/aidenpratt/Documents/Documents - Aiden\u2019s MacBook Pro/MSD-2024/MSD_2024_AP/6013/assignments/MyMalloc"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
