@@ -1,6 +1,10 @@
-//
-// Created by Aiden Pratt on 3/11/24.
-//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Author: Aiden Pratt
+//Date: 3/11/2034
+//CS:6013
+//test cpp file for testing the efficiency of my mallloc implementation vs the system's malloc implementation
+//todo explain tests
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "testMalloc.h"
 #include <iostream>
@@ -11,20 +15,20 @@
 #include <cassert>
 #include <ctime>
 
-//todo write up notes
-//grow size is something we could do
+//todo write up notes ideas
+//grow size is something we could test if wanted to spend more time comparing
 
 
 MyAlloc test;
 
-//comment out this malloc and free to run the system version of malloc and free for the timing tests
-//void* malloc(size_t size){
-//    void* mem = test.allocate(size);
-//    return mem;
-//}
-//void free(void* ptr){
-//    test.deallocate(ptr);
-//}
+//todo comment out this malloc and free to run the system version of malloc and free for the timing tests
+void* malloc(size_t size){
+    void* mem = test.allocate(size);
+    return mem;
+}
+void free(void* ptr){
+    test.deallocate(ptr);
+}
 
 
 void testMalloc::TestMalloc1() {
@@ -71,34 +75,49 @@ void testMalloc::TestMalloc2(){
     std::cout << "Test 2: \t for loop for growing capacity passed! ";
 }
 
-//todo more test ideas:
-//size of char, size of int, array of 1000, check if overlap?
+//todo more test ideas: size of char, size of int, array of 1000, check if overlap?
 
-//void testMalloc::TestMalloc3(){
-//    MyAlloc arrayTestAlloc;
-//    void* arrayOfAddresses[11];
-//    // By inserting elements 11 times, it should reach growth threshold, and capacity should increase.
-//    for (int i = 0; i < 11; i++) {
-//        arrayOfAddresses[i] = arrayTestAlloc.allocate(10);
-//    }
-//    assert(arrayTestAlloc.mallocHash.capacity_ == 20);
-//
-//    //deallocate the things that have been allocated
-//    for(int i = 0 ; i < 11; i++ ){
-//        arrayTestAlloc.deallocate(arrayOfAddresses[i]);
-//    }
-//    assert(arrayTestAlloc.mallocHash.capacity_ == 20);
-//    assert(arrayTestAlloc.mallocHash.size_ == 0);
-//
-//
-//}
+void testMalloc::TestMalloc3(){
+    MyAlloc arrayTestAlloc;
+    void* arrayOfAddresses[11];
+    // By inserting elements 11 times, it should reach growth threshold, and capacity should increase.
+    for(int i = 0 ; i < 11; i++ ){
+        arrayOfAddresses[i] = arrayTestAlloc.allocate(10);
+    }
+    assert(arrayTestAlloc.mallocHash.capacity_ == 20);
+    assert(arrayTestAlloc.mallocHash.size_ == 11);
+    std::cout << "capacity check worked!\n";
 
-//void testMalloc::TestMalloc4(){
-//    MyAlloc CharTest;
-//    void* CharSize = malloc(1);
-//    int index = CharTest.mallocHash.hash(CharSize);
-//
-//}
+    //deallocate the things that have been allocated
+    for(int i = 0 ; i < 11; i++ ){
+        arrayTestAlloc.deallocate(arrayOfAddresses[i]);
+        std::cout << "size: " << arrayTestAlloc.mallocHash.size_ << "\n";
+    }
+    assert(arrayTestAlloc.mallocHash.capacity_ == 20);
+    assert(arrayTestAlloc.mallocHash.size_ == 0);
+}
+
+//this test is testing which much larger array sizes and more memory to allocate
+void testMalloc::TestMalloc4(){
+    MyAlloc arrayTestAlloc;
+    void* arrayOfAddresses[10000];
+    // By inserting elements 11 times, it should reach growth threshold, and capacity should increase.
+    for(int i = 0 ; i < 9999; i++ ){
+        arrayOfAddresses[i] = arrayTestAlloc.allocate(10000);
+    }
+
+    assert(arrayTestAlloc.mallocHash.capacity_ == 20480);
+    assert(arrayTestAlloc.mallocHash.size_ == 9999);
+    std::cout << "capacity check worked!\n";
+
+    //deallocate the things that have been allocated
+    for(int i = 0 ; i < 9999; i++ ){
+        arrayTestAlloc.deallocate(arrayOfAddresses[i]);
+       // std::cout << "size: " << arrayTestAlloc.mallocHash.size_ << "\n";
+    }
+    assert(arrayTestAlloc.mallocHash.capacity_ == 20480);
+    assert(arrayTestAlloc.mallocHash.size_ == 0);
+}
 
 
 
@@ -141,13 +160,11 @@ void testMalloc::HashTableInsertTests(){
 }
 
 
+//---------------------------------TIMING TESTS------------------------------//
 
 void testMalloc::MallocTiming() {
-
     const int maxPower = 15;
-
     for (int power = 2; power <= maxPower; power++) {
-
         int n = 1000000;
         int size = pow(2, power);
 
@@ -162,7 +179,6 @@ void testMalloc::MallocTiming() {
         float cpu_time = time_used / CLOCKS_PER_SEC;
 
         std::cout << size << "\t" <<  cpu_time * n << "\t" << "\n";
-
     }
 }
 

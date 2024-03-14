@@ -2,6 +2,23 @@
 #include "parse.hpp"
 
 
+static std::string parse_keyword(std::istream & inn) {
+    std::string keyword;
+
+    while (true) {
+        int a = inn.peek();
+        if (isalpha(a)) {
+            consume(inn, a);
+            char c = a;
+            keyword += c;
+        }
+        else
+            break;
+    }
+
+    return keyword;
+}
+
 expr* parse_var(std::istream &in){
     std::string var;
     while(true){
@@ -58,7 +75,11 @@ expr* parse_let(std::istream &in){
 
 }
 
+//todo rename to inner for hw 10
+
 expr *parse_multicand(std::istream &in) {
+    std::string keyword;
+
     skip_whitespace(in);
     int c = in.peek();
     if ((c == '-') || isdigit(c)){
@@ -78,12 +99,61 @@ expr *parse_multicand(std::istream &in) {
         return parse_var(in);
     }
     else if(c == '_'){
-        return parse_let(in);
+        consume(in, '_');
+        //return parse_let(in);
+        keyword = parse_keyword(in);
+        if(keyword == "let"){
+            return parse_let(in);
+        }
+        else if(keyword == "if"){
+            return parse_if(in);
+        }
+        else if(keyword == "true"){
+            expr* e = new BoolExpr(true);
+            return e;
+        }
+        else if(keyword == "false"){
+            expr* e = new BoolExpr(false);
+            return e;
+        }
+        //todo add for true and false parser too
     }
     else {
         consume(in, c);
         throw std::runtime_error("invalid input");
     }
+    return nullptr;
+}
+
+expr *parse_if(std::istream &inn){
+    skip_whitespace(inn);
+
+    expr* IfPart = parse_expr(inn);
+
+    skip_whitespace(inn);
+
+    consume(inn,'_');
+    consume(inn,'t');
+    consume(inn,'h');
+    consume(inn,'e');
+    consume(inn,'n');
+
+    expr* ThenPart = parse_expr(inn);
+
+    skip_whitespace(inn);
+
+    consume(inn, '_');
+    consume(inn, 'e');
+    consume(inn, 'l');
+    consume(inn, 's');
+    consume(inn, 'e');
+
+    skip_whitespace(inn);
+
+    expr* ElsePart = parse_expr(inn);
+
+    return new IfExpr(IfPart, ThenPart, ElsePart);
+
 }
 
 expr *parse_num(std::istream &inn) {
@@ -124,7 +194,13 @@ expr *parse_expr(std::istream &in) {
     skip_whitespace(in);
 
     int c = in.peek();
-    if (c == '+') {
+    if (c == '=') {
+        consume(in, '=');
+        consume(in, '=');
+        expr* rhs = parse_expr(in);
+        return new EqExpr(e, rhs);
+    }
+    else if (c == '+') {
         consume(in, '+');
         expr *rhs = parse_expr(in);
         return new AddExpr(e, rhs);
@@ -143,18 +219,18 @@ expr *parse_addend(std::istream &in) {
     skip_whitespace(in);
 
     int c = in.peek();
-    if (c == '*') {
+
+    while (c == '*') {
         consume(in, '*');
         skip_whitespace(in) ;
         expr *rhs = parse_addend(in);
         return new MultExpr(e, rhs);
     }
-    else{
-        return e ;
-    }
+    return e ;
 }
 void consume(std::istream &in, int expect) {
     int c = in.get();
+    //std::cout << "expecting: " << (char)expect << "\n";
     if (c!=expect) {
         throw std::runtime_error("consume mismatch");
     }

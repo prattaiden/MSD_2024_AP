@@ -1,7 +1,9 @@
-//
-// Created by Aiden Pratt on 3/11/24.
-//
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Author: Aiden Pratt
+//Date: 3/11/2034
+//CS:6013
+//cpp file of my hash table which is utilized in my malloc to store addresses and data of inputted sizes
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <sys/mman.h>
 #include "HashTable.h"
@@ -17,12 +19,12 @@ HashTable::HashTable() {
 //HashTable Destructor
 HashTable::~HashTable() {
     int tc = munmap(table_, capacity_);
-    if(tc == -1){
+    if(tc == TOMBSTONE){
         throw std::runtime_error("deconstruct failed");
     }
 }
 
-
+//hash method to place entry in the hash table
 size_t HashTable::hash(void* entry) const {
     const char* key = reinterpret_cast<const char*>(entry);
     size_t hash = 0;
@@ -35,10 +37,9 @@ size_t HashTable::hash(void* entry) const {
     hash += (hash << 3);
     hash ^= (hash >> 11);
     hash += (hash << 15);
-
+//modulu with capacity to ensure hash is in range
     return hash % capacity_;
 }
-
 
 void* HashTable::find(void* entry) {
     size_t index = hash(entry);
@@ -64,6 +65,8 @@ void* HashTable::find(void* entry) {
 }
 
 void HashTable::grow() {
+    //double capacity immediately
+    //could also be done later in the method
     this->capacity_ *=2;
 
     // Create a new table twice the size
@@ -75,14 +78,21 @@ void HashTable::grow() {
         if (table_[i].address != nullptr && table_[i].address != reinterpret_cast<void*>(TOMBSTONE)) {
             size_t index = hash(table_[i].address);
             // Rehash the entry into the new table using its address and size
+            while(newTable[index].address != nullptr && newTable[index].address != reinterpret_cast<void*>(TOMBSTONE)){
+                index = (index + 1) % capacity_;
+            }
+
             newTable[index].address = table_[i].address;
             newTable[index].size = table_[i].size;
         }
     }
-    std::swap(newTable, table_);
-    //deallocate the new table
+
+    TableEntry* oldTable = table_;
+    table_ = newTable;
+
+    //deallocate the old table
     //capacity_ is currently new capacity, so /2 when deallocating
-    int mun = munmap(newTable, (capacity_/2) * sizeof(TableEntry));
+    int mun = munmap(oldTable, (capacity_/2) * sizeof(TableEntry));
     if(mun == -1){
         std::perror("munmap failed");
         exit(EXIT_FAILURE);
@@ -104,6 +114,10 @@ void HashTable::insert(void* entry, size_t entrySize) {
 }
 
 
+//lazy delete from the hash table
+//this method does not necessarily just clear the entire data
+//it takes a pointer to the entry and replaces the address with a TOMBSTONE
+//this TOMBSTONE = -1 and symbolizes a way the allocator can see if deleted data has been in this memory location
 size_t HashTable::lazyDelete(void* entry) {
     size_t index = hash(entry);
     size_t originalIndex = index;

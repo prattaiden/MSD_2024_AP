@@ -16,8 +16,10 @@ public:
     virtual Val* mult_to(Val* other_val) = 0;
     virtual std::string to_string() = 0;
     virtual Expr* to_expr() = 0;
+    virtual bool is_true();
 
 };
+
 
 class NumVal : public Val {
 public:
@@ -28,6 +30,20 @@ public:
     Val* mult_to(Val* other_val) override;
     std::string to_string() override;
     Expr* to_expr() override;
+    bool is_true() override;
+
+};
+
+class BoolVal : public Val{
+public:
+    bool TF;
+    explicit BoolVal(bool TF);
+    bool equals(Val *e) override;
+    Val* add_to(Val* other_val) override;
+    Val* mult_to(Val* other_val) override;
+    std::string to_string() override;
+    Expr* to_expr() override;
+    bool is_true() override;
 };
 
 #endif //MSDSCRIPT2_VAL_H

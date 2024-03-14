@@ -4,6 +4,9 @@
 #define parse_hpp
 #include <cstdio>
 
+ //expr * parse_keyword(std::istream &in);
+expr* parse_comparg(std::istream &in);
+expr* parse_if(std::istream & in);
 expr *parse_expr(std::istream &in);
 expr* parse_addend(std::istream &in);
 expr* parse_multicand(std::istream &in);

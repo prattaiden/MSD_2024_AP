@@ -1,14 +1,14 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Author: Aiden Pratt
+//Date: 3/11/2034
+//CS:6013
+//main file for myMalloc implementation
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #include "testMalloc.h"
 #include "testMalloc.h"
 #include "MyAlloc.h"
-
-//TODO HEADER COMMENTS HERE
-//
-//Author: Aiden Pratt
-//Date:
-//cs 6013
-
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -20,12 +20,14 @@ int main() {
 
 //    testMalloc::TestMalloc1();
 
-//    testMalloc::HashTableInsertTests();
-
 //    testMalloc::TestMalloc2();
 
-//    testMalloc::TestMalloc3();
+//
+   //testMalloc::TestMalloc3();
+   //this test below is for a large array size for memory
+  // testMalloc::TestMalloc4();
 
+//    testMalloc::HashTableInsertTests();
 
 
     return 0;

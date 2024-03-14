@@ -1,6 +1,9 @@
-//
-// Created by Aiden Pratt on 3/11/24.
-//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Author: Aiden Pratt
+//Date: 3/11/2034
+//CS:6013
+//header file for my hash table which is used to store memory addresses of certain sizes
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifndef MYMALLOC_HASHTABLE_H
 #define MYMALLOC_HASHTABLE_H
@@ -9,9 +12,10 @@
 #include <cstdlib>
 #include <ctime>
 
+//-1 is stored at the address when the memory there is freed
 const int TOMBSTONE = -1;
 
-
+//entry in the table
 struct TableEntry{
     void* address;
     size_t size;
@@ -21,7 +25,7 @@ struct TableEntry{
         size = 0;
     }
 };
-
+//-------------------------------hash table---------------------------------//
 class HashTable {
 
 private:

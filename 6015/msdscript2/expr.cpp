@@ -412,8 +412,168 @@ void LetExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs
 }
 
 
+//------------------------------------------EQ--------------------------------------------------------//
+
+EqExpr::EqExpr(expr* lhs, expr* rhs) {
+    this->lhs = lhs;
+    this->rhs = rhs;
+}
+
+bool EqExpr::equals(expr *e) {
+    EqExpr * a = dynamic_cast<EqExpr*>(e);
+    if(a == nullptr){
+        return false;
+    }
+    else{
+        return(lhs->equals(a->lhs) && rhs->equals(a->rhs));
+    }
+}
+
+Val *EqExpr::interp() {
+    return new (BoolVal)(lhs->interp()->equals(rhs->interp()));
+}
+
+void EqExpr::print(std::ostream&  ostream){
+    ostream << "(";
+    lhs->print(ostream);
+    ostream << "==";
+    rhs->print(ostream);
+    ostream << ")";
+}
+//todo
+void EqExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+    lhs->pretty_print(ostream, p, false, 0);
+    ostream << " == ";
+    rhs->pretty_print(ostream,p, false, 0);
+}
+
+bool EqExpr::has_variable() {
+    return false;
+}
+
+expr *EqExpr::subst(std::string string, expr *e) {
+    return nullptr;
+}
+
+//------------------------------------------IF--------------------------------------------------------//
+
+IfExpr::IfExpr(expr *IfPart, expr *ThenPart, expr *ElsePart) {
+        this->IfPart = IfPart;
+        this->ThenPart = ThenPart;
+        this->ElsePart = ElsePart;
+}
+
+bool IfExpr::equals(expr *e) {
+    IfExpr *a = dynamic_cast<IfExpr*>(e);
+    if(a == nullptr){
+        return false;
+    }
+    else{
+        return (IfPart->equals(a->IfPart) && ThenPart->equals(a->ThenPart) && ElsePart->equals(a->ElsePart));
+    }
+}
+
+Val *IfExpr::interp() {
+    if(IfPart->interp()->is_true()){
+        return ThenPart->interp();
+    }
+    else{
+        return ElsePart->interp();
+    }
+}
+
+void IfExpr::print(std::ostream &ostream) {
+    ostream << "(_if ";
+    IfPart->print(ostream);
+    ostream << "\n" << "_then";
+    ThenPart->print(ostream);
+    ostream << "\n" << "_else";
+    ElsePart->print(ostream);
+    ostream << ")";
+}
+//todo
+void IfExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+    if(p > prec_none && let_needs_parenthesis){
+        ostream << "(";
+    }
+
+    int ifPos = ostream.tellp();
+    int n = ifPos - pos;
+    ostream << "_if " << this->IfPart;
+
+    this->IfPart->pretty_print(ostream, p, let_needs_parenthesis, ifPos);
+    ostream << "\n" << " ";
+    //todo might not need this space
+    int thenPos = ostream.tellp();
+
+    while(n > 0){
+        ostream << " ";
+        n--;
+    }
+    ostream << "_then  ";
+    this->ThenPart->pretty_print(ostream, prec_none, let_needs_parenthesis, thenPos);
+
+    ostream << "\n" << " ";
+    int elsePos = ostream.tellp();
+    int f = elsePos - pos;
+
+    while(f > 0){
+        ostream << " ";
+        f--;
+    }
+    ostream << "_else ";
+    this->ElsePart->pretty_print(ostream, prec_none, let_needs_parenthesis, elsePos);
+
+    if(p > prec_none && let_needs_parenthesis){
+        ostream << ")";
+    }
+}
+
+bool IfExpr::has_variable() {
+    return false;
+}
+
+expr* IfExpr::subst(std::string string, expr *e) {
+    return nullptr;
+}
+
+//------------------------------------------BOOL--------------------------------------------------------//
 
 
+BoolExpr::BoolExpr(bool TF) {
+    this->TF = TF;
+}
+
+bool BoolExpr::equals(expr *e) {
+    BoolExpr* a = dynamic_cast<BoolExpr*> (e);
+    if(a == nullptr){
+        return false;
+    }
+    else{
+        return (this->TF == a->TF);
+    }
+}
+//todo
+Val *BoolExpr::interp() {return new BoolVal(TF);}
 
 
+void BoolExpr::print(std::ostream &ostream) {
+    if(TF){
+        ostream << "_true";
+    }
+    else{
+        ostream << "_false";
+    }
+}
+//todo
+void BoolExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+    print(ostream);
+}
 
+bool BoolExpr::has_variable() {
+    return false;
+}
+
+expr *BoolExpr::subst(std::string string, expr *e) {
+    return nullptr;
+}

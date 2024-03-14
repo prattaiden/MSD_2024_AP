@@ -1,6 +1,9 @@
-//
-// Created by Aiden Pratt on 3/11/24.
-//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Author: Aiden Pratt
+//Date: 3/11/2034
+//CS:6013
+//header file for testing my malloc vs the system malloc
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifndef MYMALLOC_TESTMALLOC_H
 #define MYMALLOC_TESTMALLOC_H
@@ -20,6 +23,8 @@ public:
     static void MallocTiming();
 
     static void TestMalloc3();
+
+    static void TestMalloc4();
 
     static void FreeTiming();
 };

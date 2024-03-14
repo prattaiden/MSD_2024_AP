@@ -36,7 +36,7 @@ public:
     virtual Val * interp() = 0;
     virtual bool has_variable() = 0;
     virtual expr* subst(std::string string , expr *e) = 0;
-    virtual void print(std::ostream&) = 0;
+    virtual void print(std::ostream& ostream) = 0;
 
     std::string to_string(){
         std::stringstream st("");
@@ -147,18 +147,48 @@ public:
 //----------------------------------------------------_BOOL------------------------------------------------//
 class BoolExpr : public expr{
 public:
-
+    bool TF;
+    BoolExpr(bool TF);
+    bool has_variable() override;
+    bool equals(expr *e) override;
+    expr* subst(std::string string , expr *e) override;
+    Val* interp() override;
+    void print(std::ostream& ostream) override;
+    void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
 //----------------------------------------------------_IF------------------------------------------------//
 class IfExpr : public expr{
 public:
-    Expr*
+    expr* IfPart;
+    expr* ThenPart;
+    expr* ElsePart;
+
+    IfExpr(expr* IfPart, expr* ThenPart, expr* ElsePart);
+
+    bool has_variable() override;
+    bool equals(expr* e) override;
+    Val* interp() override;
+    expr* subst(std::string string , expr *e) override;
+    void print(std::ostream& ostream) override;
+    void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
 
 //----------------------------------------------------_EQ------------------------------------------------//
 
-class EqExpr : public Expr {
+class EqExpr : public expr {
 public:
+
+
+    expr* lhs;
+    expr* rhs;
+    EqExpr(expr *lhs, expr *rhs);
+    bool has_variable() override;
+    expr* subst(std::string string , expr *e) override;
+    bool equals(expr*e) override;
+    Val* interp() override;
+    void print(std::ostream& ostream) override;
+    void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
+
 };
 
 #endif //ASSIGNMENT2_EXPR_H

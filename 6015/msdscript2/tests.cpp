@@ -2,6 +2,7 @@
 #include "catch.h"
 #include "expr.h"
 #include "parse.hpp"
+#include "Val.h"
 
 //
 TEST_CASE("Nabil_Test_Cases"){
@@ -371,5 +372,105 @@ TEST_CASE("testing_let_parse"){
 TEST_CASE("Val_Classes"){
     CHECK(((new NumVal(4))->to_string()) == "4");
 }
+
+TEST_CASE("testing_refactoring_Val"){
+    SECTION("SetUpBoolVal"){
+        CHECK((new BoolVal(true))->is_true());
+        CHECK_FALSE((new BoolVal(false))->is_true());
+        CHECK_THROWS_WITH((new BoolVal(true))->add_to(new NumVal(5)), "Cannot add a boolean arguments");
+
+    }
+}
+
+TEST_CASE("testing_refactoring_expr"){
+    SECTION("EqExpr"){
+        CHECK((new EqExpr(new NumExpr(4), new NumExpr(4)))->interp()->equals(new BoolVal(true)));
+        CHECK((new EqExpr(new NumExpr(1), new NumExpr(2)))->interp()->equals(new BoolVal(false)) );
+        CHECK((new EqExpr(new NumExpr(3), new NumExpr(3)))->interp()->equals(new BoolVal(true)));
+    }
+}
+
+TEST_CASE("testing-refactoring"){
+    CHECK( (new AddExpr(new NumExpr(1), new NumExpr(2)))->interp()
+                   ->equals(new NumVal(3)) );
+    CHECK( (new AddExpr(new NumExpr(10), new NumExpr(20)))->interp()
+                   ->equals(new NumVal(30)) );
+}
+
+TEST_CASE("HW9 Conditionals"){
+    SECTION("Nabil slide 40"){
+        //1 + 2 -> 3
+        CHECK( (new AddExpr(new NumExpr(1), new NumExpr(2)))->interp()->equals(new NumVal(3)) );
+    }
+    SECTION("Nabil slide 49"){
+        //_let x = 2+3
+        //_in x*x
+        CHECK( (new LetExpr("x",
+                         new AddExpr(new NumExpr(2), new NumExpr(3)),
+                         new MultExpr(new VarExpr("x"), new VarExpr("x"))))
+                       ->interp()
+                       ->equals(new NumVal(25)) );
+    }
+    SECTION("Nabil slide 57"){
+        //_if _true
+        //_then 1
+        //_else 2
+        CHECK( (new IfExpr(new BoolExpr(true),
+                           new NumExpr(1),
+                           new NumExpr(2)))->interp()
+                       ->equals(new NumVal(1)) );
+    }
+    SECTION("(1 == 2) + 3 throws an exception", "[Add]") {
+        expr* testExpr = new AddExpr(new EqExpr(new NumExpr(1), new NumExpr(2)), new NumExpr(3));
+        CHECK_THROWS_WITH(testExpr->interp(), "Cannot add a boolean arguments");
+    }
+
+    SECTION("1 == 2 + 3 evaluates to _false", "[EqExpr]") {
+        expr* testExpr = new EqExpr(new NumExpr(1), new AddExpr(new NumExpr(2), new NumExpr(3)));
+        Val* result = testExpr->interp();
+        CHECK((result)->to_string() == "_false");
+        //std::cout << "testBool: " << (new BoolExpr(true))->interp()->to_string() << std::endl;
+
+    }
+
+    SECTION("1 + 1 == 2 + 0 evaluates to _true", "[EqExpr]") {
+        expr* testExpr = new EqExpr(new AddExpr(new NumExpr(1), new NumExpr(1)), new AddExpr(new NumExpr(2), new NumExpr(0)));
+        Val* result = testExpr->interp();
+        CHECK((result)->to_string() == "_true");
+    }
+}
+
+
+TEST_CASE("parse1") {
+    SECTION("parse") {
+        CHECK(parse_str("1 == 2")->interp()->equals(new BoolVal(false)));
+        CHECK((((parse_str("_if 1 == 2 _then 5 _else 6"))->interp())->to_string()) == "6");
+        CHECK((parse_str("(1 + 2) == (3 + 0)"))->interp()->equals(new BoolVal(true)));
+        CHECK((parse_str("(1 + 2) == (3 + 0)"))->interp()->to_string()== "_true");
+    }
+    SECTION("parse2"){
+        CHECK( parse_str("_if x==3 _then 42+x _else 84*x")
+            ->equals( new IfExpr( new EqExpr( new VarExpr("x"), new NumExpr(3) ),
+                     new AddExpr( new NumExpr(42), new VarExpr("x")),
+                     new MultExpr( new NumExpr(84), new VarExpr("x")))));
+
+    CHECK( parse_str(" \n\t _if \n\t x \n\t == \n\t 3 \n\t _then \n\t 42 \n\t + \n\t x "
+             "\n\t _else \n\t 84 \n\t * \n\t x \n\t ")
+            ->equals( new IfExpr( new EqExpr( new VarExpr("x"), new NumExpr(3) ),
+                     new AddExpr( new NumExpr(42), new VarExpr("x") ),
+                     new MultExpr( new NumExpr(84), new VarExpr("x") ) ) ));
+    }
+    SECTION("parse3WithBools"){
+        CHECK(parse_str("_if _true _then 5 _else 4")->equals(new IfExpr(new BoolExpr(true), new NumExpr(5), new NumExpr(4))));
+        CHECK(parse_str("_true")->equals(new BoolExpr(true)));
+        CHECK(parse_str("_if 2 == 2 _then _true _else _false")
+        ->equals(new IfExpr(new EqExpr(new NumExpr(2), new NumExpr(2)), new BoolExpr(true), new BoolExpr(false))));
+    }
+}
+
+TEST_CASE("slide_tests"){
+
+}
+
 
 
