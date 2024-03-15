@@ -18,8 +18,6 @@ public:
 
     static void HashTableInsertTests();
 
-    static void TestingGrowthAgain();
-
     static void MallocTiming();
 
     static void TestMalloc3();
@@ -27,6 +25,8 @@ public:
     static void TestMalloc4();
 
     static void FreeTiming();
+
+    static void HashTableCheck2();
 };
 
 

@@ -18,7 +18,7 @@
  */
 
 MyAlloc::MyAlloc() {
-
+ mallocHash;
 }
 void* MyAlloc::allocate(size_t bytesToAllocate) {
     if(bytesToAllocate == 0)

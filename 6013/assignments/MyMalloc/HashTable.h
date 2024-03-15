@@ -50,6 +50,7 @@ public:
     size_t size_;
     TableEntry* table_;
 
+    //method has been moved to public for testing purposes
     void grow();
 };
 

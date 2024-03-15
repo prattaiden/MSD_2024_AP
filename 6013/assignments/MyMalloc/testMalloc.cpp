@@ -3,7 +3,6 @@
 //Date: 3/11/2034
 //CS:6013
 //test cpp file for testing the efficiency of my mallloc implementation vs the system's malloc implementation
-//todo explain tests
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "testMalloc.h"
@@ -15,20 +14,18 @@
 #include <cassert>
 #include <ctime>
 
-//todo write up notes ideas
-//grow size is something we could test if wanted to spend more time comparing
 
 
 MyAlloc test;
 
 //todo comment out this malloc and free to run the system version of malloc and free for the timing tests
-void* malloc(size_t size){
-    void* mem = test.allocate(size);
-    return mem;
-}
-void free(void* ptr){
-    test.deallocate(ptr);
-}
+//void* malloc(size_t size){
+//    void* mem = test.allocate(size);
+//    return mem;
+//}
+//void free(void* ptr){
+//    test.deallocate(ptr);
+//}
 
 
 void testMalloc::TestMalloc1() {
@@ -75,8 +72,6 @@ void testMalloc::TestMalloc2(){
     std::cout << "Test 2: \t for loop for growing capacity passed! ";
 }
 
-//todo more test ideas: size of char, size of int, array of 1000, check if overlap?
-
 void testMalloc::TestMalloc3(){
     MyAlloc arrayTestAlloc;
     void* arrayOfAddresses[11];
@@ -119,6 +114,33 @@ void testMalloc::TestMalloc4(){
     assert(arrayTestAlloc.mallocHash.size_ == 0);
 }
 
+//testing the hashtable works
+void testMalloc::HashTableCheck2(){
+    HashTable hashTable;
+    //checking that printing out an empty hash table is all null ptr, address is 0
+    for(int i = 0; i < hashTable.capacity_; i++){
+        std::cout << hashTable.table_[i].address << "\n";
+    }
+    int val = 543;
+    hashTable.insert(&val, val);
+
+    //print again after adding one value
+    for(int i = 0; i < hashTable.capacity_; i++){
+        std::cout << "added one value: " << hashTable.table_[i].address << "\n";
+    }
+
+    int val2 = 444;
+    int val3 = 342;
+    int val4 = 888;
+    hashTable.insert(&val2, val2);    hashTable.insert(&val3, val3);    hashTable.insert(&val4, val4);
+
+    //added more values
+    for(int i = 0; i < hashTable.capacity_; i++){
+        std::cout << "added more: " << hashTable.table_[i].address << "\n";
+    }
+
+
+}
 
 
 void testMalloc::HashTableInsertTests(){
@@ -161,6 +183,11 @@ void testMalloc::HashTableInsertTests(){
 
 
 //---------------------------------TIMING TESTS------------------------------//
+
+//uncomment these tests in main
+//their respective size and times in microseconds will be printed to the console
+//at the top of this file, uncomment out the FREE and MALLOC overwritten methods in order to see -
+//MyAlloc's implementation
 
 void testMalloc::MallocTiming() {
     const int maxPower = 15;

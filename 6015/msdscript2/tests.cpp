@@ -387,6 +387,7 @@ TEST_CASE("testing_refactoring_expr"){
         CHECK((new EqExpr(new NumExpr(4), new NumExpr(4)))->interp()->equals(new BoolVal(true)));
         CHECK((new EqExpr(new NumExpr(1), new NumExpr(2)))->interp()->equals(new BoolVal(false)) );
         CHECK((new EqExpr(new NumExpr(3), new NumExpr(3)))->interp()->equals(new BoolVal(true)));
+        CHECK((new EqExpr(new AddExpr(new NumExpr(3), new NumExpr(3)), new NumExpr(6)))->interp()->equals(new BoolVal(true)));
     }
 }
 
@@ -468,9 +469,6 @@ TEST_CASE("parse1") {
     }
 }
 
-TEST_CASE("slide_tests"){
-
-}
 
 
 

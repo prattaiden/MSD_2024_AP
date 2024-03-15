@@ -77,17 +77,20 @@ void HashTable::grow() {
     for (size_t i = 0; i < size_; i++) {
         if (table_[i].address != nullptr && table_[i].address != reinterpret_cast<void*>(TOMBSTONE)) {
             size_t index = hash(table_[i].address);
+
             // Rehash the entry into the new table using its address and size
+            //this prevents overlap
             while(newTable[index].address != nullptr && newTable[index].address != reinterpret_cast<void*>(TOMBSTONE)){
                 index = (index + 1) % capacity_;
             }
-
             newTable[index].address = table_[i].address;
             newTable[index].size = table_[i].size;
         }
     }
 
+    //pointing an oldtable to the member table
     TableEntry* oldTable = table_;
+    //pointing the member table to the new table
     table_ = newTable;
 
     //deallocate the old table
@@ -99,6 +102,7 @@ void HashTable::grow() {
     }
 }
 
+//insert method
 void HashTable::insert(void* entry, size_t entrySize) {
     if(size_ == THRESHOLD_FACTOR * capacity_){
         //std::cout << "hit growth part\n";
@@ -118,6 +122,7 @@ void HashTable::insert(void* entry, size_t entrySize) {
 //this method does not necessarily just clear the entire data
 //it takes a pointer to the entry and replaces the address with a TOMBSTONE
 //this TOMBSTONE = -1 and symbolizes a way the allocator can see if deleted data has been in this memory location
+//the other programs act according when parsing through the memory and hitting this TOMBSTONE indicator
 size_t HashTable::lazyDelete(void* entry) {
     size_t index = hash(entry);
     size_t originalIndex = index;
