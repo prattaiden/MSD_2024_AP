@@ -396,6 +396,11 @@ TEST_CASE("testing-refactoring"){
                    ->equals(new NumVal(3)) );
     CHECK( (new AddExpr(new NumExpr(10), new NumExpr(20)))->interp()
                    ->equals(new NumVal(30)) );
+    CHECK((new MultExpr(new NumExpr(3), new NumExpr(10)))->interp()->equals(new NumVal(30)));
+    CHECK((new MultExpr(new NumExpr(0), new NumExpr(0)))->interp()->equals(new NumVal(0)));
+    CHECK((new AddExpr(new NumExpr(0), new NumExpr(0)))->interp()->equals(new NumVal(0)));
+    CHECK((new AddExpr(new NumExpr(0), new NumExpr(-10)))->interp()->equals(new NumVal(-10)));
+
 }
 
 TEST_CASE("HW9 Conditionals"){
@@ -442,8 +447,8 @@ TEST_CASE("HW9 Conditionals"){
 }
 
 
-TEST_CASE("parse1") {
-    SECTION("parse") {
+TEST_CASE("parse") {
+    SECTION("parse1") {
         CHECK(parse_str("1 == 2")->interp()->equals(new BoolVal(false)));
         CHECK((((parse_str("_if 1 == 2 _then 5 _else 6"))->interp())->to_string()) == "6");
         CHECK((parse_str("(1 + 2) == (3 + 0)"))->interp()->equals(new BoolVal(true)));
@@ -455,17 +460,30 @@ TEST_CASE("parse1") {
                      new AddExpr( new NumExpr(42), new VarExpr("x")),
                      new MultExpr( new NumExpr(84), new VarExpr("x")))));
 
-    CHECK( parse_str(" \n\t _if \n\t x \n\t == \n\t 3 \n\t _then \n\t 42 \n\t + \n\t x "
-             "\n\t _else \n\t 84 \n\t * \n\t x \n\t ")
-            ->equals( new IfExpr( new EqExpr( new VarExpr("x"), new NumExpr(3) ),
+        CHECK( parse_str(" \n\t _if \n\t x \n\t == \n\t 3 \n\t _then \n\t 42 \n\t + \n\t x "
+                "\n\t _else \n\t 84 \n\t * \n\t x \n\t ")->equals( new IfExpr( new EqExpr( new VarExpr("x"), new NumExpr(3) ),
                      new AddExpr( new NumExpr(42), new VarExpr("x") ),
                      new MultExpr( new NumExpr(84), new VarExpr("x") ) ) ));
+
+        CHECK((parse_str(" _if   3 == 3 _then _true _else _false")
+        ->equals(new IfExpr(new EqExpr(new NumExpr(3), new NumExpr(3)), new BoolExpr(true), new BoolExpr(false)))));
     }
+
     SECTION("parse3WithBools"){
         CHECK(parse_str("_if _true _then 5 _else 4")->equals(new IfExpr(new BoolExpr(true), new NumExpr(5), new NumExpr(4))));
         CHECK(parse_str("_true")->equals(new BoolExpr(true)));
         CHECK(parse_str("_if 2 == 2 _then _true _else _false")
         ->equals(new IfExpr(new EqExpr(new NumExpr(2), new NumExpr(2)), new BoolExpr(true), new BoolExpr(false))));
+    }
+    SECTION("parseMore"){
+        CHECK( (parse_str ( "_if 1 == 2 _then 5 _else 6")) -> equals(new IfExpr(new EqExpr(new NumExpr(1), new NumExpr(2)), new NumExpr(5), new NumExpr(6))));
+        CHECK( (parse_str ("_if (_if 1 == 2 _then _true _else _false) _then 5 _else 6")) ->interp() ->equals(new NumVal(6)));
+        CHECK( (((parse_str ( "_if 1 == 2 _then 5 _else 6")) -> interp()) -> to_string()) == "6");
+        CHECK( (((parse_str ( "_if (_if 1 == 2\n"
+                              "     _then _false\n"
+                              "     _else _true)\n"
+                              "_then 5\n"
+                              "_else 6")) -> interp()) -> to_string()) == "5");
     }
 }
 

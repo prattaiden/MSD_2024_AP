@@ -452,7 +452,9 @@ bool EqExpr::has_variable() {
 }
 
 expr *EqExpr::subst(std::string string, expr *e) {
-    return nullptr;
+    expr* nextLHS = this->lhs->subst(string, e);
+    expr* nextRHS = this->rhs->subst(string, e);
+    return new EqExpr(nextLHS, nextRHS);
 }
 
 //------------------------------------------IF--------------------------------------------------------//
@@ -534,7 +536,11 @@ bool IfExpr::has_variable() {
 }
 
 expr* IfExpr::subst(std::string string, expr *e) {
-    return nullptr;
+    expr* nextIf = this->IfPart->subst(string, e);
+    expr* nextThen = this->ThenPart->subst(string, e);
+    expr* nextElse = this->ElsePart->subst(string, e);
+
+    return new IfExpr(nextIf, nextThen, nextElse);
 }
 
 //------------------------------------------BOOL--------------------------------------------------------//
@@ -575,5 +581,5 @@ bool BoolExpr::has_variable() {
 }
 
 expr *BoolExpr::subst(std::string string, expr *e) {
-    return nullptr;
+    return this;
 }
