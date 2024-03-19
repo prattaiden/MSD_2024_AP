@@ -31,7 +31,7 @@ Val *NumVal::add_to(Val *other_val) {
         throw std::runtime_error("addition of non-number");
     }
     else
-        return new NumVal(val + other_num->val);
+        return new NumVal((unsigned)val + (unsigned)other_num->val);
 }
 
 Val *NumVal::mult_to(Val *other_val) {
@@ -40,7 +40,7 @@ Val *NumVal::mult_to(Val *other_val) {
         throw std::runtime_error("multiplication of non-number");
     }
     else {
-        return new NumVal(val * other_num->val);
+        return new NumVal((unsigned)val * (unsigned)other_num->val);
     }
 }
 
@@ -87,10 +87,11 @@ std::string BoolVal::to_string() {
     else{
         return "_false";
     }
+    //return this->to_expr()->to_string();
 }
 
 Expr *BoolVal::to_expr() {
-    return nullptr;
+    return reinterpret_cast<Expr *>(new BoolExpr(this->TF));
 }
 
 bool BoolVal::is_true() {

@@ -74,13 +74,13 @@ public class Client {
 
         //(part4- compute shared DH secret!)//
        BigInteger sharedSecret = Shared.computeSharedSecret(clientDHPriv_, serverDHPublicKey);
-       System.out.println("private secret! " + Arrays.toString(sharedSecret.toByteArray()));
+//       System.out.println("private secret! " + Arrays.toString(sharedSecret.toByteArray()));
 
        //this should be reading the server's HMAC of the history
        byte[] serverHMAC = (byte[]) inputStream.readObject();
        //adding it to history before sending back client version
        history.write(serverHMAC);
-       System.out.println(Arrays.toString(serverHMAC));
+       //System.out.println(Arrays.toString(serverHMAC));
        System.out.println("client has RECEIVED HMAC of message history from server");
 
        makeClientSecretKeys(nonce.toByteArray(),sharedSecret.toByteArray());
@@ -90,7 +90,7 @@ public class Client {
        System.out.println("client has SENT the HMAC of message history");
        //final history add, maybe not necessary
        history.write(hmac);
-       System.out.println(Arrays.toString(hmac));
+//       System.out.println(Arrays.toString(hmac));
 
 
        clientSocket.close();

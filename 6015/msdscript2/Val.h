@@ -16,7 +16,7 @@ public:
     virtual Val* mult_to(Val* other_val) = 0;
     virtual std::string to_string() = 0;
     virtual Expr* to_expr() = 0;
-    virtual bool is_true();
+    virtual bool is_true() = 0;
 
 };
 

@@ -1,6 +1,22 @@
 #include <iostream>
 #include "parse.hpp"
 
+void skip_whitespace(std::istream &in) {
+    while (1) {
+        int c = in.peek();
+        if (!isspace(c))
+            break;
+        consume(in, c);
+    }
+}
+
+void consume(std::istream &in, int expect) {
+    int c = in.get();
+    //std::cout << "expecting: " << (char)expect << "\n";
+    if (c!=expect) {
+        throw std::runtime_error("consume mismatch");
+    }
+}
 
 static std::string parse_keyword(std::istream & inn) {
     std::string keyword;
@@ -228,22 +244,7 @@ expr *parse_addend(std::istream &in) {
     }
     return e ;
 }
-void consume(std::istream &in, int expect) {
-    int c = in.get();
-    //std::cout << "expecting: " << (char)expect << "\n";
-    if (c!=expect) {
-        throw std::runtime_error("consume mismatch");
-    }
-}
 
-void skip_whitespace(std::istream &in) {
-    while (1) {
-        int c = in.peek();
-        if (!isspace(c))
-            break;
-        consume(in, c);
-    }
-}
 
 expr *parse(std::istream &in) {
     expr* e;
@@ -255,7 +256,6 @@ expr *parse(std::istream &in) {
 
     return e;
 }
-
 
 expr* parse_str(const std::string &str) {
     std::istringstream iss(str);

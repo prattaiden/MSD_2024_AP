@@ -371,6 +371,10 @@ TEST_CASE("testing_let_parse"){
 
 TEST_CASE("Val_Classes"){
     CHECK(((new NumVal(4))->to_string()) == "4");
+    CHECK(((new NumVal(0))->to_string()) == "0");
+    CHECK(((new NumVal(-5))->to_string()) == "-5");
+    CHECK(((new NumVal(10000))->to_string()) == "10000");
+    CHECK(((new NumVal(3000000))->to_string()) == "3000000");
 }
 
 TEST_CASE("testing_refactoring_Val"){
@@ -486,6 +490,16 @@ TEST_CASE("parse") {
                               "_else 6")) -> interp()) -> to_string()) == "5");
     }
 }
+
+TEST_CASE("test_sub_if"){
+    CHECK((new IfExpr(new BoolExpr(true), new VarExpr("x"), new NumExpr(10)))->subst("x", new NumExpr(8))
+    ->equals(new IfExpr(new BoolExpr(true), new NumExpr(8), new NumExpr(10))));
+    CHECK((new IfExpr(new BoolExpr(false), new VarExpr("x"), new NumExpr(10)))->subst("x", new NumExpr(8))
+                  ->equals(new IfExpr(new BoolExpr(false), new NumExpr(8), new NumExpr(10))));
+    CHECK((new IfExpr(new BoolExpr(true), new NumExpr(6), new VarExpr("6")))->subst("6", new NumExpr(8))
+                  ->equals(new IfExpr(new BoolExpr(true), new NumExpr(6), new NumExpr(8))));
+}
+
 
 
 
