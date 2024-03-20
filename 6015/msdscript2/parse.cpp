@@ -92,8 +92,26 @@ expr* parse_let(std::istream &in){
 }
 
 //todo rename to inner for hw 10
+expr* parse_fun(std::istream& in){
+    skip_whitespace(in);
 
-expr *parse_multicand(std::istream &in) {
+    consume(in, '(');
+
+    expr* e = parse_var(in);
+
+    std::string var = e->to_string();
+
+    consume(in, ')');
+
+    skip_whitespace(in);
+
+    e = parse_expr(in);
+
+    return new FunExpr(var, e);
+
+}
+
+expr *parse_inner(std::istream &in) {
     std::string keyword;
 
     skip_whitespace(in);
@@ -132,7 +150,9 @@ expr *parse_multicand(std::istream &in) {
             expr* e = new BoolExpr(false);
             return e;
         }
-        //todo add for true and false parser too
+        else if(keyword == "fun"){
+            return parse_fun(in);
+        }
     }
     else {
         consume(in, c);
@@ -171,6 +191,7 @@ expr *parse_if(std::istream &inn){
     return new IfExpr(IfPart, ThenPart, ElsePart);
 
 }
+
 
 expr *parse_num(std::istream &inn) {
     int n = 0;
@@ -230,7 +251,7 @@ expr *parse_addend(std::istream &in) {
 
     expr *e;
 
-    e = parse_multicand(in);
+    e = parse_inner(in);
 
     skip_whitespace(in);
 

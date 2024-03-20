@@ -1,0 +1,54 @@
+buffer overflow lab
+created a password.txt file
+copied the "superSecretPassword"
+
+compiled and executed and successfully logged in with this password in the password.txt file
+the goal is now to successfully login by putting a buffer overflow password in my password.txt that will still succeed, even when the password is incorrect
+
+trying otool on the compiled program:
+this gives several flags to use 
+
+used otool -tV ./a.out 
+this gives the assembly of the C program it seems
+
+attempting to understand the assembly and see where a buffer overflow attack can be done within the login method 
+the char password[40] is the limiting factor here
+the read in part of login attempts to read in up to 1000 but with that array being limited to 40, it is susceptible to an attack
+
+overwrite the return of login to be success 
+
+                High Address
+                 +---------------------------+
+                 |                           |
+                 |         Return Address    | <- RSP
+                 +---------------------------+
+                 |                           |
+                 |                           |
+                 |                           |
+                 |         Other Data         |
+                 |                           |
+                 |                           |
+                 +---------------------------+
+                 |                           |
+                 |          Buffer           | <- Buffer starts here
+                 |          (password)      |
+                 |                           |
+                 +---------------------------+
+                 |                           |
+                 |         Local Vars         |
+                 |                           |
+                 +---------------------------+
+                 |                           |
+                 |        Saved RBP          |
+                 +---------------------------+
+                 |                           |
+                 |        Function Args      |
+                 |                           |
+                 +---------------------------+
+                 |                           |
+                 |                           |
+                 |         Previous Frame    |
+                 |                           |
+                 |                           |
+                 +---------------------------+
+                Low Address

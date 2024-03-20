@@ -583,3 +583,85 @@ bool BoolExpr::has_variable() {
 expr *BoolExpr::subst(std::string string, expr *e) {
     return this;
 }
+
+//------------------------------------------FUNCTION--------------------------------------------------------//
+FunExpr::FunExpr(std::string formal_arg, expr *body) {
+    this->formal_arg = formal_arg;
+    this->body = body;
+}
+
+bool FunExpr::has_variable() {
+    return false;
+}
+
+expr *FunExpr::subst(std::string string, expr *e) {
+    if(formal_arg == string){
+        return this;
+    }
+    else{
+        return new FunExpr(formal_arg, body->subst(string, e));
+    }
+}
+
+bool FunExpr::equals(expr *e) {
+    FunExpr* a = dynamic_cast<FunExpr*> (e);
+    if(a == nullptr){
+        return false;
+    }
+    return (this->formal_arg == a->formal_arg && this-> body == a->body);
+}
+
+Val* FunExpr::interp() {
+    return new FunVal(formal_arg, body);
+}
+
+void FunExpr::print(std::ostream &ostream) {
+    ostream << "_fun (" << formal_arg << ") ";
+    body->print(ostream);
+}
+
+//todo extra credit
+void FunExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+    print(ostream);
+}
+
+
+//------------------------------------------CALL--------------------------------------------------------//
+CallExpr::CallExpr(expr *to_be_called, expr *actual_arg) {
+    this-> to_be_called = to_be_called;
+    this-> actual_arg = actual_arg;
+}
+
+bool CallExpr::has_variable() {
+    return false;
+}
+
+expr *CallExpr::subst(std::string string, expr *e) {
+    return new CallExpr(this->to_be_called->subst(string, e), this->actual_arg->subst(string, e));
+}
+
+bool CallExpr::equals(expr *e) {
+    CallExpr* a = dynamic_cast<CallExpr*> (e);
+    if( a == nullptr){
+        return false;
+    }
+    return(this->to_be_called == a->to_be_called && this->actual_arg == a->actual_arg);
+}
+
+Val *CallExpr::interp() {
+    return nullptr;
+}
+
+void CallExpr::print(std::ostream &ostream) {
+    to_be_called->print(ostream);
+    ostream << "(";
+    actual_arg->print(ostream);
+    ostream << ")";
+
+}
+
+void CallExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
+    print(ostream);
+}
+
+

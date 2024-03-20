@@ -3,6 +3,8 @@
 //
 
 #include "Val.h"
+
+#include <utility>
 #include "expr.h"
 
 bool Val::is_true() {
@@ -48,7 +50,7 @@ std::string NumVal::to_string() {
     return std::to_string(val);
 }
 
-Expr *NumVal::to_expr() {
+expr *NumVal::to_expr() {
     return nullptr;
 }
 
@@ -90,8 +92,8 @@ std::string BoolVal::to_string() {
     //return this->to_expr()->to_string();
 }
 
-Expr *BoolVal::to_expr() {
-    return reinterpret_cast<Expr *>(new BoolExpr(this->TF));
+expr *BoolVal::to_expr() {
+    return reinterpret_cast<expr *>(new BoolExpr(this->TF));
 }
 
 bool BoolVal::is_true() {
@@ -102,3 +104,50 @@ bool BoolVal::is_true() {
         return false;
     }
 }
+
+//------------------------------FUNVAL-------------------------------//
+FunVal::FunVal(std::string formal_arg, expr *body) {
+    this->formal_arg = formal_arg;
+    this-> body = body;
+}
+
+expr *FunVal::to_expr() {
+    return new FunExpr(this->formal_arg, this->body);
+}
+
+bool FunVal::equals(Val *v) {
+    FunVal* a = dynamic_cast<FunVal*>(v);
+    if(a == nullptr){
+        return false;
+    }
+    else{
+        return this->formal_arg == a->formal_arg && this->body == a->body;
+    }
+}
+
+Val *FunVal::add_to(Val *other_val) {
+    throw std::runtime_error("funVal cannot be added");
+}
+
+Val *FunVal::mult_to(Val *other_val) {
+    throw std::runtime_error("funVal cannot be multiplied");
+}
+
+Val *FunVal::call(Val *actual_arg) {
+    return body->subst(formal_arg, actual_arg->to_expr())->interp();
+}
+
+bool FunVal::is_true() {
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+

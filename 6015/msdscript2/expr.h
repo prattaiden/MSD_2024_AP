@@ -177,8 +177,6 @@ public:
 
 class EqExpr : public expr {
 public:
-
-
     expr* lhs;
     expr* rhs;
     EqExpr(expr *lhs, expr *rhs);
@@ -189,6 +187,37 @@ public:
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 
+};
+
+//----------------------------------------------------_FUN------------------------------------------------//
+
+class FunExpr : public expr{
+public:
+    std::string formal_arg;
+    expr* body;
+    bool has_variable() override;
+    expr* subst(std::string string , expr *e) override;
+    bool equals(expr*e) override;
+    Val* interp() override;
+    void print(std::ostream& ostream) override;
+    void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
+    FunExpr(std::string formal_arg, expr* body);
+};
+
+
+//------------------------------------------CALL--------------------------------------------------------//
+
+class CallExpr : public expr{
+public:
+    expr* to_be_called;
+    expr* actual_arg;
+    CallExpr(expr* to_be_called, expr* actual_arg);
+    bool has_variable() override;
+    expr* subst(std::string string , expr *e) override;
+    bool equals(expr*e) override;
+    Val* interp() override;
+    void print(std::ostream& ostream) override;
+    void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
 
 #endif //ASSIGNMENT2_EXPR_H

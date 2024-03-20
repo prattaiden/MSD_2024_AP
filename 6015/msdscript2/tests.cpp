@@ -500,6 +500,37 @@ TEST_CASE("test_sub_if"){
                   ->equals(new IfExpr(new BoolExpr(true), new NumExpr(6), new NumExpr(8))));
 }
 
+TEST_CASE("FunExpr"){
+    SECTION("Parsing FunExpr"){
+        CHECK((parse_str("_let f = _fun (x) x+1"
+                         "_in f(10)"))->interp()->to_string() == "11");
+    }
+
+    SECTION("Parsing FunExpr"){
+        CHECK((parse_str("_let f = _fun (x) x+1"
+                         "_in f(10)"))->interp()->to_string() == "11");
+        CHECK((parse_str("_let f = _fun (x) x*x"
+                         "_in f(2)"))->interp()->to_string() == "4");
+        CHECK((parse_str("_let y = 8"
+                         "_in _let f = _fun (x) x*y"
+                         "_in f(2)"))->interp()->to_string() == "16");
+        CHECK((parse_str("_let x = 8"
+                         "_in _let f = _fun (x) x*x"
+                         "_in f(2)"))->interp()->to_string() == "4");
+        CHECK((parse_str("_let factrl = _fun (factrl)"
+                         "_fun (x)"
+                         "_if x ==1"
+                         "_then 1"
+                         "_else x * factrl(factrl)(x + -1)"
+                         "_in factrl(factrl)(10)"))->interp()->to_string() == "3628800");
+    }
+    SECTION("Parsing CallExpr"){
+        CHECK((parse_str("(_fun (x) x+1 (10))"))->interp()->to_string() == "11");
+        CHECK((parse_str("(_fun (x) x+x (1))"))->interp()->to_string() == "2");
+    }
+
+}
+
 
 
 

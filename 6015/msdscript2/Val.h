@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-class Expr;
+class expr;
 
 class Val {
 public:
@@ -15,7 +15,7 @@ public:
     virtual Val* add_to(Val* other_val) = 0;
     virtual Val* mult_to(Val* other_val) = 0;
     virtual std::string to_string() = 0;
-    virtual Expr* to_expr() = 0;
+    virtual expr* to_expr() = 0;
     virtual bool is_true() = 0;
 
 };
@@ -29,7 +29,7 @@ public:
     Val* add_to(Val* other_val) override;
     Val* mult_to(Val* other_val) override;
     std::string to_string() override;
-    Expr* to_expr() override;
+    expr* to_expr() override;
     bool is_true() override;
 
 };
@@ -37,13 +37,27 @@ public:
 class BoolVal : public Val{
 public:
     bool TF;
-    explicit BoolVal(bool TF);
+    BoolVal(bool TF);
     bool equals(Val *e) override;
     Val* add_to(Val* other_val) override;
     Val* mult_to(Val* other_val) override;
     std::string to_string() override;
-    Expr* to_expr() override;
+    expr* to_expr() override;
     bool is_true() override;
+};
+
+class FunVal : public Val{
+public:
+    std::string formal_arg;
+    expr *body;
+    explicit FunVal(std::string formal_arg, expr *body);
+    expr* to_expr() override;
+    bool equals (Val *v) override;
+    Val* add_to(Val* other_val) override;
+    Val* mult_to(Val* other_val) override;
+    //void print(std::ostream &ostream);
+    bool is_true() override;
+    Val* call(Val* actual_arg);
 };
 
 #endif //MSDSCRIPT2_VAL_H

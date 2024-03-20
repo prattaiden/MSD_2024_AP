@@ -1,7 +1,9 @@
-import javax.crypto.Mac;
+import javax.crypto.*;
+import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.*;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
@@ -22,7 +24,6 @@ public class Shared {
     static BigInteger N = new BigInteger(safe_2048bit_prime_number, 16);
     static BigInteger g = new BigInteger("2");
 
-
     //used to get the public DH key in the client and server
     public static BigInteger getDHPublicKey(BigInteger DHPrivKey) {
         return g.modPow(DHPrivKey, N);
@@ -39,6 +40,16 @@ public class Shared {
             return null;
         }
     }
+
+    public static Boolean verifyKeys(Certificate certificate, byte[] dhKey, byte[] dhSignedKey, Certificate caCertificate) throws CertificateException, NoSuchAlgorithmException, SignatureException, InvalidKeyException, NoSuchProviderException {
+        Signature signature = Signature.getInstance("SHA256WithRSA");
+        signature.initVerify(certificate.getPublicKey());
+        certificate.verify(caCertificate.getPublicKey());
+        signature.update(dhKey);
+        return signature.verify(dhSignedKey);
+
+    }
+
 
     public static BigInteger getSignedDHPubKey(String privateKeyPath, BigInteger pubDHcKey) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, SignatureException {
         //read in server rsa private key
@@ -57,7 +68,7 @@ public class Shared {
         byte[] signedPublicDHKey = signature.sign();
 
         return new BigInteger(signedPublicDHKey);
-        //returns signed DH public key from...?
+        //returns signed DH public key
     }
 
     public static BigInteger computeSharedSecret(BigInteger privateKey, BigInteger publicKey) {
@@ -67,7 +78,7 @@ public class Shared {
     public static byte[] hdkfExpand(byte[] input, String tag) { // tag is a string, but that's easily converted to byte[]
         try{
             Mac HMAC = Mac.getInstance("HmacSHA256");
-            SecretKeySpec spec = new SecretKeySpec(input, "HmacSHA256");
+            SecretKeySpec spec = new SecretKeySpec(input, "RawBytes");
             HMAC.init(spec);
             HMAC.update(tag.getBytes());
             HMAC.update((byte)0x01);
@@ -79,8 +90,63 @@ public class Shared {
 
     public static byte[] computeHMAC(byte[] key, byte[] data) throws NoSuchAlgorithmException, InvalidKeyException {
         Mac mac = Mac.getInstance("HmacSHA256");
-        mac.init(new SecretKeySpec(key, "HmacSHA256"));
+        SecretKeySpec key2 = new SecretKeySpec(key, "HmacSHA256");
+        mac.init(key2);
         return mac.doFinal(data);
+    }
+
+    public static Cipher createCipher(Boolean isEncrptCipher, byte[] encryptKey, byte[] initializationVector) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException {
+        //Create an AES/CBC/PKCS5Padding cipher
+        Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+
+        //Initialize a SecretKeySpec with encryptKey for AES encryption
+        SecretKeySpec secretKeySpec = new SecretKeySpec(encryptKey, "AES");
+
+        //Initialize an IvParameterSpec with the initializationVector key
+        IvParameterSpec ivParameterSpec = new IvParameterSpec(initializationVector);
+
+        //Check if this cipher is for encrytion or decrytion
+        if(isEncrptCipher){
+            //Initialize the cipher in ENCRYPT_MODE with the SecretKeySpec and IvParameterSpec
+            cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec); //decrpt mode
+        }
+        else{
+            //Initialize the cipher in DECRYPT_MODE with the SecretKeySpec and IvParameterSpec
+            cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivParameterSpec); //decrpt mode
+        }
+
+        return cipher;
+    }
+
+    public static byte[] encrypt(byte[] message, byte[] encryptKey, byte[] initializationVector, byte[] macKey) throws IOException, NoSuchAlgorithmException, InvalidKeyException, NoSuchPaddingException, InvalidAlgorithmParameterException, IllegalBlockSizeException, BadPaddingException {
+        //Initialize message to byte array output stream
+        ByteArrayOutputStream encryptedMessage = new ByteArrayOutputStream();
+        encryptedMessage.write(message);
+
+        //Generate a MAC for the message using macKey and append this MAC to the end of msg_byteArrayOutputStream
+        byte[] macMsg = computeHMAC(message, macKey);
+        encryptedMessage.write(macMsg);
+
+        //Create a AES/CBC/PKCS5Padding cipher for encryption with encryptKey and initializationVector
+        Cipher cipher = createCipher(true, encryptKey, initializationVector);
+
+        //Using the cipher, encrypt the data in encryptedMessage
+        return cipher.doFinal(encryptedMessage.toByteArray());
+
+    }
+
+    public static String decrypt(byte[] cipherText, byte[] encryptKey, byte[] initializationVector) throws InvalidAlgorithmParameterException, NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+        //Create an AES/CBC/PKCS5Padding cipher for decryption with encryptKey and initializationVector
+        Cipher cipher = createCipher(false, encryptKey, initializationVector);
+
+        //Decrypt the cipherText using the decryption cipher to get plainText
+        byte[] plainText = cipher.doFinal(cipherText);
+
+        //Separate the decrypted data into the original message (w.o MAC)
+        byte[] decryptedMsg = Arrays.copyOf(plainText, plainText.length - 32);
+
+        return new String(decryptedMsg, StandardCharsets.UTF_8);
+
     }
 
 
