@@ -50,12 +50,13 @@ class FunVal : public Val{
 public:
     std::string formal_arg;
     expr *body;
-    explicit FunVal(std::string formal_arg, expr *body);
+    FunVal(std::string formal_arg, expr *body);
     expr* to_expr() override;
     bool equals (Val *v) override;
     Val* add_to(Val* other_val) override;
     Val* mult_to(Val* other_val) override;
-    //void print(std::ostream &ostream);
+    std::string to_string() override;
+    void print(std::ostream &ostream);
     bool is_true() override;
     Val* call(Val* actual_arg);
 };

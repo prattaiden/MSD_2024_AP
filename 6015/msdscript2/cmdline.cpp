@@ -53,6 +53,7 @@ run_mode_t use_arguments(int argc, char **argv) {
         if(argVString.compare("--pretty_print")==0){
             mode = do_pretty_print;
         }
+       // else if()
 
 //        else{
 //            std::cerr << "error: bad flag, use '--help' for more info\n";

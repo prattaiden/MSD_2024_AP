@@ -95,19 +95,32 @@ expr* parse_let(std::istream &in){
 expr* parse_fun(std::istream& in){
     skip_whitespace(in);
 
+//    consume(in, '(');
+
+    std::string fun = "_fun";
+
+    for(char letter : fun){
+        int c = in.peek();
+        if(c==letter){
+            consume(in, c);
+        }
+    }
+    skip_whitespace(in);
+
     consume(in, '(');
 
-    expr* e = parse_var(in);
-
-    std::string var = e->to_string();
+    expr* var = parse_var(in);
 
     consume(in, ')');
 
     skip_whitespace(in);
 
-    e = parse_expr(in);
+    expr* e = parse_expr(in);
 
-    return new FunExpr(var, e);
+    //consume(in, ')');
+
+
+    return new FunExpr(var->to_string(), e);
 
 }
 

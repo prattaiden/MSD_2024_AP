@@ -611,13 +611,9 @@ bool FunExpr::equals(expr *e) {
     return (this->formal_arg == a->formal_arg && this-> body == a->body);
 }
 
-Val* FunExpr::interp() {
-    return new FunVal(formal_arg, body);
-}
 
 void FunExpr::print(std::ostream &ostream) {
-    ostream << "_fun (" << formal_arg << ") ";
-    body->print(ostream);
+    ostream << "(_fun (" << this->formal_arg << ") " << this->body->to_string() << ")";
 }
 
 //todo extra credit
@@ -625,6 +621,9 @@ void FunExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs
     print(ostream);
 }
 
+Val* FunExpr::interp(){
+    return new FunVal(formal_arg, body);
+}
 
 //------------------------------------------CALL--------------------------------------------------------//
 CallExpr::CallExpr(expr *to_be_called, expr *actual_arg) {

@@ -141,6 +141,14 @@ bool FunVal::is_true() {
     return false;
 }
 
+void FunVal::print(std::ostream &ostream) {
+
+}
+
+std::string FunVal::to_string() {
+    return std::string();
+}
+
 
 
 
