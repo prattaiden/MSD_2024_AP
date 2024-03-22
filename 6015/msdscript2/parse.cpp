@@ -12,8 +12,9 @@ void skip_whitespace(std::istream &in) {
 
 void consume(std::istream &in, int expect) {
     int c = in.get();
-    //std::cout << "expecting: " << (char)expect << "\n";
+
     if (c!=expect) {
+        std::cout << "expecting: " << (char)expect  << "actual:  " << (char ) c << "\n";
         throw std::runtime_error("consume mismatch");
     }
 }
@@ -35,6 +36,17 @@ static std::string parse_keyword(std::istream & inn) {
     return keyword;
 }
 
+expr* parse_multicand(std::istream &in) {
+    expr* e = parse_inner(in);
+    while (in.peek() == '(') {
+        consume(in, '(');
+        expr* actual_arg = parse_expr(in);
+        consume(in, ')');
+        e = new CallExpr(e, actual_arg);
+    }
+    return e;
+}
+
 expr* parse_var(std::istream &in){
     std::string var;
     while(true){
@@ -53,14 +65,14 @@ expr* parse_let(std::istream &in){
 
     //todo// (_let <var> = <expr> _in <expr>)//
 
-    std::string let = "_let";
-
-    for(char letter : let){
-        int c = in.peek();
-        if(c==letter){
-            consume(in, c);
-        }
-    }
+//    std::string let = "_let";
+//
+//    for(char letter : let){
+//        int c = in.peek();
+//        if(c==letter){
+//            consume(in, c);
+//        }
+//    }
 
     skip_whitespace(in);
 
@@ -95,32 +107,20 @@ expr* parse_let(std::istream &in){
 expr* parse_fun(std::istream& in){
     skip_whitespace(in);
 
-//    consume(in, '(');
 
-    std::string fun = "_fun";
-
-    for(char letter : fun){
-        int c = in.peek();
-        if(c==letter){
-            consume(in, c);
-        }
-    }
     skip_whitespace(in);
-
     consume(in, '(');
-
-    expr* var = parse_var(in);
-
+    std::string var = parse_keyword(in);
+    skip_whitespace(in);
     consume(in, ')');
 
     skip_whitespace(in);
 
     expr* e = parse_expr(in);
 
-    //consume(in, ')');
+    skip_whitespace(in);
 
-
-    return new FunExpr(var->to_string(), e);
+    return new FunExpr(var, e);
 
 }
 
@@ -138,7 +138,7 @@ expr *parse_inner(std::istream &in) {
         skip_whitespace(in);
         c = in.get();
         if (c != ')'){
-            throw std::runtime_error("invalid input");
+            throw std::runtime_error("invalid input ')' ");
         }
         return e;
     }
@@ -169,7 +169,7 @@ expr *parse_inner(std::istream &in) {
     }
     else {
         consume(in, c);
-        throw std::runtime_error("invalid input");
+        throw std::runtime_error("invalid input ");
     }
     return nullptr;
 }
@@ -215,7 +215,7 @@ expr *parse_num(std::istream &inn) {
         //inn.get();
         consume (inn, '-');
         if(!isdigit(inn.peek())){
-            throw std::runtime_error("invalid input") ;
+            throw std::runtime_error("invalid input digit") ;
         }
     }
     while (1) {
@@ -264,7 +264,7 @@ expr *parse_addend(std::istream &in) {
 
     expr *e;
 
-    e = parse_inner(in);
+    e = parse_multicand(in);
 
     skip_whitespace(in);
 
@@ -285,7 +285,7 @@ expr *parse(std::istream &in) {
     e = parse_expr(in);
     skip_whitespace(in);
     if ( !in.eof() ) {
-        throw std::runtime_error("invalid input") ;
+        throw std::runtime_error("invalid input eof") ;
     }
 
     return e;

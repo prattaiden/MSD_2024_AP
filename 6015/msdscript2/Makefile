@@ -9,7 +9,7 @@
 CXX=c++
 CFLAGS= -std=c++11
 CXXSOURCE= cmdline.cpp main.cpp expr.cpp tests.cpp parse.cpp Val.cpp
-HEADERS= cmdline.hpp catch.h expr.h parse.hpp val.h
+HEADERS= cmdline.hpp catch.h expr.h parse.hpp Val.h
 
 
 run: msdscript

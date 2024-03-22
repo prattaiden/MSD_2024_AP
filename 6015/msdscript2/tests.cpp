@@ -325,26 +325,26 @@ TEST_CASE("LET CLASS")
     }
 
 TEST_CASE("Nabil_parse") {
-    CHECK_THROWS_WITH( parse_str("()"), "invalid input" );
+    CHECK_THROWS_WITH( parse_str("()"), "invalid input " );
 
     CHECK( parse_str("(1)")->equals(new NumExpr(1)) );
     CHECK( parse_str("(((1)))")->equals(new NumExpr(1)) );
 
-    CHECK_THROWS_WITH( parse_str("(1"), "invalid input" );
+    CHECK_THROWS_WITH( parse_str("(1"), "invalid input ')' " );
 
     CHECK( parse_str("1")->equals(new NumExpr(1)) );
     CHECK( parse_str("10")->equals(new NumExpr(10)) );
     CHECK( parse_str("-3")->equals(new NumExpr(-3)) );
     CHECK( parse_str("  \n 5  ")->equals(new NumExpr(5)) );
-    CHECK_THROWS_WITH( parse_str("-"), "invalid input" );
+    CHECK_THROWS_WITH( parse_str("-"), "invalid input digit" );
 
 
-    CHECK_THROWS_WITH( parse_str(" -   5  "), "invalid input" );
+    CHECK_THROWS_WITH( parse_str(" -   5  "), "invalid input digit" );
 
     CHECK( parse_str("x")->equals(new VarExpr("x")) );
     CHECK( parse_str("xyz")->equals(new VarExpr("xyz")) );
     CHECK( parse_str("xYz")->equals(new VarExpr("xYz")) );
-    CHECK_THROWS_WITH( parse_str("x_z"), "invalid input" );
+    CHECK_THROWS_WITH( parse_str("x_z"), "invalid input eof" );
 
     CHECK( parse_str("x + y")->equals(new AddExpr(new VarExpr("x"), new VarExpr("y"))) );
 
@@ -498,6 +498,12 @@ TEST_CASE("test_sub_if"){
                   ->equals(new IfExpr(new BoolExpr(false), new NumExpr(8), new NumExpr(10))));
     CHECK((new IfExpr(new BoolExpr(true), new NumExpr(6), new VarExpr("6")))->subst("6", new NumExpr(8))
                   ->equals(new IfExpr(new BoolExpr(true), new NumExpr(6), new NumExpr(8))));
+}
+
+TEST_CASE("aiden_fun_expr"){
+   // std::cout << (FunExpr("x", new AddExpr(new NumExpr(5), new NumExpr(7))).to_string());
+//    CHECK((parse_str("(_fun (x) (5+7))"))->interp()->equals(FunExpr("x", new AddExpr(new NumExpr(5), new NumExpr(7))))));
+    CHECK((parse_str("(_fun (x) x+1 (10))"))->interp()->to_string() == "11");
 }
 
 TEST_CASE("FunExpr"){

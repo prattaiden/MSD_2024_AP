@@ -613,10 +613,9 @@ bool FunExpr::equals(expr *e) {
 
 
 void FunExpr::print(std::ostream &ostream) {
-    ostream << "(_fun (" << this->formal_arg << ") " << this->body->to_string() << ")";
+    ostream << "(_fun " << "(" << this->formal_arg << ") " << this->body->to_string() << ")";
 }
 
-//todo extra credit
 void FunExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
     print(ostream);
 }
@@ -648,7 +647,7 @@ bool CallExpr::equals(expr *e) {
 }
 
 Val *CallExpr::interp() {
-    return nullptr;
+    return this->to_be_called->interp()->call(actual_arg->interp());
 }
 
 void CallExpr::print(std::ostream &ostream) {

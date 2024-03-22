@@ -46,16 +46,21 @@ Val *NumVal::mult_to(Val *other_val) {
     }
 }
 
-std::string NumVal::to_string() {
-    return std::to_string(val);
-}
-
 expr *NumVal::to_expr() {
-    return nullptr;
+    return new NumExpr(val);
 }
 
 bool NumVal::is_true() {
     throw std::invalid_argument("Cannot evaluate NumVal arguments");
+    return false;
+}
+
+Val *NumVal::call(Val *actual_arg) const {
+    throw std::runtime_error("cannot call numval");
+}
+
+void NumVal::print(std::ostream &os) {
+    os << std::to_string(val);
 }
 
 //-------------------------------BOOlVAL--------------------------------//
@@ -82,18 +87,8 @@ Val *BoolVal::mult_to(Val *other_val) {
     throw std::runtime_error("Cannot multiply a boolean arguments");
 }
 
-std::string BoolVal::to_string() {
-    if(TF){
-        return "_true";
-    }
-    else{
-        return "_false";
-    }
-    //return this->to_expr()->to_string();
-}
-
 expr *BoolVal::to_expr() {
-    return reinterpret_cast<expr *>(new BoolExpr(this->TF));
+    return new BoolExpr(this->TF);
 }
 
 bool BoolVal::is_true() {
@@ -103,6 +98,14 @@ bool BoolVal::is_true() {
     else{
         return false;
     }
+}
+
+Val *BoolVal::call(Val *actual_arg) const {
+    throw std::runtime_error("cannot call boolVal");
+}
+
+void BoolVal::print(std::ostream &os) {
+    os << (TF ? "_true" : "_false");
 }
 
 //------------------------------FUNVAL-------------------------------//
@@ -133,7 +136,7 @@ Val *FunVal::mult_to(Val *other_val) {
     throw std::runtime_error("funVal cannot be multiplied");
 }
 
-Val *FunVal::call(Val *actual_arg) {
+Val *FunVal::call(Val *actual_arg) const {
     return body->subst(formal_arg, actual_arg->to_expr())->interp();
 }
 
@@ -142,11 +145,6 @@ bool FunVal::is_true() {
 }
 
 void FunVal::print(std::ostream &ostream) {
-
-}
-
-std::string FunVal::to_string() {
-    return std::string();
 }
 
 

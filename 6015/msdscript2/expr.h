@@ -6,7 +6,9 @@
 #define msdscript_EXPR_H
 #include <string>
 #include <sstream>
-#include "Val.h"
+
+
+class Val;
 
 /**
  * \file expr.h

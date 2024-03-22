@@ -5,7 +5,9 @@
 #ifndef MSDSCRIPT2_VAL_H
 #define MSDSCRIPT2_VAL_H
 
+#include <string>
 #include <iostream>
+#include "expr.h"
 
 class expr;
 
@@ -14,10 +16,16 @@ public:
     virtual bool equals(Val *e) = 0;
     virtual Val* add_to(Val* other_val) = 0;
     virtual Val* mult_to(Val* other_val) = 0;
-    virtual std::string to_string() = 0;
+    virtual void print(std::ostream &os) = 0;
     virtual expr* to_expr() = 0;
     virtual bool is_true() = 0;
+    virtual Val* call(Val* actual_arg) const = 0;
 
+    std::string to_string(){
+        std::stringstream st("");
+        this->print(st);
+        return st.str();
+    }
 };
 
 
@@ -26,11 +34,12 @@ public:
     int val;
     explicit NumVal(int val);
     bool equals(Val *e) override;
+    virtual void print(std::ostream &os) override;
     Val* add_to(Val* other_val) override;
     Val* mult_to(Val* other_val) override;
-    std::string to_string() override;
     expr* to_expr() override;
     bool is_true() override;
+    Val* call(Val* actual_arg) const override;
 
 };
 
@@ -39,11 +48,12 @@ public:
     bool TF;
     BoolVal(bool TF);
     bool equals(Val *e) override;
+    virtual void print(std::ostream &os) override;
     Val* add_to(Val* other_val) override;
     Val* mult_to(Val* other_val) override;
-    std::string to_string() override;
     expr* to_expr() override;
     bool is_true() override;
+    Val* call(Val* actual_arg) const override;
 };
 
 class FunVal : public Val{
@@ -55,10 +65,9 @@ public:
     bool equals (Val *v) override;
     Val* add_to(Val* other_val) override;
     Val* mult_to(Val* other_val) override;
-    std::string to_string() override;
-    void print(std::ostream &ostream);
+    void print(std::ostream &ostream) override;
     bool is_true() override;
-    Val* call(Val* actual_arg);
+    Val* call(Val* actual_arg) const override;
 };
 
 #endif //MSDSCRIPT2_VAL_H
