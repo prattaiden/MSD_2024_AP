@@ -3,6 +3,7 @@
 #include "expr.h"
 #define parse_hpp
 #include <cstdio>
+#include "pointer.h"
 
  //expr * parse_keyword(std::istream &in);
 expr* parse_comparg(std::istream &in);

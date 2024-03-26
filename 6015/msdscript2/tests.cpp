@@ -3,6 +3,7 @@
 #include "expr.h"
 #include "parse.hpp"
 #include "Val.h"
+#include "pointer.h"
 
 //
 TEST_CASE("Nabil_Test_Cases"){

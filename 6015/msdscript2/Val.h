@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include "expr.h"
+#include "pointer.h"
 
 class expr;
 

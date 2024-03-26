@@ -141,7 +141,7 @@ Val *FunVal::call(Val *actual_arg) const {
 }
 
 bool FunVal::is_true() {
-    return false;
+    throw std::runtime_error("true/false not reasonable for FunVal");
 }
 
 void FunVal::print(std::ostream &ostream) {

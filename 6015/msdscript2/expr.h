@@ -6,6 +6,7 @@
 #define msdscript_EXPR_H
 #include <string>
 #include <sstream>
+#include "pointer.h"
 
 
 class Val;
@@ -35,7 +36,7 @@ typedef enum {
 class expr {
 public:
     virtual bool equals(expr *e) = 0;//each subclass must override
-    virtual Val * interp() = 0;
+    virtual PTR(Val) interp() = 0;
     virtual bool has_variable() = 0;
     virtual expr* subst(std::string string , expr *e) = 0;
     virtual void print(std::ostream& ostream) = 0;

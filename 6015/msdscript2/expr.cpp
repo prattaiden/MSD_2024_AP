@@ -617,7 +617,21 @@ void FunExpr::print(std::ostream &ostream) {
 }
 
 void FunExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) {
-    print(ostream);
+    //print(ostream);
+    //counts spaces
+    std::streampos initial_pos = ostream.tellp();
+    if(p > prec_none && let_needs_parenthesis){
+        ostream << "(";
+    }
+    ostream << "(_fun (" << this->formal_arg << ") " ;
+    ostream << "\n" << " ";
+    std::streampos body_pos = ostream.tellp();
+
+    this->body->pretty_print(ostream, prec_none, let_needs_parenthesis, body_pos);
+
+    if(p > prec_none && let_needs_parenthesis){
+        ostream << ")";
+    }
 }
 
 Val* FunExpr::interp(){
