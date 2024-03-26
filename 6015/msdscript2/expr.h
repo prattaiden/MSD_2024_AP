@@ -33,28 +33,28 @@ typedef enum {
 //------------------------------------------------------EXPR------------------------------------------------------//
 
 
-class expr {
+CLASS(expr) {
 public:
-    virtual bool equals(expr *e) = 0;//each subclass must override
+    virtual bool equals(PTR(expr)e) = 0;//each subclass must override
     virtual PTR(Val) interp() = 0;
     virtual bool has_variable() = 0;
-    virtual expr* subst(std::string string , expr *e) = 0;
+    virtual PTR(expr) subst(std::string string , PTR(expr)e) = 0;
     virtual void print(std::ostream& ostream) = 0;
 
     std::string to_string(){
         std::stringstream st("");
-        this->print(st);
+        THIS->print(st);
         return st.str();
     }
 
     std::string to_pp_string(){
         std::stringstream st("");
-        this->pretty_print_at(st);
+        THIS->pretty_print_at(st);
         return st.str();
     }
 
     void pretty_print_at(std::ostream &ostream){
-        this->pretty_print(ostream, prec_none, true, 0);
+        THIS->pretty_print(ostream, prec_none, true, 0);
     }
 
     virtual void pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) = 0;
@@ -69,10 +69,10 @@ class NumExpr : public expr {
 public:
     int val; ///< int that will be the Num value
     explicit NumExpr(int val);
-    bool equals(expr *e) override;
-    Val * interp() override;
+    bool equals(PTR(expr)e) override;
+    PTR(Val) interp() override;
     bool has_variable() override;
-    expr* subst(std::string string , expr *e) override;
+    PTR(expr) subst(std::string string , expr *e) override;
     void print(std::ostream &ostream) override;
     void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 
@@ -87,10 +87,10 @@ class VarExpr : public expr{
 public:
     std::string var; ///< string that will be the var
     VarExpr(std::string var);
-    bool equals(expr *e) override;
-    Val * interp() override;
+    bool equals(PTR(expr) e) override;
+    PTR (Val) interp() override;
     bool has_variable() override;
-    expr* subst(std::string string , expr *e) override;
+    PTR (expr) subst(std::string string , PTR(expr)e) override;
     void print(std::ostream &ostream) override;
     void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
@@ -102,13 +102,13 @@ public:
  */
 class AddExpr : public expr{
 public:
-    expr *lhs; ///< left hands side expression of Add class
-    expr *rhs; ///< right hands side expression of Add class
-    AddExpr(expr *lhs, expr *rhs);
-    bool equals(expr *e) override;
-    Val * interp() override;
+    PTR(expr)lhs; ///< left hands side expression of Add class
+    PTR(expr)rhs; ///< right hands side expression of Add class
+    AddExpr(PTR(expr)lhs, PTR(expr)rhs);
+    bool equals(PTR(expr)e) override;
+    PTR(Val) interp() override;
     bool has_variable() override;
-    expr* subst(std::string string , expr *e) override;
+    PTR(expr) subst(std::string string , PTR(expr)e) override;
     void print(std::ostream &ostream) override;
     void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
@@ -120,13 +120,13 @@ public:
  */
 class MultExpr : public expr {
 public:
-    expr *lhs; ///< left hands side expression of Mult class
-    expr *rhs; ///< right hands side expression of Mult class
-    MultExpr(expr *lhs, expr *rhs);
-    bool equals(expr *e) override;
-    Val * interp() override;
+    PTR(expr)lhs; ///< left hands side expression of Mult class
+    PTR(expr)rhs; ///< right hands side expression of Mult class
+    MultExpr(PTR(expr)lhs, PTR(expr)rhs);
+    bool equals(PTR(expr)e) override;
+    PTR(Val) interp() override;
     bool has_variable() override;
-    expr* subst(std::string string , expr *e) override;
+    PTR(expr) subst(std::string string , PTR(expr)e) override;
     void print(std::ostream &ostream) override;
     void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
@@ -135,13 +135,13 @@ public:
 class LetExpr : public expr{
 public:
     std::string name;
-    expr *value;
-    expr *body;
-    LetExpr(std::string lhsVar, expr *rhs, expr *body);
-    bool equals(expr *e) override;
-    Val * interp() override;
+    PTR(expr)value;
+    PTR(expr)body;
+    LetExpr(std::string lhsVar, PTR(expr)rhs, PTR(expr)body);
+    bool equals(PTR(expr)e) override;
+    PTR(Val) interp() override;
     bool has_variable() override;
-    expr* subst(std::string string, expr *e) override;
+    PTR(expr) subst(std::string string, PTR(expr)e) override;
     void print(std::ostream & ostream) override;
     void pretty_print(std::ostream &ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
@@ -153,25 +153,25 @@ public:
     bool TF;
     BoolExpr(bool TF);
     bool has_variable() override;
-    bool equals(expr *e) override;
-    expr* subst(std::string string , expr *e) override;
-    Val* interp() override;
+    bool equals(PTR(expr)e) override;
+    PTR(expr) subst(std::string string , PTR(expr)e) override;
+    PTR(Val) interp() override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
 //----------------------------------------------------_IF------------------------------------------------//
 class IfExpr : public expr{
 public:
-    expr* IfPart;
-    expr* ThenPart;
-    expr* ElsePart;
+    PTR(expr) IfPart;
+    PTR(expr) ThenPart;
+    PTR(expr) ElsePart;
 
-    IfExpr(expr* IfPart, expr* ThenPart, expr* ElsePart);
+    IfExpr(PTR(expr) IfPart, PTR(expr) ThenPart, PTR(expr) ElsePart);
 
     bool has_variable() override;
-    bool equals(expr* e) override;
-    Val* interp() override;
-    expr* subst(std::string string , expr *e) override;
+    bool equals(PTR(expr) e) override;
+    PTR(Val) interp() override;
+    PTR(expr)subst(std::string string , expr *e) override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
@@ -180,13 +180,13 @@ public:
 
 class EqExpr : public expr {
 public:
-    expr* lhs;
-    expr* rhs;
-    EqExpr(expr *lhs, expr *rhs);
+    PTR(expr) lhs;
+    PTR(expr) rhs;
+    EqExpr(PTR(expr)lhs, PTR(expr)rhs);
     bool has_variable() override;
-    expr* subst(std::string string , expr *e) override;
-    bool equals(expr*e) override;
-    Val* interp() override;
+    PTR(expr) subst(std::string string , expr *e) override;
+    bool equals(PTR(expr)e) override;
+    PTR(Val) interp() override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 
@@ -197,14 +197,14 @@ public:
 class FunExpr : public expr{
 public:
     std::string formal_arg;
-    expr* body;
+    PTR(expr)body;
     bool has_variable() override;
-    expr* subst(std::string string , expr *e) override;
-    bool equals(expr*e) override;
-    Val* interp() override;
+    PTR(expr) subst(std::string string , PTR(expr)e) override;
+    bool equals(PTR(expr)e) override;
+    PTR(Val) interp() override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
-    FunExpr(std::string formal_arg, expr* body);
+    FunExpr(std::string formal_arg, PTR(expr) body);
 };
 
 
@@ -212,13 +212,13 @@ public:
 
 class CallExpr : public expr{
 public:
-    expr* to_be_called;
-    expr* actual_arg;
-    CallExpr(expr* to_be_called, expr* actual_arg);
+    PTR(expr) to_be_called;
+    PTR(expr) actual_arg;
+    CallExpr(PTR(expr) to_be_called, expr* actual_arg);
     bool has_variable() override;
-    expr* subst(std::string string , expr *e) override;
-    bool equals(expr*e) override;
-    Val* interp() override;
+    PTR(expr) subst(std::string string , expr *e) override;
+    bool equals(PTR(expr)e) override;
+    PTR(Val) interp() override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };

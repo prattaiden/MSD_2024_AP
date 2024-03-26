@@ -14,21 +14,22 @@ bool Val::is_true() {
 //------------------------------------------NUM VAL--------------------------------------------------------//
 
 NumVal::NumVal(int val) {
-    this->val = val;
+    THIS->val = val;
 }
 
  bool NumVal::equals(Val *e) {
-    NumVal *a = dynamic_cast<NumVal*>(e);
-     if (a == nullptr) {
+    PTR(NumVal)a = CAST(NumVal)(e);
+    if (a == nullptr) {
          return false;
-     }
-     else
-         return (this->val == a->val);
+    }
+    else {
+        return (THIS->val == a->val);
+    }
 }
 
 
-Val *NumVal::add_to(Val *other_val) {
-    NumVal *other_num = dynamic_cast<NumVal*>(other_val);
+PTR(Val)NumVal::add_to(PTR(Val)other_val) {
+    PTR(NumVal)other_num = CAST(NumVal)(other_val);
     if (other_val == nullptr) {
         throw std::runtime_error("addition of non-number");
     }
@@ -36,8 +37,8 @@ Val *NumVal::add_to(Val *other_val) {
         return new NumVal((unsigned)val + (unsigned)other_num->val);
 }
 
-Val *NumVal::mult_to(Val *other_val) {
-    NumVal *other_num = dynamic_cast<NumVal*>(other_val);
+PTR(Val)NumVal::mult_to(PTR(Val)other_val) {
+    PTR(NumVal)other_num = CAST(NumVal)(other_val);
     if (other_val == NULL) {
         throw std::runtime_error("multiplication of non-number");
     }
@@ -46,7 +47,7 @@ Val *NumVal::mult_to(Val *other_val) {
     }
 }
 
-expr *NumVal::to_expr() {
+PTR(expr)NumVal::to_expr() {
     return new NumExpr(val);
 }
 
@@ -55,7 +56,7 @@ bool NumVal::is_true() {
     return false;
 }
 
-Val *NumVal::call(Val *actual_arg) const {
+PTR(Val)NumVal::call(PTR(Val)actual_arg) const {
     throw std::runtime_error("cannot call numval");
 }
 
@@ -66,29 +67,29 @@ void NumVal::print(std::ostream &os) {
 //-------------------------------BOOlVAL--------------------------------//
 
 BoolVal::BoolVal(bool TF) {
-    this->TF = TF;
+    THIS->TF = TF;
 }
 
 bool BoolVal::equals(Val *e) {
-    BoolVal *a = dynamic_cast<BoolVal*>(e);
+    PTR(BoolVal)a = CAST(BoolVal)(e);
     if(a == nullptr){
         return false;
     }
     else{
-        return(this->TF == a->TF);
+        return(THIS->TF == a->TF);
     }
 }
 
-Val *BoolVal::add_to(Val *other_val) {
+PTR(Val)BoolVal::add_to(PTR(Val)other_val) {
     throw std::runtime_error("Cannot add a boolean arguments");
 }
 
-Val *BoolVal::mult_to(Val *other_val) {
+PTR(Val)BoolVal::mult_to(PTR(Val)other_val) {
     throw std::runtime_error("Cannot multiply a boolean arguments");
 }
 
-expr *BoolVal::to_expr() {
-    return new BoolExpr(this->TF);
+PTR(expr)BoolVal::to_expr() {
+    return new BoolExpr(THIS->TF);
 }
 
 bool BoolVal::is_true() {
@@ -100,7 +101,7 @@ bool BoolVal::is_true() {
     }
 }
 
-Val *BoolVal::call(Val *actual_arg) const {
+PTR(Val)BoolVal::call(PTR(Val)actual_arg) const {
     throw std::runtime_error("cannot call boolVal");
 }
 
@@ -109,34 +110,34 @@ void BoolVal::print(std::ostream &os) {
 }
 
 //------------------------------FUNVAL-------------------------------//
-FunVal::FunVal(std::string formal_arg, expr *body) {
-    this->formal_arg = formal_arg;
-    this-> body = body;
+FunVal::FunVal(std::string formal_arg, PTR(expr)body) {
+    THIS->formal_arg = formal_arg;
+    THIS-> body = body;
 }
 
-expr *FunVal::to_expr() {
-    return new FunExpr(this->formal_arg, this->body);
+PTR(expr)FunVal::to_expr() {
+    return new FunExpr(THIS->formal_arg, THIS->body);
 }
 
 bool FunVal::equals(Val *v) {
-    FunVal* a = dynamic_cast<FunVal*>(v);
+    PTR(FunVal) a = CAST(FunVal)(v);
     if(a == nullptr){
         return false;
     }
     else{
-        return this->formal_arg == a->formal_arg && this->body == a->body;
+        return THIS->formal_arg == a->formal_arg && THIS->body == a->body;
     }
 }
 
-Val *FunVal::add_to(Val *other_val) {
+PTR(Val)FunVal::add_to(PTR(Val)other_val) {
     throw std::runtime_error("funVal cannot be added");
 }
 
-Val *FunVal::mult_to(Val *other_val) {
+PTR(Val)FunVal::mult_to(PTR(Val)other_val) {
     throw std::runtime_error("funVal cannot be multiplied");
 }
 
-Val *FunVal::call(Val *actual_arg) const {
+PTR(Val)FunVal::call(PTR(Val)actual_arg) const {
     return body->subst(formal_arg, actual_arg->to_expr())->interp();
 }
 
