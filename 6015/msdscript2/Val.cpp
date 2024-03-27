@@ -14,16 +14,16 @@ bool Val::is_true() {
 //------------------------------------------NUM VAL--------------------------------------------------------//
 
 NumVal::NumVal(int val) {
-    THIS->val = val;
+    this->val = val;
 }
 
- bool NumVal::equals(Val *e) {
+ bool NumVal::equals(PTR(Val) e) {
     PTR(NumVal)a = CAST(NumVal)(e);
     if (a == nullptr) {
          return false;
     }
     else {
-        return (THIS->val == a->val);
+        return (this->val == a->val);
     }
 }
 
@@ -34,21 +34,21 @@ PTR(Val)NumVal::add_to(PTR(Val)other_val) {
         throw std::runtime_error("addition of non-number");
     }
     else
-        return new NumVal((unsigned)val + (unsigned)other_num->val);
+        return NEW(NumVal)((unsigned)val + (unsigned)other_num->val);
 }
 
 PTR(Val)NumVal::mult_to(PTR(Val)other_val) {
     PTR(NumVal)other_num = CAST(NumVal)(other_val);
-    if (other_val == NULL) {
+    if (other_val == nullptr) {
         throw std::runtime_error("multiplication of non-number");
     }
     else {
-        return new NumVal((unsigned)val * (unsigned)other_num->val);
+        return NEW(NumVal)((unsigned)val * (unsigned)other_num->val);
     }
 }
 
 PTR(expr)NumVal::to_expr() {
-    return new NumExpr(val);
+    return NEW(NumExpr)(val);
 }
 
 bool NumVal::is_true() {
@@ -67,16 +67,16 @@ void NumVal::print(std::ostream &os) {
 //-------------------------------BOOlVAL--------------------------------//
 
 BoolVal::BoolVal(bool TF) {
-    THIS->TF = TF;
+    this->TF = TF;
 }
 
-bool BoolVal::equals(Val *e) {
+bool BoolVal::equals(PTR(Val)e) {
     PTR(BoolVal)a = CAST(BoolVal)(e);
     if(a == nullptr){
         return false;
     }
     else{
-        return(THIS->TF == a->TF);
+        return(this->TF == a->TF);
     }
 }
 
@@ -89,7 +89,7 @@ PTR(Val)BoolVal::mult_to(PTR(Val)other_val) {
 }
 
 PTR(expr)BoolVal::to_expr() {
-    return new BoolExpr(THIS->TF);
+    return NEW(BoolExpr)(this->TF);
 }
 
 bool BoolVal::is_true() {
@@ -111,21 +111,21 @@ void BoolVal::print(std::ostream &os) {
 
 //------------------------------FUNVAL-------------------------------//
 FunVal::FunVal(std::string formal_arg, PTR(expr)body) {
-    THIS->formal_arg = formal_arg;
-    THIS-> body = body;
+    this->formal_arg = formal_arg;
+    this-> body = body;
 }
 
 PTR(expr)FunVal::to_expr() {
-    return new FunExpr(THIS->formal_arg, THIS->body);
+    return NEW(FunExpr)(this->formal_arg, this->body);
 }
 
-bool FunVal::equals(Val *v) {
+bool FunVal::equals(PTR(Val)v) {
     PTR(FunVal) a = CAST(FunVal)(v);
     if(a == nullptr){
         return false;
     }
     else{
-        return THIS->formal_arg == a->formal_arg && THIS->body == a->body;
+        return this->formal_arg == a->formal_arg && this->body == a->body;
     }
 }
 
@@ -145,7 +145,7 @@ bool FunVal::is_true() {
     throw std::runtime_error("true/false not reasonable for FunVal");
 }
 
-void FunVal::print(std::ostream &ostream) {
+void FunVal::print(std::ostream &ostream){
 }
 
 

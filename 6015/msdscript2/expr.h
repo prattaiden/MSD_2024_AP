@@ -35,6 +35,7 @@ typedef enum {
 
 CLASS(expr) {
 public:
+    virtual ~expr(){};
     virtual bool equals(PTR(expr)e) = 0;//each subclass must override
     virtual PTR(Val) interp() = 0;
     virtual bool has_variable() = 0;
@@ -72,7 +73,7 @@ public:
     bool equals(PTR(expr)e) override;
     PTR(Val) interp() override;
     bool has_variable() override;
-    PTR(expr) subst(std::string string , expr *e) override;
+    PTR(expr) subst(std::string string , PTR(expr)e) override;
     void print(std::ostream &ostream) override;
     void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 
@@ -108,7 +109,7 @@ public:
     bool equals(PTR(expr)e) override;
     PTR(Val) interp() override;
     bool has_variable() override;
-    PTR(expr) subst(std::string string , PTR(expr)e) override;
+    PTR(expr) subst(std::string string , PTR(expr)e)override;
     void print(std::ostream &ostream) override;
     void pretty_print(std::ostream &override, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
@@ -171,7 +172,7 @@ public:
     bool has_variable() override;
     bool equals(PTR(expr) e) override;
     PTR(Val) interp() override;
-    PTR(expr)subst(std::string string , expr *e) override;
+    PTR(expr)subst(std::string string , PTR(expr)e) override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
@@ -184,7 +185,7 @@ public:
     PTR(expr) rhs;
     EqExpr(PTR(expr)lhs, PTR(expr)rhs);
     bool has_variable() override;
-    PTR(expr) subst(std::string string , expr *e) override;
+    PTR(expr) subst(std::string string , PTR(expr)e) override;
     bool equals(PTR(expr)e) override;
     PTR(Val) interp() override;
     void print(std::ostream& ostream) override;
@@ -214,9 +215,9 @@ class CallExpr : public expr{
 public:
     PTR(expr) to_be_called;
     PTR(expr) actual_arg;
-    CallExpr(PTR(expr) to_be_called, expr* actual_arg);
+    CallExpr(PTR(expr) to_be_called, PTR(expr) actual_arg);
     bool has_variable() override;
-    PTR(expr) subst(std::string string , expr *e) override;
+    PTR(expr) subst(std::string string , PTR(expr)e) override;
     bool equals(PTR(expr)e) override;
     PTR(Val) interp() override;
     void print(std::ostream& ostream) override;

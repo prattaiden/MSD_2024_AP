@@ -14,6 +14,7 @@ class expr;
 
 CLASS (Val) {
 public:
+    virtual ~Val(){};
     virtual bool equals(PTR(Val) e) = 0;
     virtual PTR(Val) add_to(PTR(Val) other_val) = 0;
     virtual PTR(Val) mult_to(PTR(Val) other_val) = 0;
@@ -61,7 +62,7 @@ class FunVal : public Val{
 public:
     std::string formal_arg;
     PTR(expr) body;
-    FunVal(std::string formal_arg, expr *body);
+    FunVal(std::string formal_arg, PTR(expr) body);
     PTR(expr) to_expr() override;
     bool equals (PTR(Val)v) override;
     PTR(Val) add_to(PTR(Val) other_val) override;

@@ -18,7 +18,7 @@
 int main(int argc, char** argv){
     try {
         run_mode_t mode = use_arguments(argc, argv);
-        expr *n;
+        PTR(expr) n;
 
         switch(mode){
             case do_nothing:

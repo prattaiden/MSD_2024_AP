@@ -71,7 +71,7 @@ TEST_CASE("Test_Interp_Mult"){
     CHECK((NEW(MultExpr)(NEW(MultExpr)(NEW(NumExpr)(4), NEW(NumExpr)(3)), NEW(NumExpr)(6)))->interp()->equals(NEW(NumVal)(72)));
     CHECK((NEW(MultExpr)(NEW(NumExpr)(2), NEW(NumExpr)(20)))->interp()->equals(NEW(NumVal)(40)));
     CHECK((NEW(MultExpr)(NEW(NumExpr)(1), NEW(NumExpr)(20)))->interp()->equals(NEW(NumVal)(20)));
-    CHECK((NEW(MultExpr)(NEW(NumExpr) (10), NEW(NumExpr)(10)))->interp()->equals(new(NumVal)(100)));
+    CHECK((NEW(MultExpr)(NEW(NumExpr) (10), NEW(NumExpr)(10)))->interp()->equals(NEW(NumVal)(100)));
     CHECK((NEW(MultExpr)(NEW(NumExpr)(100), NEW(NumExpr)(20)))->interp()->equals(NEW(NumVal)(2000)));
 }
 
@@ -182,8 +182,8 @@ TEST_CASE("nested_sub_test"){
                    == (NEW(LetExpr)("y", NEW(NumExpr)(2), NEW(NumExpr)(2)))->to_string());
     SECTION("Test LetBinding to_string")
     {
-        LetExpr *expression1 = NEW(LetExpr)("y", NEW(NumExpr)(3), NEW(AddExpr)(NEW(VarExpr)("y"), NEW(NumExpr)(2)));
-        LetExpr *expression2 = NEW(LetExpr)("x", NEW(NumExpr)(5), NEW(AddExpr)(expression1, NEW(VarExpr)("x")));
+        PTR(LetExpr)expression1 = NEW(LetExpr)("y", NEW(NumExpr)(3), NEW(AddExpr)(NEW(VarExpr)("y"), NEW(NumExpr)(2)));
+        PTR(LetExpr) expression2 = NEW(LetExpr)("x", NEW(NumExpr)(5), NEW(AddExpr)(expression1, NEW(VarExpr)("x")));
         REQUIRE(expression1->to_string() == "(_let y=3 _in (y+2))");
         REQUIRE(expression2->to_string() == "(_let x=5 _in ((_let y=3 _in (y+2))+x))");
     }
@@ -260,7 +260,7 @@ TEST_CASE("LET CLASS")
         CHECK((NEW(LetExpr)("x", NEW(NumExpr)(5), NEW(AddExpr)(NEW(VarExpr)("x"), NEW(NumExpr)(7))))
                       ->to_string() == "(_let x=5 _in (x+7))");
         //LetExpr with multiplication expression
-        CHECK((NEW((LetExpr))("x", NEW(NumExpr)(9), NEW(MultExpr)(NEW(VarExpr)("x"), NEW(NumExpr)(3))))
+        CHECK((NEW(LetExpr)("x", NEW(NumExpr)(9), NEW(MultExpr)(NEW(VarExpr)("x"), NEW(NumExpr)(3))))
                       ->to_string() == "(_let x=9 _in (x*3))");
         //Nested let
         CHECK((NEW(LetExpr)("x", NEW(NumExpr)(5),
@@ -432,21 +432,21 @@ TEST_CASE("HW9 Conditionals"){
                        ->equals(NEW(NumVal)(1)) );
     }
     SECTION("(1 == 2) + 3 throws an exception", "[Add]") {
-        expr* testExpr = NEW(AddExpr)(NEW(EqExpr)(NEW(NumExpr)(1), NEW(NumExpr)(2)), NEW(NumExpr)(3));
+        PTR(expr) testExpr = NEW(AddExpr)(NEW(EqExpr)(NEW(NumExpr)(1), NEW(NumExpr)(2)), NEW(NumExpr)(3));
         CHECK_THROWS_WITH(testExpr->interp(), "Cannot add a boolean arguments");
     }
 
     SECTION("1 == 2 + 3 evaluates to _false", "[EqExpr]") {
-        expr* testExpr = NEW(EqExpr)(NEW(NumExpr)(1), NEW(AddExpr)(NEW(NumExpr)(2), NEW(NumExpr)(3)));
-        Val* result = testExpr->interp();
+        PTR(expr) testExpr = NEW(EqExpr)(NEW(NumExpr)(1), NEW(AddExpr)(NEW(NumExpr)(2), NEW(NumExpr)(3)));
+        PTR(Val) result = testExpr->interp();
         CHECK((result)->to_string() == "_false");
         //std::cout << "testBool: " << (new BoolExpr(true))->interp()->to_string() << std::endl;
 
     }
 
     SECTION("1 + 1 == 2 + 0 evaluates to _true", "[EqExpr]") {
-        expr* testExpr = NEW(EqExpr)(NEW(AddExpr)(NEW(NumExpr)(1), NEW(NumExpr)(1)), NEW(AddExpr)(NEW(NumExpr)(2), NEW(NumExpr)(0)));
-        Val* result = testExpr->interp();
+        PTR(expr) testExpr = NEW(EqExpr)(NEW(AddExpr)(NEW(NumExpr)(1), NEW(NumExpr)(1)), NEW(AddExpr)(NEW(NumExpr)(2), NEW(NumExpr)(0)));
+        PTR(Val) result = testExpr->interp();
         CHECK((result)->to_string() == "_true");
     }
 }

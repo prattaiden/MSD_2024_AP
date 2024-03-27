@@ -14,10 +14,10 @@
 #include <cstddef>
 
 template <typename T>
-class ConcurrentQueue {
+class SerialQueue {
 
 public:
-   ConcurrentQueue() :
+   SerialQueue() :
       head_( new Node{ T{}, nullptr } ), size_( 0 )
    {
       tail_ = head_;
@@ -25,12 +25,13 @@ public:
 
     //adds a new node at the tail of the linked list
    void enqueue( const T & x ) {
-       Node* node = new Node(x, nullptr); //creating a new node from data passed in
+       Node* node = new Node(x, nullptr); //creating a new node from data passed in, pointing at nothing
        if(size_ == 0){
            head_->next = node;
        }
        tail_->next = node;
        tail_ = node;
+       //node->next = head_->next;// todo ????? in 0?
        size_++;
    }
 
@@ -54,7 +55,7 @@ public:
        size_--;
    }
 
-   ~ConcurrentQueue() {
+   ~SerialQueue() {
 
       while( head_ != nullptr ) {
          Node* temp = head_->next;
