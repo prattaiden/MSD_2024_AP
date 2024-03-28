@@ -47,7 +47,6 @@ public class Shared {
         certificate.verify(caCertificate.getPublicKey());
         signature.update(dhKey);
         return signature.verify(dhSignedKey);
-
     }
 
 

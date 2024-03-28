@@ -1,6 +1,14 @@
+////////////////////////////////////////////////////////////////////////
 //
-// Created by Aiden Pratt on 3/25/24.
+// Author: Aiden Pratt
+// Date: 3/25/2024
 //
+// CS 6013
+//
+//
+//
+////////////////////////////////////////////////////////////////////////
+
 #include <cassert>
 #include "iostream"
 #include "SerialQueue.hpp"
@@ -53,6 +61,30 @@ void static_test2(){
     assert(stat_queue.size() == 3);
 }
 
+//todo DYNAMIC IS RUN IT THROUGH A LOOP WHERE YOU CAN CONTROL THE NUMBER OF INSERTS AND NUMBER OF DELETIONS
+
+void new_dynamic_enqueue_test(){
+    SerialQueue<int> *dyn_queue_char = new SerialQueue<int>();
+    for(int i = 0; i < 100; i++){
+        dyn_queue_char->enqueue(i);
+    }
+    assert(dyn_queue_char->size() == 100);
+}
+
+void new_dynamic_dequeue_test(){
+    SerialQueue<int> *dyn_queue_char = new SerialQueue<int>();
+    for(int i = 0; i < 100; i++){
+        dyn_queue_char->enqueue(i);
+    }
+    assert(dyn_queue_char->size() == 100);
+
+   int value;
+    for(int i = 0; i < 100; i++){
+        dyn_queue_char->dequeue(&value);
+        assert(value == i);
+    }
+}
+
 void dynamic_enqueue_test() {
     SerialQueue<int>* dyn_queue = new SerialQueue<int>();
     dyn_queue->enqueue(1);
@@ -85,6 +117,9 @@ void dynamic_dequeue_test() {
 int main(){
 
     //print_queue_tests();
+    new_dynamic_enqueue_test();
+    new_dynamic_dequeue_test();
+
     static_test2();
     static_enqueue_test();
     static_dequeue_test();

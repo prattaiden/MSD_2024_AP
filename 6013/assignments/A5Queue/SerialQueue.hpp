@@ -25,13 +25,12 @@ public:
 
     //adds a new node at the tail of the linked list
    void enqueue( const T & x ) {
-       Node* node = new Node(x, nullptr); //creating a new node from data passed in, pointing at nothing
-       if(size_ == 0){
-           head_->next = node;
-       }
+       Node* node = new Node(x, nullptr); //creating a new node from data passed in, pointing at nullptr
+//       if(size_ == 0){
+//           head_->next = node;
+//       }
        tail_->next = node;
        tail_ = node;
-       //node->next = head_->next;// todo ????? in 0?
        size_++;
    }
 
@@ -43,16 +42,15 @@ public:
        if(size_ == 0 || ret == nullptr){
            return false;
        }
-       *ret = head_->next->data; //data in the node to be removed
-       Node* temp_head = head_->next;
-        head_->next = temp_head->next;//head is now pointing to the next next node
-       delete temp_head; //remove that first node
-
-       //if removing last node, set tail to head
-       if(head_->next == nullptr){
-           tail_ = nullptr;//queue is empty now
-       }
+       *ret = head_->next->data; //data in what will be the new head node/garbage
+       Node* temp = head_;
+        head_ = head_->next;//head is now pointing to the next node
+       delete temp; //remove that first node(garbage node)
+//       if(head_->next == nullptr){
+//           tail_ = head_;//queue is empty now
+//       }
        size_--;
+       return true;
    }
 
    ~SerialQueue() {

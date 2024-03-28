@@ -13,4 +13,6 @@ add_executable(msdscript2 main.cpp expr.cpp cmdline.cpp
         Val.cpp
         Val.h
         pointer.h
+        Env.cpp
+        Env.h
 )
