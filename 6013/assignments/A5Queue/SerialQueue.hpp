@@ -26,9 +26,6 @@ public:
     //adds a new node at the tail of the linked list
    void enqueue( const T & x ) {
        Node* node = new Node(x, nullptr); //creating a new node from data passed in, pointing at nullptr
-//       if(size_ == 0){
-//           head_->next = node;
-//       }
        tail_->next = node;
        tail_ = node;
        size_++;
@@ -44,11 +41,8 @@ public:
        }
        *ret = head_->next->data; //data in what will be the new head node/garbage
        Node* temp = head_;
-        head_ = head_->next;//head is now pointing to the next node
+       head_ = head_->next;//head is now pointing to the next node
        delete temp; //remove that first node(garbage node)
-//       if(head_->next == nullptr){
-//           tail_ = head_;//queue is empty now
-//       }
        size_--;
        return true;
    }

@@ -29,7 +29,7 @@ int main(int argc, char** argv){
                 break;
             case do_interp:
                 n = parse_expr(std::cin);
-                std::cout << n->interp() << "\n" ;
+                std::cout << n->interp(Env::empty) << "\n" ;
                 break;
             case do_pretty_print:
                 n = parse_expr(std::cin);

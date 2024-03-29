@@ -9,6 +9,7 @@
 #include <sstream>
 #include "Val.h"
 #include "pointer.h"
+#include "Env.h"
 
 /**
  * \author Aiden Pratt
@@ -33,9 +34,9 @@ bool expr::equals(PTR(expr)e) {
  *\brief definition for interp in expr
  *\return 0
  */
-PTR(Val) expr::interp() {
-    return NEW(NumVal)(0);
-}
+//PTR(Val) expr::interp(PTR(Env) env) {
+//    return NEW(NumVal)(0);
+//}
 
 //------------------------------------------NUM--------------------------------------------------------//
 /**
@@ -63,7 +64,7 @@ bool NumExpr::equals(PTR(expr)e) {
  * \brief interps the num value
  * \return the val of this num object
  */
-PTR(Val) NumExpr::interp() {
+PTR(Val) NumExpr::interp(PTR(Env) env) {
     return NEW(NumVal)(this->val);
 }
 /**
@@ -124,8 +125,8 @@ bool VarExpr::equals(PTR(expr)e) {
 /**
  * \brief interp implementation for var, returns a runtime error
  */
-PTR(Val) VarExpr::interp(){
-    throw std::runtime_error("no value for variable");
+PTR(Val) VarExpr::interp(PTR(Env)env){
+    throw env->lookup(var);
 }
 
 /**
@@ -195,8 +196,8 @@ bool AddExpr::equals(PTR(expr)e) {
  * \brief interps the add object mathematically
  * \return return the mathematical addition equation of of name and value
  */
-PTR(Val)AddExpr::interp(){
-    return this->lhs->interp()->add_to(this->rhs->interp());
+PTR(Val)AddExpr::interp(PTR(Env)env){
+    return (this->lhs->interp(env)->add_to(this->rhs->interp(env)));
 }
 
 /**
@@ -277,8 +278,8 @@ bool MultExpr::equals(PTR(expr)e) {
  * \brief interps the mult object mathematically
  * \return return the mathematical addition equation of of name and value
  */
-PTR(Val)MultExpr::interp(){
-    return this->lhs->interp()->mult_to(this->rhs->interp());
+PTR(Val)MultExpr::interp(PTR(Env)env){
+    return this->lhs->interp(env)->mult_to(this->rhs->interp(env));
 }
 
 /**
@@ -351,9 +352,10 @@ bool LetExpr::equals(PTR(expr)e) {
     }
 }
 
-PTR(Val)LetExpr::interp() {
-    PTR(expr)newExpr = this->body->subst(this->name, this->value);
-    return newExpr->interp();
+PTR(Val)LetExpr::interp(PTR(Env)env) {
+    PTR(Val) rhsResult = this->body->interp(env);
+    PTR(Env) new_env = NEW(ExtendedEnv)(name, rhsResult, env);
+    return this->body->interp(new_env);
 }
 
 bool LetExpr::has_variable(){
@@ -429,8 +431,8 @@ bool EqExpr::equals(PTR(expr)e) {
     }
 }
 
-PTR(Val)EqExpr::interp() {
-    return NEW(BoolVal)(lhs->interp()->equals(rhs->interp()));
+PTR(Val)EqExpr::interp(PTR(Env)env) {
+    return NEW(BoolVal)(lhs->interp(env)->equals(rhs->interp(env)));
 }
 
 void EqExpr::print(std::ostream&  ostream){
@@ -473,12 +475,12 @@ bool IfExpr::equals(PTR(expr)e) {
     }
 }
 
-PTR(Val)IfExpr::interp() {
-    if(IfPart->interp()->is_true()){
-        return ThenPart->interp();
+PTR(Val)IfExpr::interp(PTR(Env)env) {
+    if(IfPart->interp(env)->is_true()){
+        return ThenPart->interp(env);
     }
     else{
-        return ElsePart->interp();
+        return ElsePart->interp(env);
     }
 }
 
@@ -554,7 +556,7 @@ bool BoolExpr::equals(PTR(expr)e) {
     }
 }
 //todo
-PTR(Val)BoolExpr::interp() {return NEW(BoolVal)(TF);}
+PTR(Val)BoolExpr::interp(PTR(Env)env) {return NEW(BoolVal)(TF);}
 
 
 void BoolExpr::print(std::ostream &ostream) {
@@ -629,8 +631,8 @@ void FunExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs
 //}
 }
 
-PTR(Val)FunExpr::interp(){
-    return NEW(FunVal) (formal_arg, body);
+PTR(Val)FunExpr::interp(PTR(Env)env){
+    return NEW(FunVal) (formal_arg, body, env);
 }
 
 //------------------------------------------CALL--------------------------------------------------------//
@@ -655,8 +657,8 @@ bool CallExpr::equals(PTR(expr)e) {
     return(this->to_be_called == a->to_be_called && this->actual_arg == a->actual_arg);
 }
 
-PTR(Val) CallExpr::interp() {
-    return to_be_called->interp()->call((actual_arg)->interp());
+PTR(Val) CallExpr::interp(PTR(Env)env) {
+    return to_be_called->interp(env)->call((actual_arg)->interp(env));
 }
 
 void CallExpr::print(std::ostream &ostream) {

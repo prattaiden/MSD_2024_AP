@@ -5,8 +5,12 @@
 #ifndef MSDSCRIPT2_ENV_H
 #define MSDSCRIPT2_ENV_H
 
+#include <string>
 #include "pointer.h"
-#include "val.h"
+
+class Val;
+class expr;
+
 
 class Env {
 public:
@@ -19,9 +23,7 @@ class EmptyEnv : public Env{
 public:
     EmptyEnv();
 
-    PTR(Val) lookup(std::string find_name){
-        throw std::runtime_error("free variable: " + find_name);
-    }
+    PTR(Val) lookup(std::string find_name) override;
 };
 
 class ExtendedEnv : public Env{
@@ -31,14 +33,7 @@ public:
     PTR(Env) rest;
     ExtendedEnv(std::string name, PTR(Val) val , PTR(Env) rest);
 
-    PTR(Val) lookup(std::string find_name){
-        if(find_name == name){
-            return val;
-        }
-        else{
-            return rest->lookup(find_name);
-        }
-    }
+    PTR(Val) lookup(std::string find_name) override;
 };
 
 

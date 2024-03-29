@@ -64,6 +64,10 @@ void NumVal::print(std::ostream &os) {
     os << std::to_string(val);
 }
 
+std::string NumVal::to_string(){
+    return std::to_string(val);
+}
+
 //-------------------------------BOOlVAL--------------------------------//
 
 BoolVal::BoolVal(bool TF) {
@@ -109,10 +113,20 @@ void BoolVal::print(std::ostream &os) {
     os << (TF ? "_true" : "_false");
 }
 
+std::string BoolVal::to_string(){
+    if(TF){
+        return "_true";
+    }
+    else{
+        return "_false";
+    }
+}
+
 //------------------------------FUNVAL-------------------------------//
-FunVal::FunVal(std::string formal_arg, PTR(expr)body) {
+FunVal::FunVal(std::string formal_arg, PTR(expr)body, PTR(Env) env) {
     this->formal_arg = formal_arg;
     this-> body = body;
+    this->env = env;
 }
 
 PTR(expr)FunVal::to_expr() {
@@ -138,7 +152,7 @@ PTR(Val)FunVal::mult_to(PTR(Val)other_val) {
 }
 
 PTR(Val)FunVal::call(PTR(Val)actual_arg) const {
-    return body->subst(formal_arg, actual_arg->to_expr())->interp();
+    return body->subst(formal_arg, actual_arg->to_expr())->interp(env);
 }
 
 bool FunVal::is_true() {
@@ -146,6 +160,10 @@ bool FunVal::is_true() {
 }
 
 void FunVal::print(std::ostream &ostream){
+}
+
+std::string FunVal::to_string(){
+    return "[function]";
 }
 
 

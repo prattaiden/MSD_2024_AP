@@ -7,9 +7,11 @@
 #include <string>
 #include <sstream>
 #include "pointer.h"
+#include "Env.h"
 
 
 class Val;
+class Env;
 
 /**
  * \file expr.h
@@ -37,7 +39,7 @@ CLASS(expr) {
 public:
     virtual ~expr(){};
     virtual bool equals(PTR(expr)e) = 0;//each subclass must override
-    virtual PTR(Val) interp() = 0;
+    virtual PTR(Val) interp(PTR(Env) env) = 0;
     virtual bool has_variable() = 0;
     virtual PTR(expr) subst(std::string string , PTR(expr)e) = 0;
     virtual void print(std::ostream& ostream) = 0;
@@ -71,7 +73,7 @@ public:
     int val; ///< int that will be the Num value
     explicit NumExpr(int val);
     bool equals(PTR(expr)e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env) env) override;
     bool has_variable() override;
     PTR(expr) subst(std::string string , PTR(expr)e) override;
     void print(std::ostream &ostream) override;
@@ -89,7 +91,7 @@ public:
     std::string var; ///< string that will be the var
     VarExpr(std::string var);
     bool equals(PTR(expr) e) override;
-    PTR (Val) interp() override;
+    PTR (Val) interp(PTR(Env) env) override;
     bool has_variable() override;
     PTR (expr) subst(std::string string , PTR(expr)e) override;
     void print(std::ostream &ostream) override;
@@ -107,7 +109,7 @@ public:
     PTR(expr)rhs; ///< right hands side expression of Add class
     AddExpr(PTR(expr)lhs, PTR(expr)rhs);
     bool equals(PTR(expr)e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env) env) override;
     bool has_variable() override;
     PTR(expr) subst(std::string string , PTR(expr)e)override;
     void print(std::ostream &ostream) override;
@@ -125,7 +127,7 @@ public:
     PTR(expr)rhs; ///< right hands side expression of Mult class
     MultExpr(PTR(expr)lhs, PTR(expr)rhs);
     bool equals(PTR(expr)e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env) env) override;
     bool has_variable() override;
     PTR(expr) subst(std::string string , PTR(expr)e) override;
     void print(std::ostream &ostream) override;
@@ -140,7 +142,7 @@ public:
     PTR(expr)body;
     LetExpr(std::string lhsVar, PTR(expr)rhs, PTR(expr)body);
     bool equals(PTR(expr)e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env) env) override;
     bool has_variable() override;
     PTR(expr) subst(std::string string, PTR(expr)e) override;
     void print(std::ostream & ostream) override;
@@ -156,7 +158,7 @@ public:
     bool has_variable() override;
     bool equals(PTR(expr)e) override;
     PTR(expr) subst(std::string string , PTR(expr)e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env) env) override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };
@@ -171,7 +173,7 @@ public:
 
     bool has_variable() override;
     bool equals(PTR(expr) e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env)env) override;
     PTR(expr)subst(std::string string , PTR(expr)e) override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
@@ -187,7 +189,7 @@ public:
     bool has_variable() override;
     PTR(expr) subst(std::string string , PTR(expr)e) override;
     bool equals(PTR(expr)e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env) env) override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 
@@ -202,7 +204,7 @@ public:
     bool has_variable() override;
     PTR(expr) subst(std::string string , PTR(expr)e) override;
     bool equals(PTR(expr)e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env) env) override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
     FunExpr(std::string formal_arg, PTR(expr) body);
@@ -219,7 +221,7 @@ public:
     bool has_variable() override;
     PTR(expr) subst(std::string string , PTR(expr)e) override;
     bool equals(PTR(expr)e) override;
-    PTR(Val) interp() override;
+    PTR(Val) interp(PTR(Env)env) override;
     void print(std::ostream& ostream) override;
     void pretty_print(std::ostream& ostream, precedence_t p, bool let_needs_parenthesis, int pos) override;
 };

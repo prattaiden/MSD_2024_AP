@@ -55,6 +55,12 @@ build CMakeFiles/A5Queue.dir/SerialQueue.cpp.o: CXX_COMPILER__A5Queue_unscanned_
   OBJECT_DIR = CMakeFiles/A5Queue.dir
   OBJECT_FILE_DIR = CMakeFiles/A5Queue.dir
 
+build CMakeFiles/A5Queue.dir/ConcurrentQueueTests.cpp.o: CXX_COMPILER__A5Queue_unscanned_Debug /Users/aidenpratt/Documents/Documents$ -$ Aiden’s$ MacBook$ Pro/MSD-2024/MSD_2024_AP/6013/assignments/A5Queue/ConcurrentQueueTests.cpp || cmake_object_order_depends_target_A5Queue
+  DEP_FILE = CMakeFiles/A5Queue.dir/ConcurrentQueueTests.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/A5Queue.dir
+  OBJECT_FILE_DIR = CMakeFiles/A5Queue.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target A5Queue
@@ -63,7 +69,7 @@ build CMakeFiles/A5Queue.dir/SerialQueue.cpp.o: CXX_COMPILER__A5Queue_unscanned_
 #############################################
 # Link the executable A5Queue
 
-build A5Queue: CXX_EXECUTABLE_LINKER__A5Queue_Debug CMakeFiles/A5Queue.dir/SerialQueue.cpp.o
+build A5Queue: CXX_EXECUTABLE_LINKER__A5Queue_Debug CMakeFiles/A5Queue.dir/SerialQueue.cpp.o CMakeFiles/A5Queue.dir/ConcurrentQueueTests.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
   OBJECT_DIR = CMakeFiles/A5Queue.dir
   POST_BUILD = :

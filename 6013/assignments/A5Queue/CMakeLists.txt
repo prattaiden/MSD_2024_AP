@@ -7,4 +7,6 @@ add_executable(A5Queue
         SerialQueue.hpp
         SerialQueue.cpp
         ConcurrentQueue.hpp
+        ConcurrentQueueTests.cpp
+        ConcurrentQueueTests.h
 )

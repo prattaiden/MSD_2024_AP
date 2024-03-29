@@ -9,8 +9,10 @@
 #include <iostream>
 #include "expr.h"
 #include "pointer.h"
+#include "Env.h"
 
 class expr;
+class Env;
 
 CLASS (Val) {
 public:
@@ -23,11 +25,7 @@ public:
     virtual bool is_true() = 0;
     virtual PTR(Val) call(PTR(Val) actual_arg) const = 0;
 
-    std::string to_string(){
-        std::stringstream st("");
-        THIS->print(st);
-        return st.str();
-    }
+    virtual std::string to_string() = 0;
 };
 
 
@@ -35,6 +33,7 @@ class NumVal : public Val {
 public:
     int val;
     explicit NumVal(int val);
+    std::string to_string() override;
     bool equals(PTR(Val)e) override;
     virtual void print(std::ostream &os) override;
     PTR(Val) add_to(PTR(Val) other_val) override;
@@ -49,6 +48,7 @@ class BoolVal : public Val{
 public:
     bool TF;
     BoolVal(bool TF);
+    std::string to_string() override;
     bool equals(PTR(Val)e) override;
     virtual void print(std::ostream &os) override;
     PTR(Val) add_to(PTR(Val) other_val) override;
@@ -62,7 +62,9 @@ class FunVal : public Val{
 public:
     std::string formal_arg;
     PTR(expr) body;
-    FunVal(std::string formal_arg, PTR(expr) body);
+    PTR(Env) env;
+    FunVal(std::string formal_arg, PTR(expr) body, PTR(Env) env);
+    std::string to_string() override;
     PTR(expr) to_expr() override;
     bool equals (PTR(Val)v) override;
     PTR(Val) add_to(PTR(Val) other_val) override;

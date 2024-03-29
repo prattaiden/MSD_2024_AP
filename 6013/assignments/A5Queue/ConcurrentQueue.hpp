@@ -12,6 +12,8 @@
 ////////////////////////////////////////////////////////////////////////
 
 #include <cstddef>
+#include <mutex>
+
 
 template <typename T>
 class ConcurrentQueue {
@@ -25,13 +27,16 @@ public:
 
     //adds a new node at the tail of the linked list
     void enqueue( const T & x ) {
-        Node* node = new Node(x, nullptr); //creating a new node from data passed in
-        if(size_ == 0){
+        Node *node = new Node(x, nullptr); //creating a new node from data passed in
+        if (size_ == 0) {
             head_->next = node;
         }
+        {//lock
+        std::unique_lock<std::mutex> lock(mutex_);
         tail_->next = node;
         tail_ = node;
         size_++;
+        }
     }
 
     //dequeue( T * ret ) removes a node from the head of the linked list,
@@ -39,19 +44,23 @@ public:
     // If the queue is empty, dequeue returns false.
     // If an element was dequeued successfully, dequeue returns true.
     bool dequeue( T * ret ) {
-        if(size_ == 0 || ret == nullptr){
-            return false;
-        }
-        *ret = head_->next->data; //data in the node to be removed
-        Node* temp_head = head_->next;
-        head_->next = temp_head->next;//head is now pointing to the next next node
-        delete temp_head; //remove that first node
+        {//lock
+            std::unique_lock<std::mutex> lock(mutex_);
+            if (size_ == 0 || ret == nullptr) {
+                return false;
+            }
+            *ret = head_->next->data; //data in the node to be removed
+            Node *temp_head = head_->next;
+            head_->next = temp_head->next;//head is now pointing to the next next node
+            delete temp_head; //remove that first node
 
-        //if removing last node, set tail to head
-        if(head_->next == nullptr){
-            tail_ = nullptr;//queue is empty now
+            //if removing last node, set tail to head
+            if (head_->next == nullptr) {
+                tail_ = nullptr;//queue is empty now
+            }
+            size_--;
+            return true;
         }
-        size_--;
     }
 
     ~ConcurrentQueue() {
@@ -82,4 +91,5 @@ public:
     Node* head_;
     Node* tail_;
     int size_;
+    mutable std::mutex mutex_;
 };
