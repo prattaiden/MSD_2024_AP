@@ -1,6 +1,8 @@
 #include <iostream>
 #include "parse.hpp"
 
+#include "expr.h"
+
 void skip_whitespace(std::istream &in) {
     while (1) {
         int c = in.peek();
@@ -76,8 +78,14 @@ PTR(expr) parse_let(std::istream &in){
 //    }
 
     skip_whitespace(in);
-
-    PTR(expr) var = parse_var(in);
+    int c = in.peek();
+//    PTR(expr) var = parse_var(in);
+    std::string lhs = "";
+    while (isalpha(c)) {
+        lhs+= c;
+        consume(in, c);
+        c = in.peek();
+    }
 
     skip_whitespace(in);
 
@@ -100,7 +108,7 @@ PTR(expr) parse_let(std::istream &in){
 
     PTR(expr) expr2 = parse_expr(in);
 
-    return NEW(LetExpr)(var->to_string(), expr1, expr2);
+    return NEW(LetExpr)(lhs, expr1, expr2);
 
 }
 

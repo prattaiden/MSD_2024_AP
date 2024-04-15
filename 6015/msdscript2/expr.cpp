@@ -2,11 +2,7 @@
 // Created by Aiden Pratt on 1/16/24.
 //
 #include "expr.h"
-#include "catch.h"
-#include <utility>
-#include <stdexcept>
 #include <iostream>
-#include <sstream>
 #include "Val.h"
 #include "pointer.h"
 #include "Env.h"
@@ -19,7 +15,7 @@
  */
 
 
-class Val;
+//class Val;
 
 //------------------------------------------EXPR--------------------------------------------------------//
 /**
@@ -126,7 +122,10 @@ bool VarExpr::equals(PTR(expr)e) {
  * \brief interp implementation for var, returns a runtime error
  */
 PTR(Val) VarExpr::interp(PTR(Env)env){
-    throw env->lookup(var);
+    if(env == nullptr){
+        env = Env::empty;
+    }
+    return env->lookup(this->var);
 }
 
 /**
@@ -197,6 +196,9 @@ bool AddExpr::equals(PTR(expr)e) {
  * \return return the mathematical addition equation of of name and value
  */
 PTR(Val)AddExpr::interp(PTR(Env)env){
+    if(env == nullptr){
+        env = Env::empty;
+    }
     return (this->lhs->interp(env)->add_to(this->rhs->interp(env)));
 }
 
@@ -279,6 +281,9 @@ bool MultExpr::equals(PTR(expr)e) {
  * \return return the mathematical addition equation of of name and value
  */
 PTR(Val)MultExpr::interp(PTR(Env)env){
+    if(env == nullptr){
+        env = Env::empty;
+    }
     return this->lhs->interp(env)->mult_to(this->rhs->interp(env));
 }
 
@@ -353,6 +358,9 @@ bool LetExpr::equals(PTR(expr)e) {
 }
 
 PTR(Val)LetExpr::interp(PTR(Env)env) {
+    if(env == nullptr){
+        env = Env::empty;
+    }
     PTR(Val) rhsResult = this->body->interp(env);
     PTR(Env) new_env = NEW(ExtendedEnv)(name, rhsResult, env);
     return this->body->interp(new_env);
@@ -432,6 +440,9 @@ bool EqExpr::equals(PTR(expr)e) {
 }
 
 PTR(Val)EqExpr::interp(PTR(Env)env) {
+    if(env == nullptr){
+        env = Env::empty;
+    }
     return NEW(BoolVal)(lhs->interp(env)->equals(rhs->interp(env)));
 }
 
@@ -476,6 +487,9 @@ bool IfExpr::equals(PTR(expr)e) {
 }
 
 PTR(Val)IfExpr::interp(PTR(Env)env) {
+    if(env == nullptr){
+        env = Env::empty;
+    }
     if(IfPart->interp(env)->is_true()){
         return ThenPart->interp(env);
     }
@@ -556,7 +570,8 @@ bool BoolExpr::equals(PTR(expr)e) {
     }
 }
 //todo
-PTR(Val)BoolExpr::interp(PTR(Env)env) {return NEW(BoolVal)(TF);}
+PTR(Val)BoolExpr::interp(PTR(Env)env)
+{return NEW(BoolVal)(TF);}
 
 
 void BoolExpr::print(std::ostream &ostream) {
@@ -632,6 +647,9 @@ void FunExpr::pretty_print(std::ostream &ostream, precedence_t p, bool let_needs
 }
 
 PTR(Val)FunExpr::interp(PTR(Env)env){
+    if(env == nullptr){
+        env = Env::empty ;
+    }
     return NEW(FunVal) (formal_arg, body, env);
 }
 
@@ -658,6 +676,9 @@ bool CallExpr::equals(PTR(expr)e) {
 }
 
 PTR(Val) CallExpr::interp(PTR(Env)env) {
+    if(env == nullptr){
+        env = Env::empty;
+    }
     return to_be_called->interp(env)->call((actual_arg)->interp(env));
 }
 

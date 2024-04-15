@@ -3,9 +3,8 @@
 //
 
 #include "Val.h"
-
-#include <utility>
 #include "expr.h"
+#include "Env.h"
 
 bool Val::is_true() {
     return false;
@@ -56,7 +55,7 @@ bool NumVal::is_true() {
     return false;
 }
 
-PTR(Val)NumVal::call(PTR(Val)actual_arg) const {
+PTR(Val)NumVal::call(PTR(Val)actual_arg)  {
     throw std::runtime_error("cannot call numval");
 }
 
@@ -105,7 +104,7 @@ bool BoolVal::is_true() {
     }
 }
 
-PTR(Val)BoolVal::call(PTR(Val)actual_arg) const {
+PTR(Val)BoolVal::call(PTR(Val)actual_arg) {
     throw std::runtime_error("cannot call boolVal");
 }
 
@@ -124,6 +123,9 @@ std::string BoolVal::to_string(){
 
 //------------------------------FUNVAL-------------------------------//
 FunVal::FunVal(std::string formal_arg, PTR(expr)body, PTR(Env) env) {
+    if(env == nullptr){
+        env = Env::empty ;
+    }
     this->formal_arg = formal_arg;
     this-> body = body;
     this->env = env;
@@ -151,8 +153,8 @@ PTR(Val)FunVal::mult_to(PTR(Val)other_val) {
     throw std::runtime_error("funVal cannot be multiplied");
 }
 
-PTR(Val)FunVal::call(PTR(Val)actual_arg) const {
-    return body->subst(formal_arg, actual_arg->to_expr())->interp(env);
+PTR(Val)FunVal::call(PTR(Val)actual_arg) {
+    return this->body->interp(NEW(ExtendedEnv)(this->formal_arg, actual_arg, this->env));
 }
 
 bool FunVal::is_true() {
@@ -160,6 +162,7 @@ bool FunVal::is_true() {
 }
 
 void FunVal::print(std::ostream &ostream){
+    ostream << "function";
 }
 
 std::string FunVal::to_string(){

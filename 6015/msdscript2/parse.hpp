@@ -1,9 +1,11 @@
 
 #ifndef parse_hpp
-#include "expr.h"
+//#include "expr.h"
 #define parse_hpp
 #include <cstdio>
 #include "pointer.h"
+
+ class expr ;
 
  //expr * parse_keyword(std::istream &in);
 PTR(expr) parse_comparg(std::istream &in);

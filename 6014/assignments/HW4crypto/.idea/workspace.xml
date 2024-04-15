@@ -21,11 +21,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcfa7054-8671-4a75-ab00-d073b2fcc180" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/PrattQT/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/PrattQT/PrattQT.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/PrattQT/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/PrattQT/mainwidget.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/PrattQT/mainwidget.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTPart2MsdScript/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTPart2MsdScript/QTPart2MsdScript.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTPart2MsdScript/msdscriptgui.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTPart2MsdScript/msdscriptgui.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTp2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTp2/QTp2.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTp2/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTp2/msdscriptgui.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../6015/QTp2/msdscriptgui.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/A5Queue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/A5Queue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/ConcurrentQueue.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/ConcurrentQueue.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/ConcurrentQueueTests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/ConcurrentQueueTests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/SerialQueue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/SerialQueue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/SerialQueue.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/SerialQueue.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/A5Queue" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/A5Queue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/CMakeFiles/A5Queue.dir/ConcurrentQueueTests.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/CMakeFiles/A5Queue.dir/ConcurrentQueueTests.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6013/assignments/A5Queue/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/HW4crypto" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/HW4crypto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/Env.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/Env.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/Env.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/Env.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/Val.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/Val.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/Val.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/Val.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/cmdline.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/cmdline.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/expr.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/expr.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/parse.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/parse.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/test_msdscript.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/test_msdscript.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/tests.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/CMakeFiles/msdscript2.dir/tests.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/expr.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/expr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/msdscript" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/parse.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/parse.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/parse.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../6015/msdscript2/tests.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +131,7 @@
       <workItem from="1708625170508" duration="24774000" />
       <workItem from="1708879940147" duration="82000" />
       <workItem from="1708898040198" duration="2176000" />
+      <workItem from="1712778759276" duration="2165000" />
     </task>
     <servers />
   </component>

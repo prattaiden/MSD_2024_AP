@@ -8,7 +8,7 @@
 // CS 6013
 //
 //
-//
+//implementation of concurrent queue utilizing locks for the threads
 ////////////////////////////////////////////////////////////////////////
 
 #include <cstddef>
@@ -25,17 +25,30 @@ public:
         tail_ = head_;
     }
 
+    int calculateTotalSize() const {
+        int totalSize = 0;
+
+        Node* current = head_->next;  // Skip the dummy head node
+
+        while (current != nullptr) {
+            totalSize++;
+            current = current->next;
+        }
+
+        return totalSize;
+    }
+
     //adds a new node at the tail of the linked list
     void enqueue( const T & x ) {
         Node *node = new Node(x, nullptr); //creating a new node from data passed in
-        if (size_ == 0) {
-            head_->next = node;
-        }
-        {//lock
+//        if (size_ == 0) {
+//            head_->next = node;
+//        }
+        {//lock scope
         std::unique_lock<std::mutex> lock(mutex_);
         tail_->next = node;
         tail_ = node;
-        size_++;
+        //size_++;
         }
     }
 
@@ -44,21 +57,17 @@ public:
     // If the queue is empty, dequeue returns false.
     // If an element was dequeued successfully, dequeue returns true.
     bool dequeue( T * ret ) {
-        {//lock
+        {//lock scope
             std::unique_lock<std::mutex> lock(mutex_);
-            if (size_ == 0 || ret == nullptr) {
-                return false;
-            }
+//            if (size_ == 0 || ret == nullptr) {
+//                return false;
+//            }
             *ret = head_->next->data; //data in the node to be removed
-            Node *temp_head = head_->next;
-            head_->next = temp_head->next;//head is now pointing to the next next node
+            Node *temp_head = head_;
+            head_ = head_->next;//head is now pointing to the next next node
             delete temp_head; //remove that first node
 
-            //if removing last node, set tail to head
-            if (head_->next == nullptr) {
-                tail_ = nullptr;//queue is empty now
-            }
-            size_--;
+            //size_--;
             return true;
         }
     }
@@ -71,6 +80,8 @@ public:
             head_ = temp;
         }
     }
+
+
 
     int size() const { return size_; }
 

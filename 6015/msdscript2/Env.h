@@ -9,21 +9,21 @@
 #include "pointer.h"
 
 class Val;
-class expr;
+//class expr;
 
 
-class Env {
+CLASS(Env) {
 public:
     static PTR(Env) empty;
     virtual PTR(Val) lookup(std::string find_name) = 0;
-
+    virtual ~Env() = default ;
 };
 
 class EmptyEnv : public Env{
 public:
-    EmptyEnv();
+    EmptyEnv() = default;
 
-    PTR(Val) lookup(std::string find_name) override;
+    PTR(Val) lookup(std::string find_name);
 };
 
 class ExtendedEnv : public Env{

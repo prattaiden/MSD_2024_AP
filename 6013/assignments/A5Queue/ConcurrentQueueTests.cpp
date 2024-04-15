@@ -1,7 +1,13 @@
-//
-// Created by Aiden Pratt on 3/29/24.
-//
-
+//////////////////////////////////////////////////////////////////////////
+////
+//// Author: Aiden Pratt
+//// Date: 3/25/2024
+////
+//// CS 6013
+////
+////
+////test file for concurrent queue and threads
+//////////////////////////////////////////////////////////////////////////
 #include "ConcurrentQueue.hpp"
 #include <vector>
 #include <iostream>
@@ -29,10 +35,14 @@ bool testQueue( int num_producers, int num_consumers, int num_ints ) {
             }
         }));
     }
+    //waiting for all threads to join
     for(std::thread& thread : threads){
         thread.join();
     }
-    return concurrentQueue.size() == (num_producers - num_consumers)*num_ints;
+    std::cout << concurrentQueue.size() << "\n";
+    std::cout << concurrentQueue.calculateTotalSize() << "\n";
+
+    return concurrentQueue.calculateTotalSize() == (num_producers - num_consumers)*num_ints;
 }
 
 
@@ -49,6 +59,6 @@ int main(int argc, char** argv){
         std::cout << "tests passed\n";
     }
     else{
-        std::cout << "failed test\n";
+        std::cout << "failed test, resulted in false \n";
     }
 }

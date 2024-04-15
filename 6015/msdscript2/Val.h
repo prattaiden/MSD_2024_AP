@@ -7,7 +7,6 @@
 
 #include <string>
 #include <iostream>
-#include "expr.h"
 #include "pointer.h"
 #include "Env.h"
 
@@ -23,7 +22,7 @@ public:
     virtual void print(std::ostream &os) = 0;
     virtual PTR(expr) to_expr() = 0;
     virtual bool is_true() = 0;
-    virtual PTR(Val) call(PTR(Val) actual_arg) const = 0;
+    virtual PTR(Val) call(PTR(Val) actual_arg) = 0;
 
     virtual std::string to_string() = 0;
 };
@@ -40,7 +39,7 @@ public:
     PTR(Val) mult_to(PTR(Val) other_val) override;
     PTR(expr) to_expr() override;
     bool is_true() override;
-    PTR(Val) call(PTR(Val) actual_arg) const override;
+    PTR(Val) call(PTR(Val) actual_arg) override;
 
 };
 
@@ -55,7 +54,7 @@ public:
     PTR(Val) mult_to(PTR(Val) other_val) override;
     PTR(expr) to_expr() override;
     bool is_true() override;
-    PTR(Val) call(PTR(Val) actual_arg) const override;
+    PTR(Val) call(PTR(Val) actual_arg) override;
 };
 
 class FunVal : public Val{
@@ -63,7 +62,7 @@ public:
     std::string formal_arg;
     PTR(expr) body;
     PTR(Env) env;
-    FunVal(std::string formal_arg, PTR(expr) body, PTR(Env) env);
+    FunVal(std::string formal_arg, PTR(expr) body, PTR(Env) env = nullptr);
     std::string to_string() override;
     PTR(expr) to_expr() override;
     bool equals (PTR(Val)v) override;
@@ -71,7 +70,7 @@ public:
     PTR(Val) mult_to(PTR(Val) other_val) override;
     void print(std::ostream &ostream) override;
     bool is_true() override;
-    PTR(Val) call(PTR(Val) actual_arg) const override;
+    PTR(Val) call(PTR(Val) actual_arg)  override;
 };
 
 #endif //MSDSCRIPT2_VAL_H
