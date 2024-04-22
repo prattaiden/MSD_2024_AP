@@ -4,5 +4,8 @@
         <file>images/bucket.png</file>
         <file>images/cloud.png</file>
         <file>images/water.gif</file>
+        <file>images/profile1.png</file>
+        <file>images/profile2.png</file>
+        <file>images/profile3.png</file>
     </qresource>
 </RCC>

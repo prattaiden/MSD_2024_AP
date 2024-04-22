@@ -18,7 +18,7 @@ QTimer* droplet::getTimer()const{
 }
 
 void droplet::moveDroplet(){
-    setPos(x(),y() + 30);
+    setPos(x(),y() + dropletSpeed); //speed of the droplet
 
     QList<QGraphicsItem*> collidingItemsList = collidingItems();
     foreach (QGraphicsItem* item, collidingItemsList)
@@ -27,12 +27,19 @@ void droplet::moveDroplet(){
         {
             // Handle collision with bucket
             qDebug() << "Bucket collision detected!";
+            emit collide();
             delete this;
             return;
         }
     }
 
     if(this->y() > 700){
+        emit damageCounter();
         delete this;
+
     }
+}
+
+void droplet::updateSpeed(){
+    dropletSpeed *= 2;
 }

@@ -11,6 +11,16 @@
 
 //todo clang++ -std=c++17 -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include -L/opt/homebrew/opt/libomp/lib -lomp main.cpp -o main
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////
+//////////////////////author: Aiden Pratt
+//////////////////////6013: assignment 6 threading
+//////////////////////descrpition:
+//////////////////////This document contains the implementation of three methods I wrote which compute the sume of the elements within an array
+//////////////////////each implementation utilizes a different strategy for parallel threading, utilizing the computers hardware to hopefully
+//////////////////////increase the efficiency and decrease the run time for this summation to be made
+//////////////////////this document also contains tests for weak scaling and strong scaling which the results are utilized as graphs in an analysis document
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 template<typename T>
 struct result {
@@ -164,7 +174,7 @@ template<typename T>
 void weak_scaling(std::function<result<T>(T[], size_t , size_t)> func){
     const size_t min_threads = 1;
     const size_t max_threads =16;
-    const size_t min_N = 100000;
+    const size_t min_N = 200000;
     const size_t max_N = 1000000;
 
     for (size_t num_threads = min_threads; num_threads <= max_threads; num_threads++) {
@@ -208,7 +218,7 @@ int main() {
     weak_scaling<int>(parallel_sum_omp_builtin<int>);
 
 
-//-------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------v---------------//
 
     //initial tests:
 //    const size_t N = 1000000;

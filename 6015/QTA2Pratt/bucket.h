@@ -11,7 +11,13 @@ class bucket : public QObject, public QGraphicsPixmapItem
 
 public:
     bucket();
-    void keyPressEvent(QKeyEvent *event);
+    void keyPressEvent(QKeyEvent *event) override;
+    void focusInEvent(QFocusEvent *event) override;
+
+
+signals:
+    void moved();
+
 };
 
 #endif // BUCKET_H

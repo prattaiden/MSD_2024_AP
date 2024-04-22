@@ -1,0 +1,9 @@
+# ninja log v5
+0	188	1713283332985674398	untitled_autogen/timestamp	187a6cd81bfa6f40
+0	188	1713283332985674398	untitled_autogen/mocs_compilation.cpp	187a6cd81bfa6f40
+0	188	1713283332985674398	/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/untitled_autogen/timestamp	187a6cd81bfa6f40
+0	188	1713283332985674398	/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/untitled_autogen/mocs_compilation.cpp	187a6cd81bfa6f40
+189	927	1713283333725541539	CMakeFiles/untitled.dir/main.cpp.o	8d32b8dc096bb5bb
+189	931	1713283333728625672	CMakeFiles/untitled.dir/untitled_autogen/mocs_compilation.cpp.o	f36ecdb6e4f96571
+189	941	1713283333740010367	CMakeFiles/untitled.dir/mainwindow.cpp.o	dfb191af1c46ff08
+941	1041	1713283333841705645	untitled.app/Contents/MacOS/untitled	5e79770cbe5a610a

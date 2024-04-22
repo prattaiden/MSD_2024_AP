@@ -12,11 +12,21 @@ class droplet : public QObject, public QGraphicsPixmapItem
 public:
     droplet();
     QTimer *getTimer() const;
-     void moveDroplet();
+    void moveDroplet();
+
+    void updateSpeed();
+
+
+signals:
+    void collide();
+    void damageCounter();
+
 
 
 private:
      QTimer *dropTimer;
+     int dropletSpeed = 20;
+
 
 
 };

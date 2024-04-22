@@ -1,0 +1,9 @@
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/untitled.dir
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/edit_cache.dir
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/rebuild_cache.dir
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/list_install_components.dir
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/install.dir
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/install/local.dir
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/install/strip.dir
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/untitled_autogen_timestamp_deps.dir
+/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6015/untitled/build/Qt_6_7_0_for_macOS-Debug/CMakeFiles/untitled_autogen.dir

@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/background.jpg</file>
+        <file>images/bucket.png</file>
+        <file>images/cloud.png</file>
+        <file>images/water.gif</file>
+        <file>images/profile1.png</file>
+        <file>images/profile2.png</file>
+        <file>images/profile3.png</file>
+        <file>images/diamond.png</file>
+        <file>images/cave.jpg</file>
+        <file>images/miner.png</file>
+        <file>sounds/575193__nodgez__diamond-slot.wav</file>
+        <file>sounds/726508__sakurayo__diamond.mp3</file>
+        <file>images/guest.jpeg</file>
+    </qresource>
+</RCC>
