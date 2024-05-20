@@ -13,4 +13,28 @@ video for super key and
 super key: set of attributes that can uniquely identify each row
 
 keys video
+https://www.youtube.com/watch?v=_UZLrD_R0T4
+
 identify unique tuples
+
+
+keys in rdbms
+
+super key:
+  like superset
+  all possible keys that can be formed from a relation or a table
+
+5/16
+key and super key
+no tuples contain duplicates
+
+
+foreign key constraint
+
+delete corresponding records - cascade
+
+nullify foreign key
+
+disallow changes to the reference table
+
+lab
