@@ -27,3 +27,59 @@ PANDA
 series object
 each entry in the series has as key and a value
 if dont provide key, it is integer 0 -
+
+5/21
+intro to visualization
+
+matplotlib
+
+np.meshgrid(ax,ax)
+
+5/22
+test statistic
+
+bernoili distribution
+
+hypothesis testing
+t test
+z tests
+
+5/23
+
+box plot of all the values for HW1
+
+linear regression
+- predictions
+assume that as change sqft a little price change a little
+
+predict closest value nearest neighbor
+best?
+do my predictions match the data
+
+prediction for particular point
+bo bi xi
+
+best line - arg min
+find beta0 and beta1 - sum up expression over all data points
+
+next try min |pred(xi) - yi|
+
+min prediction(xi)- yi ^2 - least squares fit
+
+residual sum of squares = error - regression - scale dependent
+
+how can we get something that is not scale dependent
+total sum of squares
+TSS = su, (yi - mean of y)^2
+relative error r2
+tss - rss / tss = 1 - tss/tss = r2
+
+if no error , r squared = 1
+RSS <= TSS
+
+linear regresiion, take data points, plug in to get betas and best lines
+
+import statsmodels.formula.api as sm
+from sklearn import lineaer_model
+
+hy

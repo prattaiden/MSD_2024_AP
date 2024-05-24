@@ -38,3 +38,77 @@ nullify foreign key
 disallow changes to the reference table
 
 lab
+
+
+5/21
+entity relationship model
+every relation should have a primary key and unique key
+
+mysql workbench
+- figure out how to get into the cade machines
+
+attribute is the name and the type - entity - tuple - row
+
+candidate key:
+options for hte primary keys
+surrogate key:
+state id 24 stands in for state code GA
+
+
+5/22
+ER Models
+my sql data types
+integers, intm tiny, small, medium, big , int
+real , float, double, decimal
+dates , date , datetime, time stamp, time, year
+strings
+  char(10), varchar(1)
+  char is exactly 10 characters
+  varchar 10 up to ten characters
+  enums
+
+5/23
+strings
+choosing the N for varchar
+varchar(n)
+n bytes plus 1 or 2 bytes
+1byte if N <=255
+2bte if N>255
+
+properties
+DEFAULT 'hello' -
+AUTO-INCREMENT - goes to the next value up
+NOT NULL
+
+table properties
+  primary key (column, or multiple)
+  unique (column 1 ) - candidate key
+
+create table Titles(
+  ISBN char(14) not null,
+  Title varchar(255) not null,
+  Author varchar(255) not null,
+  primary key(ISBN)
+)
+mysql makes its own column for primary key if you dont specify
+
+Foreign key(<column>) References <table> (table's key)
+
+on delete cascade - deletes all corresponding rows
+om delete restrict - prevents you from deleting the row
+
+many to many
+primary keys of relation entities as foreign keys
+relationship sets to schema
+
+on the many side, can merge one of the relationships into its table
+1 to many mergre to many side
+since we
+
+in a 1to1
+treat as a 1 to M and merge to one of the other tables
+
+algoirthm summary slide::::::
+MANY TO MANY - create table for relationship
+1 to many - dont have to create schema for relationship, the many side table has the foreign key from the 1
+1 to 1 -
