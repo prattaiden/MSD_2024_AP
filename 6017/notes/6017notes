@@ -83,3 +83,26 @@ import statsmodels.formula.api as sm
 from sklearn import lineaer_model
 
 hy
+
+5/28
+more regression
+y=B0 + B1X
+
+difference between each point and the line at that point , add all errors
+
+y = b0 + b1 x1 + b2 x2
+if in a function add enough betas ,  can get line to match exactly, but that is not useful
+more complicated models = high risk of over fitting
+as add more complicated terms, yes boost r^2 value but not getting anything good out of it that helps with predictions
+split data into trainign and testing, fit betas with training data, compute r^2 for both sets of the data
+
+training error       testing error
+          small       big
+small     goal           overfit
+
+big                     underfit
+
+if you have overfit: remove terms - model is too complicated
+underfit: add terms - probably
+
+split into train/test : cross validation
