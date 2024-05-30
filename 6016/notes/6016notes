@@ -113,5 +113,8 @@ MANY TO MANY - create table for relationship
 1 to many - dont have to create schema for relationship, the many side table has the foreign key from the 1
 1 to 1 -
 
-6/28
+5/28
 SQL history
+
+5/29
+conditins
