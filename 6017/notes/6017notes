@@ -106,3 +106,63 @@ if you have overfit: remove terms - model is too complicated
 underfit: add terms - probably
 
 split into train/test : cross validation
+
+6/4
+KNN
+predictive data analysis
+reduce statsmodels
+m(x) = y
+knn for regresion - use averaging
+
+point - traububg points
+point k knn(point p, int k)
+for tp: training points
+d = dist(p, tp)
+
+for p : ret if d < distance(pr,p)
+replace pr with pt
+
+6//6
+spdt implementation
+and homework 4
+tree based data structures for spatial partitioning
+
+quad tree
+if too big , split bounding box into four peices
+
+KD tree
+split on median x point
+then split each half by median y
+repeat
+
+implementation
+
+K tree class
+constructor -> make the root -> need a node class and constructor - recursive
+node class , left and right children
+
+split dimension
+2D it is x or y
+in KD it is an index used to look up the point
+
+points class
+priority queue
+ access bounding boxes
+
+quad tree node
+  children are a little different - 4 children - NW NE SW SE
+  point array []
+  either an internal node and have children or a point array with points
+
+implementing two tree data structures, compare performance under different conditions
+
+base case for quad tree
+D
+
+dub run to run the main function
+
+opBinary
+operatory overloading
+string version of op want to overload '
+
+kd tree is also log N becsue it is perfecrly balanced as the points are split

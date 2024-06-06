@@ -118,3 +118,22 @@ SQL history
 
 5/29
 conditins
+
+6/6
+database systems wrapping up
+mySQL use primarykey() , candidate key is unique
+
+relational algebra
+projection
+selection
+set union
+set difference
+cross product
+
+cardinality and participation constraint
+cardinality 1 to many, many to many, 1 to 1
+if caridnality is differnet, tables will be differnt
+
+weak entitiy!!
+cant be defined by own attributes, cant be found on its own
+cade... 429 .. 561!
