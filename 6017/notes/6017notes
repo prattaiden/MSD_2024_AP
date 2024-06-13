@@ -166,3 +166,163 @@ operatory overloading
 string version of op want to overload '
 
 kd tree is also log N becsue it is perfecrly balanced as the points are split
+
+
+6/11
+for csv timing: K D then the timing
+
+decision tree:
+ISP customer service
+performing classification
+class == tree of connection issue
+
+ effectively KD trees
+ often features are categorical
+ order looking at points is a bit different from kd tree
+ only consider training data in one region
+
+ DECISION TREE
+ often but not necessearily binary
+ internal nodes correspond to decisions
+ leaf nodes are predictions
+
+ is modem plugged in ? = root node
+ - no = customer problem
+ - yes - is router plugged in - yes - no
+
+ often a binary tree, if a question has more than two answers , wont be
+
+ leaf nodes are dtraining points that fit in the bucket
+ leaf node contain number of trianing pooints in each class
+
+ benefits
+ unlike knn , no
+ potentially shorter trees
+ understandability
+
+ use a good dt to understand which features are most important
+ works well for categorical and herterogeneus features
+
+ KD tree example
+ calories and act score
+ calories number range is large strip
+ act score is small circles
+ works for herterogeneus where scales are different
+ and for categorical data
+
+ how do we build a DT ?
+ what kinds of training points in leaf nodes to give good prediction ?
+ ideally leaf nodes are mostly a single class.
+ internal nodes are important features
+
+ root node and internal nodes split the data into classes as well as possible
+
+ ID3 algorithm greedy
+ greedy algorithms are generally cheaper than other algorithms
+ whenever have to make a choice, pick what seems best , not neceessarily always
+
+ set of training points and a set of features
+ if # of training points is small or the number of features is 0
+ then we make a leaf node
+ else make an internal node
+ for each feature, find the best split value for that feature
+ and then make node using the best feature
+ remove feature from last and creatre l/r children
+ "best split"
+  is if my children are going to be leafnodes , evaluate a split by pretending the children will be leafnodes
+
+  evaluting leaf nodes
+  sum of square residuals
+  (prediction - the true)^2 E trianing points
+
+  GINI
+  measure of "inequality"
+0 if all points have the same class , larger number means it is more heterogeneous
+entropy - 0 for all same class
+metrics measure how all the points are in the same class or not
+
+very easy to built a decision tree with %100 training accuracy
+if we get %100 it means we OVERFIT the data
+
+improving accuracy and dealing with overfitting in general
+least squares regression
+
+data - smaples from some distribution
+
+models are also samples from some distribution
+usually we get one sample
+
+bootstrapping turn 1 dat set into many
+
+make a new data set
+just take random values from original dataset but do it with replacement
+making a pretend dataset by taking N samples from N random rows
+
+use this with decision trees with a technique called bagigng
+
+BAGGING
+ bootstrap many datasets, train and overfit a decision tree on each one
+ prediction is just a vote by all the decision trees
+ bagging taking an average of the noisy prediction
+
+other technique is RANDOM FOREST
+generate a bunch of different decisions trees from one dataset by limitting which features we use to split
+build many dts from one data set
+randomly limit the set of features we could split on at each node
+
+using voting to determine the final prediction
+
+example
+:
+
+6/12
+support vector machines
+use for classification
+
+decision boundary
+
+
+line between points is a separating hyper plane
+
+in 1D how to pick the best separating hyper plane
+
+distance from hyperplane to closest training point is called the margin
+in general, want maximum margin hyperplane
+
+in 2d hyperplane is  line
+maximum margin is more difficult
+placement and angle determine the margin
+equation of this line  use the normal vector, direction perpendicular to the surface
+n * x + c =
+nx * px + ny * py + c = 0
+normal is always a vector, taking the points as vectors
+
+error for blue point is 0 if on correct side of dotted blue line, distance to dotted blue line otherwise
+may be some small penalty for correcrly classified points if they are within the width of the slab and close to the hyperplane
+
+solve for decision boundary plane which minimizes the error
+
+can solve for n , b - the plane offset
+
+knn nore accurate
+model size / prediction cost
+   all training points plus acceleration structure
+
+linear svc
+normal vector and b
+very compact model
+small to store and predictions are cheap
+
+downside is the linear decision boundary
+
+topgraphical
+
+if i consider the space to be one cluster sheet, ti can stretch into different dimensins then draw a straight line
+kernel function
+"kernel frick"
+
+radiabl vase function - rvf kernel
+
+linear svc -> support vector machine
+
+k fold cross validation

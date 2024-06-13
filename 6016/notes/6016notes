@@ -137,3 +137,54 @@ if caridnality is differnet, tables will be differnt
 weak entitiy!!
 cant be defined by own attributes, cant be found on its own
 cade... 429 .. 561!
+
+
+6/11
+self join
+cross
+
+select p1.cardNum, p2.cardNum where
+select * from Phones
+
+select * from Phones p1 join Phoens p2 where p1.CardNum!=p2.CardNum and p1.phone = p2.phone;
+
+null
+sql uses 3 value logic
+true false and unknown
+null in sql = unknown
+
+
+quiz
+select patrons.name from patrons join checkedout where patrons.cardnum = checkedout.cardnum
+
+
+give me all the patrons from patrons where cardnum not in checked out
+outerjoin
+
+select * from Patrons where CardNum not in (select CardNum from CheckedOut)
+
+select * from patrons natural left join checkedout
+
+ natural and outer join and left join
+
+ Join/Inner Join = Keep only that which matches
+Left join = Keep every thing from left table, only matches from right table
+Right join = Keep everything from right table, only matches from left table
+Outer join = Keep everything
+
+5.12
+query division
+lecture 10 advanced queries
+
+Strings
+Where Title Like 'J %m'
+
+_ one of any letter
+
+
+5/13
+
+MIDTERM
+keys-superkeys
+foreign keys
+create table

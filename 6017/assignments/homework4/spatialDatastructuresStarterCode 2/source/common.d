@@ -135,6 +135,8 @@ unittest{
 //Partition the list of points so that the median is in the right place and the
 //left half has all points with a smaller coordinate in SortingDim
 //and the right half has all poitns with greater coordinate in sortingDim
+
+//TODO use for KDTREE
 auto medianByDimension(size_t SortingDim, size_t PointDim)(Point!PointDim[] points){
 
     return points.topN!((a, b) => a[SortingDim] < b[SortingDim])(points.length/2);
@@ -159,6 +161,8 @@ unittest{
 //partition the list of points so the front part has all the points with a smaller coordinate
 //in the sortingDim, and the right part has all the points with greater coordinate in the sortingDim
 //this returns the "right half".  See the unitTest for how to work with this
+
+//TODO USE FOR QUADTREE
 auto partitionByDimension(size_t sortingDim, size_t PointDim)(Point!PointDim[] points, float splitValue){
     return points.partition!(x => x[sortingDim] < splitValue);
 }

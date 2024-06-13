@@ -1,0 +1,39 @@
+lecture watching :
+
+Quad Tree
+bounding box
+
+make internal node
+searching: start at root, make sure it overlaps before recurssing down to children
+
+KT TREE
+split by x coordinate
+then by median y value
+repeat til run out of points
+
+stuff needed for implementation
+KD Tree Class
+methods for knn and range query
+they have a driver and a recursive implementation
+
+constructor of the tree is simple
+  makes the root
+
+need a Node class
+  recurssive constructor
+  what data associate with nodes of KD Tree?
+  point
+  left and right children
+
+Point Class
+Access Align Bounding boxes
+priority queue
+
+quad tree differences
+node
+  4 children
+  nw ,ne , sw, se
+
+quad tree base case
+
+D Language

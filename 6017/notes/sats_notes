@@ -8,3 +8,12 @@ the variation is seperated into explained and unexplained components
 y = Bo + B1x + error
 
 3 sample regression line
+
+the line of best fit on the graph is the one that is the minimal sum of the errors distance from the line squared
+OLS ordinary least squares regression
+betanought and beta1 guesses
+
+
+SST sum of squares - (SUM of Squares Total)
+SSR sum of squares due to regression
+sse sum of squares due to error

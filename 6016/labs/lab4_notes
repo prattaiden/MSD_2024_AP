@@ -1,0 +1,241 @@
+---------------------------------------------------------------------------------------------------
+PART 2, make the database tables
+
+SHOW TABLES FROM <UID>
+DESCRIBE Car;
+CREATE TABLE Vehicle(
+  VIN VARCHAR(255) UNSIGNED PRIMARY KEY,
+  Make VARCHAR(255),
+  Model VARCHAR(255),
+  Year INT,
+  Color VARCHAR(255)
+);
+
+CREATE TABLE SalesPerson(
+  EmployeeID VARCHAR(255) NOT NULL PRIMARY KEY,
+  Name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Assignment(
+  VIN VARCHAR(255) NOT NULL,
+  EmployeeID VARCHAR(255) NOT NULL,
+  PRIMARY KEY (VIN, EmployeeID),
+  FOREIGN KEY (VIN) REFERENCES Vehicle(VIN),
+  FOREIGN KEY (EmployeeID) REFERENCES SalesPerson(EmpolyeeID)
+);
+
+
+Now populate:
+
+INSERT INTO Vehicle (VIN, Make, Model, Year, Color)
+VALUES
+('V1', 'Toyota', 'Tacoma', 2008, 'Red'),
+ ('V2', 'Toyota', 'Tacoma', 1999, 'Green'),
+ ('V3', 'Tesla', 'Model 3', 2018, 'White'),
+ ('V4', 'Subaru', 'WRX', 2016, 'Blue'),
+ ('V5', 'Ford', 'F150', 2004, 'Red');
+
+
+INSERT INTO SalesPerson(EmployeeID, Name)
+VALUES
+('E1', 'Arnold'),
+('E2', 'Hannah'),
+('E3', 'Steve');
+
+
+INSERT INTO Assignment(VIN, EmployeeID)
+VALUES
+('V1', 'E1'),
+('V2', 'E1'),
+('V5', 'E2'),
+('V3', 'E3');
+
+---------------------------------------------------------------------------------------------------
+PART 3:
+
+  1. Get the ISBNs of all books by <Author>
+  'Seuss'
+  SELECT ISBN FROM Titles WHERE Author = <Author>;
+
+  2. Get Serial numbers (descending order) of all books by <ISBN>
+  SELECT Serial FROM Inventory WHERE ISBN = <ISBN> ORDER BY Serial DESC;
+
+  3. Get the Serial numbers and ISBNs of all books checked out by <Patron’s name>
+  use patrons, checked out, inventory
+  SELECT * FROM Patrons WHERE Patrons.CardNum = CheckedOut.CardNum
+
+  SELECT Patrons.CardNum From Patrons;
+  SELECT Name FROM Patrons JOIN CheckedOut ON Patrons.CardNum = CheckedOut.CardNum
+
+  SELECT Serial, ISBN FROM Inventory JOIN CheckedOut
+  $$$
+  SELECT Inventory.Serial, Inventory.ISBN FROM Patrons JOIN CheckedOut ON Patrons.CardNum = CheckedOut.CardNum JOIN Inventory ON CheckedOut.Serial = Inventory.Serial WHERE Patrons.Name = <Name>;
+
+  4. Get phone number(s) and Name of anyone with <ISBN> checked out
+  SELECT Phones.Phone, Patrons.Name FROM Patrons JOIN Phones ON Patrons.CardNum = Phones.CardNum JOIN CheckedOut ON CheckedOut.CardNum = Patrons.CardNum JOIN Inventory ON Inventory.Serial = CheckedOut.Serial WHERE ISBN = <ISBN>;
+  +----------+------+
+  | Phone    | Name |
+  +----------+------+
+  | 555-5555 | Joe  |
+  | 888-8888 | Dan  |
+  | 999-9999 | Dan  |
+  +----------+------+
+
+TITLES:
+  +----------------+------------------------+----------+
+  | ISBN           | Title                  | Author   |
+  +----------------+------------------------+----------+
+  | 978-0062278791 | Profiles in Courage    | Kennedy  |
+  | 978-0261102309 | The Lord of the Rings  | Tolkien  |
+  | 978-0394823379 | The Lorax              | Seuss    |
+  | 978-0441172719 | Dune                   | Herbert  |
+  | 978-0547928227 | The Hobbit             | Tolkien  |
+  | 978-0553283686 | Hyperion               | Simmons  |
+  | 978-0553283689 | Endymion               | Simmons  |
+  | 978-0679732242 | The Sound and the Fury | Faulkner |
+  +----------------+------------------------+----------+
+
+PHONES:
++---------+----------+
+| CardNum | Phone    |
++---------+----------+
+|       1 | 555-5555 |
+|       2 | 555-5555 |
+|       2 | 666-6666 |
+|       3 | 111-1111 |
+|       4 | 888-8888 |
+|       4 | 999-9999 |
++---------+----------+
+
+PATRONS:
++---------+------+
+| CardNum | Name |
++---------+------+
+|       1 | Joe  |
+|       2 | Ann  |
+|       3 | Ben  |
+|       4 | Dan  |
++---------+------+
+
+INVENTORY:
++--------+----------------+
+| Serial | ISBN           |
++--------+----------------+
+|   1006 | 978-0062278791 |
+|   1010 | 978-0261102309 |
+|   1004 | 978-0394823379 |
+|   1005 | 978-0394823379 |
+|   1001 | 978-0547928227 |
+|   1002 | 978-0547928227 |
+|   1008 | 978-0553283686 |
+|   1009 | 978-0553283689 |
+|   1003 | 978-0679732242 |
++--------+----------------+
+
+CHECKEDOUT:
++---------+--------+
+| CardNum | Serial |
++---------+--------+
+|       1 |   1001 |
+|       1 |   1004 |
+|       4 |   1005 |
+|       4 |   1006 |
++---------+--------+
+
+-------------------------------------------------------------------------------------------------------------------------
+PART 4:
+
+  1. Find the Authors of the library's oldest <N> books. Assume the lowest serial number is the oldest book.
+  combine titles and inventory
+  SELECT Author FROM Titles JOIN Inventory ON Inventory.ISBN = Titles.ISBN ORDER BY Serial ASC LIMIT 5;
+
+  2. Find the name and phone number of the person who has checked out the most recent book.
+  Assume higher serial numbers are newer.
+  Note that this query is not concerned with the absolute highest serial number, it is concerned with the highest one that has been checked out.
+  - in checkedout get the highest serial number
+  - combine with cardnum to get the names
+  SELECT Patrons.Name, Phones.Phone FROM Patrons JOIN CheckedOut ON Patrons.CardNum = CheckedOut.CardNum JOIN Phones ON Patrons.CardNum = Phones.CardNum ORDER BY Serial Desc;
+
+  3. Find the phone number(s) and name of anyone who has checked out any book.
+  use distinct to not get duplicates
+    SELECT DISTINCT Patrons.Name, Phones.Phone FROM Patrons JOIN CheckedOut ON Patrons.CardNum = CheckedOut.CardNum JOIN Phones On Patrons.CardNum = Phones.Cardnum;
+
+  4. Find the Authors and Titles of the books who have NOT been checked out by anyone. The query should not return duplicates.
+  From Titles. Combine Inventory and CheckedOut. Find the Serial Numbers that are not in CheckedOut.
+      SELECT Titles.Author, Titles.Title FROM Titles LEFT JOIN Inventory ON Titles.ISBN = Inventory.ISBN LEFT JOIN CheckedOut ON Inventory.Serial = CheckedOut.Serial WHERE CheckedOut.Serial is NULL;
+      +----------+------------------------+
+    | Author   | Title                  |
+    +----------+------------------------+
+    | Tolkien  | The Lord of the Rings  |
+    | Herbert  | Dune                   |
+    | Tolkien  | The Hobbit             |
+    | Simmons  | Hyperion               |
+    | Simmons  | Endymion               |
+    | Faulkner | The Sound and the Fury |
+    +----------+------------------------+
+  The Hobbit is checked out but it is appearing on this list. That is because this is a different Serial number copy of the book.
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+PART 5:
+
++-----------------+
+| Tables_in_Chess |
++-----------------+
+| Events          |
+| Games           |
+| Players         |
++-----------------+
+
+Games:
++-------------+------------------+------+-----+---------+-------+
+| Field       | Type             | Null | Key | Default | Extra |
++-------------+------------------+------+-----+---------+-------+
+| Round       | varchar(10)      | NO   | PRI | NULL    |       |
+| Result      | char(1)          | NO   |     | NULL    |       |
+| Moves       | varchar(2000)    | NO   |     | NULL    |       |
+| BlackPlayer | int(10) unsigned | NO   | PRI | NULL    |       |
+| WhitePlayer | int(10) unsigned | NO   | PRI | NULL    |       |
+| eID         | int(10) unsigned | NO   | PRI | NULL    |       |
++-------------+------------------+------+-----+---------+-------+
+
+Players:
++-------+------------------+------+-----+---------+----------------+
+| Field | Type             | Null | Key | Default | Extra          |
++-------+------------------+------+-----+---------+----------------+
+| Name  | varchar(255)     | YES  | UNI | NULL    |                |
+| Elo   | int(10) unsigned | YES  |     | NULL    |                |
+| pID   | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
++-------+------------------+------+-----+---------+----------------+
+
+Events:
++-------+------------------+------+-----+---------+----------------+
+| Field | Type             | Null | Key | Default | Extra          |
++-------+------------------+------+-----+---------+----------------+
+| Name  | varchar(255)     | NO   | MUL | NULL    |                |
+| Site  | varchar(255)     | NO   |     | NULL    |                |
+| Date  | date             | NO   |     | NULL    |                |
+| eID   | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
++-------+------------------+------+-----+---------+----------------+
+
+1. Find the names and IDs of any player with the 10 highest Elo ratings.
+  SELECT Players.Name, PLayers.pID FROM Players ORDER BY Players.Elo DESC LIMIT 10;
+
+2. Find the names and Elo ratings of any player who has ever played a game as black.
+  SELECT DISTINCT Players.Name, Players.Elo FROM Players JOIN Games WHERE Games.BlackPlayer = Players.pID;
+
+3. Find the names of any player who has ever won a game as white.
+  SELECT DISTINCT Players.Name FROM Players JOIN Games ON Players.pID = Games.WhitePlayer WHERE Games.Result = 'W';
+
+4. Find the names of any player who played any games between 2014 and 2018 in Budapest HUN .
+  Event Site, compare eID in Games to Event Site being 'Budapest HUN'
+  SELECT DISTINCT Players.Name FROM Players JOIN Games ON Players.pID = Games.WhitePlayer OR Players.pID = Games.BlackPlayer JOIN Events ON Games.eID = Events.eID WHERE Events.Site LIKE '%Budapest HUN%' AND YEAR(Events.Date) BETWEEN 2014 and 2018;
+
+5. Find the Sites and dates of any event in which Garry Kasparov won a game.
+    select the site and date from events. Join the event with Games
+  SELECT Events.Site, Events.Date FROM Events JOIN Games ON Games.eID = Events.eID JOIN Players ON Players.pID = Games.WhitePlayer OR Players.pID = Games.BlackPlayer WHERE Players.Name LIKE '%Kasparov, Garry%' AND (Games.Result = 'W' AND Players.pID = Games.WhitePlayer) OR (Games.Result = 'B' AND Players.pID = Games.BlackPlayer);
+
+
+6. Find the names of all opponents of Magnus Carlsen. An opponent is someone who he has played a game against. Hint: Both Magnus and his opponents could play as white or black.
+  SELECT DISTINCT Players.Name FROM Players JOIN Games ON Players.pID = Games.WhitePlayer OR Players.pID = Games.BlackPlayer WHERE (Games.BlackPlayer = (Select pID FROM Players WHERE Name = 'Carlsen, Magnus') AND Players.pID = Games.WhitePlayer) OR (Games.WhitePlayer = (SELECT pID FROM Players WHERE Name = 'Carlsen, Magnus') AND Players.pID = Games.BlackPlayer);
