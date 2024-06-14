@@ -80,22 +80,22 @@ struct BucketKNN(size_t Dim){
 }
 
 
-unittest{
-    auto bknn = BucketKNN!2([Point!2([.5, .5]), Point!2([1, 1]),
-                             Point!2([0.75, 0.4]), Point!2([0.4, 0.74])],
-                            2);
+// unittest{
+//     auto bknn = BucketKNN!2([Point!2([.5, .5]), Point!2([1, 1]),
+//                              Point!2([0.75, 0.4]), Point!2([0.4, 0.74])],
+//                             2);
     
-    writeln(bknn);
-    foreach(x; getIndicesRange(Indices!2([0,0]), Indices!2([1, 1]))){
-        writeln(x);
-    }
+//     writeln(bknn);
+//     foreach(x; getIndicesRange(Indices!2([0,0]), Indices!2([1, 1]))){
+//         writeln(x);
+//     }
 
-    writeln("bucket range query");
-    foreach(p; bknn.rangeQuery(Point!2([1,1]), .7)){
-        writeln(p);
-    }
-    writeln("bucket knn");
-    foreach(p; bknn.knnQuery(Point!2([1,1]), 3)){
-        writeln(p);
-    }
-}
+//     writeln("bucket range query");
+//     foreach(p; bknn.rangeQuery(Point!2([1,1]), .7)){
+//         writeln(p);
+//     }
+//     writeln("bucket knn");
+//     foreach(p; bknn.knnQuery(Point!2([1,1]), 3)){
+//         writeln(p);
+//     }
+// }

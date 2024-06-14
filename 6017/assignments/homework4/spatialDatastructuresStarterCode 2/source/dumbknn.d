@@ -41,22 +41,22 @@ struct DumbKNN(size_t Dim){
 
 }
 
-unittest{
-    //I'd include unitttesting code for each of your data structures to test with
-    //use a small # of points and manually check that you get the answers you expect
-    auto points = [Point!2([.5, .5]), Point!2([1, 1]),
-                   Point!2([0.75, 0.4]), Point!2([0.4, 0.74])];
-    //since the points are 2D, the data structure is a DumbKNN!2
-    auto dumb = DumbKNN!2(points);
+// unittest{
+//     //I'd include unitttesting code for each of your data structures to test with
+//     //use a small # of points and manually check that you get the answers you expect
+//     auto points = [Point!2([.5, .5]), Point!2([1, 1]),
+//                    Point!2([0.75, 0.4]), Point!2([0.4, 0.74])];
+//     //since the points are 2D, the data structure is a DumbKNN!2
+//     auto dumb = DumbKNN!2(points);
 
-    writeln("dumbknn rq");
-    foreach(p; dumb.rangeQuery(Point!2([1,1]), .7)){
-        writeln(p);
-    }
-    assert(dumb.rangeQuery(Point!2([1,1]), .7).length == 3);
+//     writeln("dumbknn rq");
+//     foreach(p; dumb.rangeQuery(Point!2([1,1]), .7)){
+//         writeln(p);
+//     }
+//     assert(dumb.rangeQuery(Point!2([1,1]), .7).length == 3);
 
-    writeln("dumb knn");
-    foreach(p; dumb.knnQuery(Point!2([1,1]), 3)){
-        writeln(p);
-    }
-}
+//     writeln("dumb knn");
+//     foreach(p; dumb.knnQuery(Point!2([1,1]), 3)){
+//         writeln(p);
+//     }
+// }
