@@ -169,6 +169,8 @@ struct quadTree{
                 recurseKNNQuery(n.NE);
                 recurseKNNQuery(n.SE);
                 recurseKNNQuery(n.SW);
+                        //the below code did not seem to work fully. 
+                        
             // P2 closestPoint = closest!2(n.aabb, p);
             // // Recurse into the child node containing closestPoint
             //     if (closestPoint[0] <= n.aabb.min[0] + (n.aabb.max[0] - n.aabb.min[0]) / 2) {

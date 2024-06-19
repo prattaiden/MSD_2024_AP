@@ -22,12 +22,11 @@ struct KDTree(size_t dim){
             if(points.length == 1){
                 splitPoint = points[0];
             }else{
+
                 //sorting by the left half
                 Pt[] leftHalf = medianByDimension!(this_level, dim)(points);
                 splitPoint = points[leftHalf.length];
-                //left half pts are used to recursively create the left child node at the next dimension level 
                 leftChild = new KDNode!next_level(leftHalf);
-                // If there are more than n points, the remaining right half points are used to create the right child node
                 if (points.length > 2){
                     rightChild = new KDNode!next_level(points[leftHalf.length + 1 .. $]);
                 }
@@ -58,7 +57,7 @@ struct KDTree(size_t dim){
 
     Pt[] KNNQuery( Pt point, int K){
         auto pq = makePriorityQueue!dim(point);
-        //defaulting aabb to start with inifite bounds
+        //aabb starts with infinity bounds to then be narrowed down
         AABB!dim aabb;
         aabb.min[] = -float.infinity;
         aabb.max[] = float.infinity;
