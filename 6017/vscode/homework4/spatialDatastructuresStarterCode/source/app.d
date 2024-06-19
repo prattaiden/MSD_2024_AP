@@ -12,7 +12,7 @@ import kdtree;
     const size_t maxTestingTimesPerSingleTest = 10;
 //---------------------------------------------PART 2 TIMING TESITNG-------------------------------------//
 
-//VARYING N -- k is 10, dimensions is 2
+//VARYING ----------------------------------------------N -- k is 10, dimensions is 2---------------------------------------------------------
 void varyingNGaussianKDTree(string fileName){
      File file = File(fileName, "w");
      file.writeln("N,avgTime");
@@ -154,7 +154,7 @@ void varyingNUniformQuadTree(string fileName){
 }
 
 
-//VARYING k --- dimension is 2 , N is 250--
+//VARYING k ---------------------------------------------------------- dimension is 2 , N is 250----------------------------------------
 void varyingkGaussianKDTree(string fileName){
     File file = File(fileName, "w");
     file.writeln("k,avgTime");
@@ -300,7 +300,7 @@ void varyingkUniformQuadTree(string fileName){
     file.close();
 }
 
-//varying D for kd trees
+//varying -----------------------------------------------D for kd trees-----------------------------------------------------------
 void varyingDGaussian(string fileName){
     File file = File(fileName, "w");
     file.writeln("dimension,avgTime");
@@ -362,6 +362,7 @@ void varyingDUniform(string fileName){
     file.close();
 }
 
+//varying ------------------------------------------------------k and N -----------------------------------------------------------
 void varyingKAndNUniformQuad(string fileName){
     File file = File(fileName, "w");
     file.writeln("N,k,avgTime");
@@ -500,33 +501,77 @@ void varyingKAndNGaussianKD(string fileName){
 }
 
 
+//------------------------------------------------ bucket testing --------------------------------------------------------
+void bucketkTiming(string fileName){
+    File file = File(fileName, "w");
+    file.writeln("");
+    enum numTestingPoints = 50;
+    auto k = 10;
+    size_t N = 1; //training points
+    long totalTime = 0;
+    long avgTime = 0;
+
+     static foreach(index; 1 .. 50){
+        //setting the varying N for this test
+        N = index* 10;
+        totalTime = 0;
+        avgTime = 0;
+  
+        foreach(testId; 0 .. maxTestingTimesPerSingleTest){
+            auto trainingPoints = getUniformPoints!2(N);
+            auto testingPoints = getUniformPoints!2(numTestingPoints);
+            auto bucket = BucketKNN!2(trainingPoints, 2);
+            auto stopWatch = StopWatch(AutoStart.no);
+            stopWatch.start;
+            foreach(const ref p ; testingPoints){
+                bucket.knnQuery(p,k);
+            }
+            stopWatch.stop;
+            totalTime += stopWatch.peek.total!"usecs";
+        
+        }
+        avgTime = totalTime / maxTestingTimesPerSingleTest;
+        file.writeln(N, "," , avgTime);
+     }
+     writeln("closing file. csv made for bucket Tree.");
+    file.close();
+}
+
 void main()
 {
     //varying N KD Tree--
-    varyingNGaussianKDTree("varyingNGaussianKDTree.csv");
-    varyingNUniformKDTree("varyingNUniformKDTree.csv");
-    //varying N Quad Tree --
-    varyingNGaussianQuadTree("varyingNGaussianQuadTree.csv");
-    varyingNUniformQuadTree("varyingNUniformQuadTree.csv");
+    // varyingNGaussianKDTree("varyingNGaussianKDTree.csv");
+    // varyingNUniformKDTree("varyingNUniformKDTree.csv");
+    // //varying N Quad Tree --
+    // varyingNGaussianQuadTree("varyingNGaussianQuadTree.csv");
+    // varyingNUniformQuadTree("varyingNUniformQuadTree.csv");
 
-    //varying k KD Tree --
-    varyingkGaussianKDTree("varyingkGaussianKDTree.csv");
-    varyingkUniformKDTree("varyingkUniformKDTree.csv");
-    //varying k Quad Tree --
-    varyingkGaussianQuadtree("varyingkGaussianQuadTree.csv");
-    varyingkUniformQuadTree("varyingkUniformQuadTree.csv");
+    // //varying k KD Tree --
+    // varyingkGaussianKDTree("varyingkGaussianKDTree.csv");
+    // varyingkUniformKDTree("varyingkUniformKDTree.csv");
+    // //varying k Quad Tree --
+    // varyingkGaussianQuadtree("varyingkGaussianQuadTree.csv");
+    // varyingkUniformQuadTree("varyingkUniformQuadTree.csv");
 
-    //varying D KD Tree -- 
-    varyingDGaussian("varyingDGaussian.csv");
-    varyingDUniform("varyingDUniform.csv");
+    // //varying D KD Tree -- 
+    // varyingDGaussian("varyingDGaussian.csv");
+    // varyingDUniform("varyingDUniform.csv");
 
-    //varying k and N KD Tree --
-    varyingKAndNGaussianKD("varyingKNGaussianKDTree.csv");
-    varyingKAndNUniformKD("varyingKNUniformKDTree.csv");
+    // //varying k and N KD Tree --
+    // varyingKAndNGaussianKD("varyingKNGaussianKDTree.csv");
+    // varyingKAndNUniformKD("varyingKNUniformKDTree.csv");
 
-    //varying k and N Quad Tree --
-    varyingKAndNGaussianQuad("varyingKNGaussianQuadTree.csv");
-    varyingKAndNUniformQuad("varyingKNUniformQuadTree.csv");
+    // //varying k and N Quad Tree --
+    // varyingKAndNGaussianQuad("varyingKNGaussianQuadTree.csv");
+    // varyingKAndNUniformQuad("varyingKNUniformQuadTree.csv");
+    
+
+    //bucket file
+    //expected to perform better with uniform and not gaussian
+    //bucketkGaussianTiming("varyingkGaussianBucket.csv");
+    bucketkTiming("varyingNUGaussianBucket.csv");
+
+
 
 
 
