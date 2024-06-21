@@ -38,16 +38,16 @@ struct KDTree(size_t dim){
     Pt[] rangeQuery( Pt p, float r ){
         Pt[] range;
 
-        void recurse( NodeType )( NodeType n ){
+        void RangeRecurse( NodeType )( NodeType n ){
 
             if (distance(p, n.splitPoint) <= r){
                 range ~= n.splitPoint;
 
                 if(n.leftChild !is null && p[n.next_level] - r <= n.leftChild.splitPoint[n.next_level]){
-                    recurse(n.leftChild);
+                    RangeRecurse(n.leftChild);
                 }
                 if(n.rightChild !is null && p[n.next_level] + r >= n.rightChild.splitPoint[n.next_level]){
-                    recurse(n.rightChild);
+                    RangeRecurse(n.rightChild);
                 }
             }      
         
@@ -62,7 +62,7 @@ struct KDTree(size_t dim){
         aabb.min[] = -float.infinity;
         aabb.max[] = float.infinity;
 
-        void recurse(NodeType)(NodeType n, AABB!dim tempBox){
+        void KnnRecurse(NodeType)(NodeType n, AABB!dim tempBox){
             //if pq is less than the K of neighbors to find
             if(pq.length < K){
                 pq.insert(n.splitPoint);
@@ -74,7 +74,7 @@ struct KDTree(size_t dim){
             }
 
             AABB!dim leftbbox = tempBox;
-            //Max boundary for the current dimension is set to the node’s splitPoint
+            //setting the max of the leftbox to the current splitpoint
             leftbbox.max[n.this_level] = n.splitPoint[n.this_level];
 
             AABB!dim rightbbox = tempBox;
@@ -83,15 +83,15 @@ struct KDTree(size_t dim){
             if(n.leftChild !is null && (pq.length < K ||  
             distance(closest(leftbbox, point), point) < distance(pq.front, point)))
             {
-                recurse(n.leftChild, leftbbox);
+                KnnRecurse(n.leftChild, leftbbox);
             }
             if(n.rightChild !is null && (pq.length < K || 
             distance(closest(rightbbox, point), point) < distance(pq.front, point)))
             {
-                recurse(n.rightChild, rightbbox);
+                KnnRecurse(n.rightChild, rightbbox);
             }
         }
-        recurse( root, aabb );
+        KnnRecurse( root, aabb );
         return pq.release;
     }
 }
