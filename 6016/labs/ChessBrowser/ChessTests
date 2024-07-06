@@ -1,0 +1,15 @@
+using System;
+using System.IO;
+using Xunit;
+
+
+public class ChessUnitTests{
+
+    public void ReadPGN_FileNotFound_Test(){
+        string filePath = "fake/path.pgn";
+
+        var exception = Assert.Throws<FileNotFoundException>(() => PgnReader.ReadChessGamePgn(filePath));
+        Assert.Equal("file not found", exception.Message);
+    }
+
+}
