@@ -16,11 +16,11 @@ namespace LibraryWebServer.Controllers
         private static string user = "";
         private static int card = -1;
 
-        //private readonly LibraryContext db;
-        //public HomeController(LibraryContext _db)
-        //{
-        //    db = _db;
-        //}
+        private readonly LibraryContext db;
+        public HomeController(LibraryContext _db)
+        {
+           db = _db;
+        }
 
         /// <summary>
         /// Given a Patron name and CardNum, verify that they exist and match in the database.
