@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6016/labs/Lab8/LibraryWebServer /LibraryWebServer/LibraryWebServer.csproj": {}
+    "/Users/aidenpratt/Downloads/Lab8/LibraryWebServer /LibraryWebServer/LibraryWebServer.csproj": {}
   },
   "projects": {
-    "/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6016/labs/Lab8/LibraryWebServer /LibraryWebServer/LibraryWebServer.csproj": {
+    "/Users/aidenpratt/Downloads/Lab8/LibraryWebServer /LibraryWebServer/LibraryWebServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6016/labs/Lab8/LibraryWebServer /LibraryWebServer/LibraryWebServer.csproj",
+        "projectUniqueName": "/Users/aidenpratt/Downloads/Lab8/LibraryWebServer /LibraryWebServer/LibraryWebServer.csproj",
         "projectName": "LibraryWebServer",
-        "projectPath": "/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6016/labs/Lab8/LibraryWebServer /LibraryWebServer/LibraryWebServer.csproj",
+        "projectPath": "/Users/aidenpratt/Downloads/Lab8/LibraryWebServer /LibraryWebServer/LibraryWebServer.csproj",
         "packagesPath": "/Users/aidenpratt/.nuget/packages/",
-        "outputPath": "/Users/aidenpratt/Documents/Documents - Aiden’s MacBook Pro/MSD-2024/MSD_2024_AP/6016/labs/Lab8/LibraryWebServer /LibraryWebServer/obj/",
+        "outputPath": "/Users/aidenpratt/Downloads/Lab8/LibraryWebServer /LibraryWebServer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/aidenpratt/.nuget/NuGet/NuGet.Config"

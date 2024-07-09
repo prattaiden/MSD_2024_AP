@@ -34,8 +34,19 @@ namespace LibraryWebServer.Controllers
         [HttpPost]
         public IActionResult CheckLogin( string name, int cardnum )
         {
-            // TODO: Fill in. Determine if login is successful or not.
+
             bool loginSuccessful = false;
+
+            // TODO: Fill in. Determine if login is successful or not.
+            var query =  from p in db.Patrons
+                where p.CardNum == cardnum && p.Name == name
+                select p;
+
+            Debug.WriteLine("Count: " + query.Count());
+
+            if (query.Count()==1)
+                loginSuccessful=true;
+
 
             if ( !loginSuccessful )
             {
@@ -76,9 +87,30 @@ namespace LibraryWebServer.Controllers
         public ActionResult AllTitles()
         {
 
-            // TODO: Implement
+            var query = 
+            from t in db.Titles
+            join i in db.Inventory on t.Isbn equals i.Isbn
+            into tJoinI
+            from i in tJoinI.DefaultIfEmpty()
+            //from j in tJoinI.DefaultIfEmpty()
+            join c in db.CheckedOut on i.Serial equals c.Serial
+            into iJoinC
+            from c in iJoinC.DefaultIfEmpty()
+            join p in db.Patrons on c.CardNum equals p.CardNum
+            into cJoinP
+            from p in cJoinP.DefaultIfEmpty()
+      
+            select new {isbn = t.Isbn, title = t.Title, author = t.Author, serial = i != null ? (uint?)i.Serial : null, name = p !=null ? p.Name : ""};
 
-            return Json( null );
+            // Convertimg the result to a list to debug the output
+            var resultList = query.ToList();
+            System.Diagnostics.Debug.WriteLine("-------------------------------------------------------------------------------------------------------------------");
+            foreach (var item in resultList)
+            {
+                System.Diagnostics.Debug.WriteLine($"ISBN: {item.isbn}, Title: {item.title}, Author: {item.author}, Serial: {item.serial}, Name: {item.name}");
+            }
+
+            return Json( query );
 
         }
 
@@ -93,8 +125,18 @@ namespace LibraryWebServer.Controllers
         [HttpPost]
         public ActionResult ListMyBooks()
         {
+            if (card == -1){
+                return Json( new { success = false , message = "failed, no user is logged in "});
+            }
+            var query = 
+            from c in db.CheckedOut
+            where c.CardNum == card
+            join i in db.Inventory on c.Serial equals i.Serial
+            join t in db.Titles on i.Isbn equals t.Isbn
+            select new {title = t.Title, author = t.Author, serial = c.Serial};
+
             // TODO: Implement
-            return Json( null );
+            return Json( query );
         }
 
 
@@ -109,8 +151,21 @@ namespace LibraryWebServer.Controllers
         [HttpPost]
         public ActionResult CheckOutBook( int serial )
         {
-            // You may have to cast serial to a (uint)
 
+            if(card == -1){
+                return Json(new {success = false, message = "failed, no user is logged in "});
+            }
+
+            var addCheckedOut = new CheckedOut
+            {
+                Serial = (uint)serial,
+                CardNum = (uint)card
+            };
+
+           // CheckedOut x = addCheckedOut.SingleOrDefault();
+            db.CheckedOut.Add(addCheckedOut);
+
+            db.SaveChanges();
 
             return Json( new { success = true } );
         }
@@ -125,7 +180,14 @@ namespace LibraryWebServer.Controllers
         [HttpPost]
         public ActionResult ReturnBook( int serial )
         {
-            // You may have to cast serial to a (uint)
+            var removeCheckdOut = new CheckedOut
+            {
+             Serial = (uint) serial,
+             CardNum = (uint)card   
+            };
+
+            db.CheckedOut.Remove(removeCheckdOut);
+            db.SaveChanges();
 
             return Json( new { success = true } );
         }
