@@ -1,3 +1,5 @@
+package com.example.lab5
+
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,7 +15,7 @@ class GravityViewModel : ViewModel() {
     fun updateOffsets(newX: Float, newY: Float) {
         val scaleFactor = 50f
         val screenWidth = 400
-        val screenHeight = 800
+        val screenHeight = 1600
 
         _xOffset.value = (newX * scaleFactor).coerceIn(0f, screenWidth.toFloat() - 40.dp.value)
         _yOffset.value = (-newY * scaleFactor).coerceIn(0f, screenHeight.toFloat() - 40.dp.value)

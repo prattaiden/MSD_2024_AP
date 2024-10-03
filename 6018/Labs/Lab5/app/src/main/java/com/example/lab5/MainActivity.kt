@@ -1,8 +1,6 @@
 package com.example.lab5
 
-import GravityViewModel
 import android.annotation.SuppressLint
-import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.Bundle
@@ -24,12 +22,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.lifecycle.LiveData
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
-import com.example.lab5.ui.theme.Lab5Theme
 import com.example.lab5.ui.theme.SensorUtils
 
 
@@ -46,6 +40,8 @@ class MainActivity : ComponentActivity() {
         gravitySensor = sensorManager.getDefaultSensor(Sensor.TYPE_GRAVITY)!!
         sensorUtils = SensorUtils()
         viewModel = GravityViewModel()
+
+
 
         setContent {
             GravitySensorScreen(sensorUtils, gravitySensor, sensorManager,viewModel)
@@ -80,15 +76,6 @@ class MainActivity : ComponentActivity() {
         val gravityData by sensorUtils.getGravityData(gravitySensor, sensorManager)
             .collectAsState(initial = floatArrayOf(0f, 0f, 0f))
 
-        val orientation = when {
-            gravityData[2] > 9 -> "Face Up"
-            gravityData[2] < -9 -> "Face Down"
-            gravityData[1] > 7 -> "Portrait"
-            gravityData[0] > 7 -> "Landscape (Left)"
-            gravityData[0] < -7 -> "Landscape (Right)"
-            else -> "Unknown Orientation"
-        }
-
         viewModel.updateOffsets(gravityData[0], gravityData[1])
 
         Surface(
@@ -108,11 +95,6 @@ class MainActivity : ComponentActivity() {
                     text = "Z: ${gravityData[2]}",
                     style = MaterialTheme.typography.bodyLarge
                 )
-//                Text(
-//                    text = "Orientation: $orientation",
-//                    style = MaterialTheme.typography.headlineLarge
-//                )
-
                 Marble(viewModel)
             }
         }
