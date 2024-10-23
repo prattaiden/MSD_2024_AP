@@ -1,0 +1,58 @@
+# creating and testing my first post
+POST http://127.0.0.1:7070/posts
+Content-Type: application/json
+
+{
+  "content": "TESTING IS THIS THING ON?"
+}
+
+
+
+###
+
+#get based on a time
+#fill in the last part of the url with the most recent desired timestamp to check posts
+GET 127.0.0.1:7070/posts/since/1729547671387
+
+
+###
+
+#get post based on an id
+#fill in with the desired id number
+GET 127.0.0.1:7070/posts/2
+
+###
+
+#delete a post based on id
+DELETE http://127.0.0.1:70070/posts/1
+
+
+#POST http://127.0.0.1:7070/books/like
+#Content-Type: application/json
+##MY_SESSION: 3e5b333c33766d14b1899762e6669568
+#
+#{
+#  "title" : "Dune 3"
+#}
+#
+####
+#
+#//need to implement corressponding handler
+#POST http://127.0.0.1:7070/books/hate
+#Content-Type: application/json
+#MY_SESSION: b0a83af3b40e20afd02ff206ebd872f9
+#
+#{
+#  "title" : "Dune 6"
+#}
+#
+#####
+#
+#GET  http://127.0.0.1:7070/books/liked
+#MY_SESSION: b0a83af3b40e20afd02ff206ebd872f9
+#
+#####
+#
+#GET http://127.0.0.1:7070/books
+#
+#
